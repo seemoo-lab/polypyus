@@ -22,6 +22,6 @@ setup(
     },
     entry_points={
         "console_scripts": ["polypyus-cli=polypyus.cli:app"],
-        "gui_scripts": ["polypyus=polypyus.gui:app"],
+        "gui_scripts": ["polypyus-gui=polypyus.gui:app"],
     },
 )

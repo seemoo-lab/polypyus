@@ -32,13 +32,13 @@ pip install .
 
 After the installation, at your disposal are the commands:
 
-* polypyus
+* polypyus-gui
 * polypyus-cli
 
 ## Using Polypyus
 
 Polypyus is available through a graphical and a command-line interface.
-Both the GUI (polypyus) and the CLI (polypyus-cli) take these arguments during invocation:
+Both the GUI (polypyus-gui) and the CLI (polypyus-cli) take these arguments during invocation:
 
 ```bash
   --verbose is the verbosity level. By default, it shows warnings -v shows info -vv show debug information.
