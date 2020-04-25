@@ -1,0 +1,137 @@
+* {
+font-family: Lucida Console, Monaco5, monospace;
+selection-color:  #eceff4;
+selection-background-color: #88c0d0;
+color:#d8dee9;
+}
+a {color: #88c0d0}
+QWidget {
+	background: #2e3440;
+}
+QMenuBar {
+	spacing: 5px;
+	border-bottom: 1px solid #434c5e;
+}
+QMenuBar::item {
+	background: #434c5e;
+}
+QDoubleSpinBox {
+	background-color: #3b4252;
+}
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+}
+QMenuBar::item:selected {
+
+	background: #88c0d0;
+}
+QStatusBar{
+	border-top: 1px solid #434c5e;
+}
+
+QScrollBar {
+	background: #3b4252;
+}
+QScrollBar::add-page, QScrollBar::sub-page {
+	background: #434c5e;
+}
+
+QPushButton {
+	border-radius: 5px;
+	background: #88c0d0;
+	padding: 5px;
+	color: #2e3440;
+}
+QPushButton::disabled {
+	background: #434c5e;
+	color: #97999e;
+}
+QPushButton.negative {
+	background: #bf616a;
+}
+QPushButton.positive {
+	background: #a3be8c;
+}
+QLabel {
+	color:#d8dee9;
+	background: transparent;
+}
+
+QLineEdit {
+	color: #d8dee9;
+	background: #3b4252;
+	border: None;
+	border-bottom: 1px solid #4c566a;
+}
+QLineEdit::disabled {
+	background: #434c5e;
+	color: #97999e;
+}
+
+QAbstractScrollArea, QAbstractScrollArea #scrollAreaWidgetContents {
+	background: transparent;
+}
+QTableCornerButton::section {
+	background: #4c566a;
+}
+QHeaderView::section {
+	background: #4c566a;
+	color: #e5e9f0;
+	border: 1px solid #434c5e;
+}
+QTextEdit {
+	background: #3b4252;
+}
+QListWidget {
+	background: #3b4252;
+}
+QToolTip {
+	background: #d8dee9;
+	border: 1px solid #eceff4;
+	color: #2e3440;
+
+}
+QListWidget::item {
+	border-bottom: 1px solid #4c566a;
+	margin: 0 10px;
+	padding-bottom: 5px;
+}
+.type_label {
+	color: #d8dee9;
+	font-weight: bold;
+	border: 2px solid #4c566a;
+	border-radius: 3px;
+	padding: .25ex;
+	min-width: 2em;
+	min-height: 1.5ex;
+	margin-right: 0.6em;
+	text-align: center;
+}
+.list_element {
+	min-height: 6ex;
+}
+QTableView {
+	background: #3b4252;
+	border:  1px solid #4c566a;
+	alternate-background-color: #434c5e;
+}
+QTableView.clickable::item:hover {
+	color: #88c0d0;
+}
+QComboBox QAbstractItemView {
+	background: #434c5e;
+}
+QGroupBox {
+	padding: 3px 1.5ex;
+	border: 2px solid #434c5e;
+	margin-top: 2ex;
+}
+QGroupBox::title {
+	subcontrol-origin: margin;
+	subcontrol-position: top left; /* position at the top center */
+	/* padding: 3px; */
+	font-weight: bold;
+	top: 1.5ex;
+	left: 0.5em;
+}
