@@ -8,7 +8,7 @@ for binaries that are complex to disassemble and where common tools miss functio
 approach makes it very fast and run within a few seconds. However, this approach
 requires the binaries to be for the same architecture and have similar compiler options.
 
-*Polypyus* integrates into the workflow of existing tools like *Ghidra*, *IDA*, *BinDiff*, and *Diaphora*. 
+*Polypyus* integrates into the workflow of existing tools like *Ghidra*, *IDA*, *BinDiff*, and *Diaphora*.
 For example, it can import previously annotated functions and learn from these, and also export found functions to be
 imported into *IDA*. Since *Polypyus* uses rather strict thresholds, it only found correct matches in our experiments.
 While this leads to fewer results than in existing tools, it is a good entry point for loading these matches into
@@ -29,9 +29,12 @@ by *IDA*, but often, *IDA* did either not recognize these as code or not mark th
 Note that *Diaphora* has similar problems, as it exports functions identified by *IDA* before further processing
 them.
 
-Moreover, we found that *Amnesia* was not working well. However, many functions have a similar stack frame
+Moreover, we found that *Amnesia* finds many functions, including many
+false positives. However, many functions have a similar stack frame
 setup in the beginning. Thus, *Polypyus* has an option to learn common function starts from the annotated
 input binaries and apply this to other binaries to identify functions without matching their name.
+This optional step is only applied to the regions in which no functions were previously located ,
+this way the common function starts method and the main function finding do not conflict.
 
 ## How it works
 
