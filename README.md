@@ -29,7 +29,7 @@ by *IDA*, but often, *IDA* did either not recognize these as code or not mark th
 Note that *Diaphora* has similar problems, as it exports functions identified by *IDA* before further processing
 them.
 
-Moreover, we found that *Amnesia* finds many functions, including many
+Moreover, while we found that *Amnesia* finds many functions, it also finds many
 false positives. However, many functions have a similar stack frame
 setup in the beginning. Thus, *Polypyus* has an option to learn common function starts from the annotated
 input binaries and apply this to other binaries to identify functions without matching their name.
