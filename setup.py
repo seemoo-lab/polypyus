@@ -16,6 +16,7 @@ setup(
         "typer == 0.0.8",
         "loguru == 0.4.*",
         "tabulate == 0.8.*",
+        "dataclasses",
     ],
     package_data={
         "": ["style.css", "polypyus.ico", "Polypyus.png", "about.html", "LICENSE.txt"]
