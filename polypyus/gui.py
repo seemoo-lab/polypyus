@@ -81,7 +81,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowIcon(QIcon(str(ASSETS_DIR.joinpath("polypyus.ico"))))
         with open(ASSETS_DIR.joinpath("style.css"), "r") as css:
             self.setStyleSheet(css.read())
-        self.setWindowTitle("Polypyus - Frimware Historian")
+        self.setWindowTitle("Polypyus - Firmware Historian")
 
         self.binary_list = BinaryList()
         self.history_list = HistoryList()

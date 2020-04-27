@@ -33,7 +33,7 @@ Moreover, while we found that *Amnesia* finds many functions, it also finds many
 false positives. However, many functions have a similar stack frame
 setup in the beginning. Thus, *Polypyus* has an option to learn common function starts from the annotated
 input binaries and apply this to other binaries to identify functions without matching their name.
-This optional step is only applied to the regions in which no functions were previously located ,
+This optional step is only applied to the regions in which no functions were previously located,
 this way the common function starts method and the main function finding do not conflict.
 
 ## How it works
@@ -115,7 +115,16 @@ The second invocation reuses the same project file and matches against the binar
 For each command, the number of `--history` and `--annotation` needs to match.
 These two commands could also be combined into one by adding the `--target` argument to the first command.
 
-## License
+### How does it work internally?
+
+We will release a paper soon. Until then, you can take a look into 
+[Jan's Master thesis final presentation](doc/jan_msc-final-presentation.pdf), which covers the issues encountered
+when working with conventional binary diffing approaches in ARM Thumb2 mode, and how the alternate binary-only
+approach works.
+
+## License & Credits
 
 We thank Anna Stichling for creating the *Polypyus* logo.
+We also thank Christian Blichmann and Joxean Koret for their feedback.
+
 *Polypyus* is open-source and licensed under the [GPLv3](LICENSE.txt).
