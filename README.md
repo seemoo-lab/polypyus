@@ -122,6 +122,24 @@ We will release a paper soon. Until then, you can take a look into
 when working with conventional binary diffing approaches in ARM Thumb2 mode, and how the alternate binary-only
 approach works.
 
+## Recommended IDA Workflow
+
+After some internal testing, we can recommend the following workflow when working with *IDA Pro* and *Polypyus*:
+
+* Create a fresh database. ARM v7 little endian, ARM Cortex M for the Bluetooth firmware.
+* Mark position 0x0 as Thumb (`Alt-g`, `T=0x1`).
+* Create ROM and RAM segments. ROM at `0x0` with `rx`, RAM at `0x200000` with `rwx` (at least for the Bluetooth firmware).
+* Create vector table offsets in ROM, at least for the reset vector, which is a 4-byte offset at `0x4` (`o`).
+  On the *CYW20735* firmware it points to `0x3bc+1`. Go back one byte and create a function (`p`).
+* Wait for auto analysis to finish.
+* Import *Polypyus* results.
+* Run the [Thumbs Up](https://github.com/CheckPointSW/Karta/blob/master/src/thumbs_up/thumbs_up_firmware.py) scripts.
+* Run both [BinDiff](https://www.zynamics.com/bindiff.html) and [Diaphora](http://diaphora.re/).
+  The latter ideally in an IDA version with decompiler. Use both, as they use different heuristics.
+
+...now your IDA database might be somewhat useful :) Still a lot of things the disassembler
+fails at within ARM Thumb2 but way better than anything IDA does on its own.
+
 ## License & Credits
 
 We thank Anna Stichling for creating the *Polypyus* logo.
