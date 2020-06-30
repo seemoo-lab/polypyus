@@ -25,6 +25,7 @@ import csv
 from argparse import ArgumentParser, FileType
 from binaryninja import *
 
+
 def get_functions(bv):
     """Populate dictionary of function names and offsets
     """
@@ -45,7 +46,7 @@ def get_functions(bv):
             size=func.total_bytes,
             type="FUNC",
             mode=mode,
-            )
+        )
         functions.append(data)
 
     return functions
@@ -59,7 +60,7 @@ def export_bn(csv_file, bv):
 
     try:
         with open(csv_file, "w") as f:
-            writer = csv.DictWriter(f, fieldnames = export_fields, delimiter = " ")
+            writer = csv.DictWriter(f, fieldnames=export_fields, delimiter=" ")
             writer.writeheader()
             for row in csv_array:
                 writer.writerow(row)
@@ -75,30 +76,32 @@ class GetOptions:
         if interactive:
             csv_file = OpenFileNameField("Export functions to Polypyus csv file")
             get_form_input([csv_file], "BN Export Options")
-            if csv_file.result == '':
+            if csv_file.result == "":
                 self.csv_file = None
             else:
                 self.csv_file = csv_file.result
-            return 
+            return
 
         # headless
-        descr            = "Export functions from existing Binary Ninja database to Polypyus csv format."
-        parser           = ArgumentParser(description=descr)
-        parser.add_argument('bndb', type=FileType('r'), help="Path to Binary Ninja database.")
-        parser.add_argument('csv', type=FileType('w'), help="Path to Polypyus csv.")
-        args  = parser.parse_args()
+        descr = "Export functions from existing Binary Ninja database to Polypyus csv format."
+        parser = ArgumentParser(description=descr)
+        parser.add_argument(
+            "bndb", type=FileType("r"), help="Path to Binary Ninja database."
+        )
+        parser.add_argument("csv", type=FileType("w"), help="Path to Polypyus csv.")
+        args = parser.parse_args()
         self.bn_database = args.bndb
-        self.csv_file    = args.csv
+        self.csv_file = args.csv
 
 
 class ExportBNInBackground(BackgroundTaskThread):
     def __init__(self, bv, options):
         global task
         BackgroundTaskThread.__init__(self, "Exporting Polypyus from BN", False)
-        self.csv_file  = options.csv_file
-        self.options   = options
-        self.bv        = bv
-        task           = self
+        self.csv_file = options.csv_file
+        self.options = options
+        self.bv = bv
+        task = self
 
     def run(self):
         (success, error_message) = export_bn(self.options.csv_file, self.bv)
@@ -125,7 +128,9 @@ def export_bn_in_background(bv):
     background_task.start()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     export_bn_headless()
 else:
-    PluginCommand.register("Export Polypyus from BN", "Export Polypyus from BN", export_bn_in_background)
+    PluginCommand.register(
+        "Export Polypyus from BN", "Export Polypyus from BN", export_bn_in_background
+    )

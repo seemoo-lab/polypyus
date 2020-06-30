@@ -1,14 +1,21 @@
-from enum import IntEnum, auto
 from os import path
 
 from loguru import logger
-from polypyus.annotation_parser import guess_type
+from PyQt5.QtCore import Qt, pyqtSignal, pyqtSlot
+from PyQt5.QtWidgets import (
+    QHBoxLayout,
+    QLabel,
+    QListWidgetItem,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
+from PyQt5.QtCore import QSize
+
 from polypyus.widgets.annotation_list import AnnotationDialog
 from polypyus.widgets.file_list import FileList, FileListItem
 from polypyus.widgets.tools import SMALL_FONT, fixed_policy, layout_wrap
-from PyQt5.QtCore import Qt, pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import (QHBoxLayout, QLabel, QListWidgetItem, QPushButton,
-                             QSizePolicy, QVBoxLayout, QWidget)
+from polypyus.widgets.type_label import TypeLabel
 
 
 class HistoryElement(FileListItem):
@@ -30,7 +37,7 @@ class HistoryElement(FileListItem):
     def show_edit_dialog(self):
         dialog = AnnotationDialog(self.data, parent=self)
         ok = dialog.exec_()
-        new_data = dialog.result
+        new_data = dialog.results
         if ok and new_data:
             self.HistEntryUpdateRequested.emit(new_data, self)
 
@@ -44,10 +51,7 @@ class HistoryElement(FileListItem):
         layout.addWidget(self.delete_button)
         layout2 = QHBoxLayout()
         for type_ in self.data["annotation_types"]:
-            type_label = QLabel(type_, self)
-            type_label.setAlignment(Qt.AlignCenter)
-            type_label.setSizePolicy(fixed_policy)
-            type_label.setProperty("class", "type_label")
+            type_label = TypeLabel(type_, self)
             type_label.setFont(SMALL_FONT)
             layout2.addWidget(type_label)
         layout2.addStretch()
@@ -88,7 +92,7 @@ class HistoryList(FileList):
         data = dict(filepath=filepath, name=path.basename(filepath))
         dialog = AnnotationDialog(data, parent=self)
         ok = dialog.exec_()
-        new_data = dialog.result
+        new_data = dialog.results
         if ok and new_data:
             self.NewHistEntryRequested.emit(new_data)
 

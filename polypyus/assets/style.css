@@ -111,6 +111,7 @@ QListWidget::item {
 .list_element {
 	min-height: 6ex;
 }
+
 QTableView {
 	background: #3b4252;
 	border:  1px solid #4c566a;
@@ -125,7 +126,7 @@ QComboBox QAbstractItemView {
 QGroupBox {
 	padding: 3px 1.5ex;
 	border: 2px solid #434c5e;
-	margin-top: 2ex;
+	margin-top: 3ex;
 }
 QGroupBox::title {
 	subcontrol-origin: margin;

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-import traceback
 from enum import IntEnum, auto
 from os import getcwd
 from pathlib import Path
-from typing import Iterable
 
+from pony import orm  # type: ignore
+from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
+from typing import Iterable, Optional, cast
 from loguru import logger
+
 from polypyus import actions, importer, models
 from polypyus.exporter import export_matches_csv
 from polypyus.tools import serialize
-from pony import orm
-from PyQt5.QtCore import QObject, QTimer, pyqtSignal, pyqtSlot
 
 
 def buffered_send(stream: Iterable[object], signal: pyqtSignal, size=2000):
@@ -72,7 +72,6 @@ class Controller(QObject):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.graph = None
         self.state = ControllerState.waiting_for_db
 
     def no_sort(self, type_: TableTypes):
@@ -110,12 +109,10 @@ class Controller(QObject):
     def run(self):
         cwd = Path(getcwd())
         if self.memory_location != ":memory:":
-            self.memory_location = str(Path(self.memory_location).resolve())
+            self.memory_location = str(Path(self.memory_location).absolute())
         logger.info(f"creating database at {self.memory_location} ({cwd})")
-        importer.DB.bind(
-            provider="sqlite", filename=self.memory_location, create_db=True
-        )
-        importer.DB.generate_mapping(create_tables=True)
+        models.DB.bind(provider="sqlite", filename=self.memory_location, create_db=True)
+        models.DB.generate_mapping(create_tables=True)
         self.state = ControllerState.connected_to_db
         self.status(
             "Loading data from db", [Events.MatchersBlocked, Events.MatchesBlocked]
@@ -161,7 +158,7 @@ class Controller(QObject):
     @orm.db_session
     def get_common_functions(self):
         with self.no_sort(TableTypes.CommonFunction):
-            matchers = orm.select(m for m in models.Matcher)
+            matchers = models.Matcher.select()
             stream = serialize(matchers)
             self.NewMatchers.emit(list(stream))
 
@@ -171,7 +168,7 @@ class Controller(QObject):
     def get_matches(self, request):
         if not self.check_operational():
             return
-        binary_choice = request["id"]
+        binary_choice: int = int(request["id"])
         target = models.Binary[binary_choice]
         logger.info(f"loading matches for {target}")
         self.status(f"Retrieving matches for {target.name}", [Events.MatchesBlocked])
@@ -193,8 +190,9 @@ class Controller(QObject):
         if not self.check_operational():
             return
 
-        id_ = request.get("id", None)
-        if id_ is None:
+        id__: Optional[int] = request.get("id", None)
+
+        if id__ is None:
             self.status(
                 "Importing annotated binary",
                 [Events.MatchersBlocked, Events.MatchesBlocked],
@@ -210,6 +208,7 @@ class Controller(QObject):
                 return
 
         else:
+            id_: int = cast(int, id__)
             source = models.Binary[id_]
             if source is None:
                 return
@@ -224,11 +223,7 @@ class Controller(QObject):
             except FileNotFoundError:
                 self.status(f"{path} was not found, annotation not imported")
         source.annotations.remove(
-            (
-                a
-                for a in source.annotations
-                if a.id in request.get("removed_annotations")
-            )
+            (a for a in source.annotations if a.id in request["removed_annotations"])
         )
         models.Function.cleanup()
         if source.annotations.is_empty():
@@ -243,7 +238,6 @@ class Controller(QObject):
     @orm.db_session
     def _invalidate_binaries(self):
         self.status("Resetting Project")
-        self.graph = None
         self.ResetMatchers.emit()
         self.ResetMatches.emit()
         self.ResetBinaries.emit()
@@ -254,7 +248,6 @@ class Controller(QObject):
     @orm.db_session
     def _invalidate_matchers(self):
         self.status("Resetting Matches and Matchers")
-        self.graph = None
         self.ResetMatchers.emit()
         self.ResetMatches.emit()
         models.Matcher.reset()
@@ -293,7 +286,6 @@ class Controller(QObject):
         )
         settings = models.SettingsStorage.get_settings()
         self._invalidate_matchers()
-        history_size = models.Binary.select_annotated().count()
         groups = models.Function.common_functions(settings["min_fnc_size"], 1)
         self.status("Creating matchers")
         matchers = actions.create_matchers(
@@ -307,7 +299,7 @@ class Controller(QObject):
     @pyqtSlot(dict)
     @logger.catch
     @orm.db_session
-    def delete_binary(self, request, ignore_annotations=False):
+    def delete_binary(self, request):
         if not self.check_operational():
             return
         id_ = request.get("id", None)
@@ -372,11 +364,9 @@ class Controller(QObject):
 
     @orm.db_session
     def _match_against(self, target: models.Binary):
-        orm.delete(match for match in target.matches)
-        if self.graph is None:
-            self.graph = actions.makeGraph()
-        matches = actions.match_matchers_against(target, self.graph)
-        return matches
+        target.matches.select().delete()
+        graph = actions.makeGraph()
+        return actions.match_matchers_against(target, graph)
 
     @pyqtSlot(dict)
     @logger.catch

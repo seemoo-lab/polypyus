@@ -3,20 +3,20 @@
 Functions to import binaries into polypyus
 """
 
-import os
 from pathlib import Path
-from typing import Callable, Dict, Tuple
+from typing import Callable, Dict, Tuple, Optional, Iterable, Type
 
+from pony import orm  # type: ignore
 from loguru import logger
 from polypyus.annotation_parser import (
     FileType,
+    FunctionBounds,
     guess_type,
     parse_csv_functions,
     parse_elf_functions,
     parse_symdefs_functions,
 )
 from polypyus.models import (
-    DB,
     Annotation,
     Binary,
     CsvAnnotation,
@@ -24,9 +24,10 @@ from polypyus.models import (
     Function,
     SymdefsAnnotation,
 )
-from pony import orm
 
-FileTypeMapping: Dict[FileType, Tuple[Annotation, Callable]] = {
+FileTypeMapping: Dict[
+    FileType, Tuple[Type[Annotation], Callable[[Path], Iterable[FunctionBounds]]]
+] = {
     FileType.ELF: (ElfAnnotation, parse_elf_functions),
     FileType.CSV: (CsvAnnotation, parse_csv_functions),
     FileType.SYMDEFS: (SymdefsAnnotation, parse_symdefs_functions),
@@ -37,7 +38,7 @@ FileTypeMapping: Dict[FileType, Tuple[Annotation, Callable]] = {
 def import_annotation(binary: Binary, type_: FileType, path: Path) -> Annotation:
     """Imports functions from annotation file and creates Annotation object.
 
-	Args:
+    Args:
         binary: The Binary to which to import functions.
 
 	Returns:
@@ -67,8 +68,8 @@ def import_annotation(binary: Binary, type_: FileType, path: Path) -> Annotation
 
 
 @orm.db_session
-def get_or_create_annotation(binary: Binary, path: Path) -> Annotation:
-    """get_or_create_annotation guesses file type and delegates the import to the corresponding importer.
+def get_or_create_annotation(binary: Binary, path: Path) -> Optional[Annotation]:
+    """Guesses file type and delegates the import to the corresponding importer.
 
     Args:
         binary: The Binary to which to add the annotations to.

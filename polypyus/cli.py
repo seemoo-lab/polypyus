@@ -7,22 +7,22 @@ import itertools
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Callable, List
+from typing import Callable, List, Optional
 
 import typer
 from loguru import logger
+from pony import orm  # type: ignore
+from tabulate import tabulate
+
 from polypyus.actions import (
     create_matchers,
     makeGraph,
     match_matchers_against,
-    validate,
 )
 from polypyus.graph import Graph
 from polypyus.importer import get_or_create_annotation, get_or_create_binary
 from polypyus.models import DB, Binary, Function, Match, Matcher
 from polypyus.tools import format_addr, format_data, format_percentage, serialize
-from pony import orm
-from tabulate import tabulate
 
 app = typer.Typer()
 
@@ -52,27 +52,27 @@ def bind_db(location: str):
 
 
 def prepare_graph(
-    history: List[Path], annotation: List[Path], targets: List[Path], min_size: int
-) -> Graph:
+    histories: List[Path], annotations: List[Path], min_size: int, max_rel_fuzz: float
+) -> Optional[Graph]:
 
     logger.debug("Importing history")
-    for hist, annotation in zip(history, annotation):
-        bin_ = get_or_create_binary(hist)
-        info = get_or_create_annotation(bin_, annotation)
+    for history, annotation in zip(histories, annotations):
+        bin_ = get_or_create_binary(history)
+        get_or_create_annotation(bin_, annotation)
         logger.debug(f"Imported history {bin_.serialize()}")
 
     if Binary.select_annotated().count() == 0:
         typer.echo("No history entries in database")
-        return
+        return None
 
-    if history:
+    if histories:
         logger.debug("Clearing matchers")
         Matcher.reset()
         logger.debug("Grouping function symbols")
         groups = Function.common_functions(min_size, 1)
         logger.debug("finished grouping")
         logger.debug("make matchers")
-        matchers = create_matchers(groups, min_size)
+        matchers = create_matchers(groups, min_size, max_rel_fuzz)
         logger.debug(f"{len(matchers)} matchers generated")
     graph = makeGraph(matchers)
     logger.debug("finish making matchers")
@@ -82,7 +82,7 @@ def prepare_graph(
 def match_and_print(graph: Graph, target_path: Path, parallelize: bool):
     target = get_or_create_binary(path=target_path, make_target=True)
     typer.echo(f"Target: {target.filepath}")
-    matches = match_matchers_against(target, graph=graph, parallelize=parallelize)
+    matches = list(match_matchers_against(target, graph=graph, parallelize=parallelize))
     data = serialize(matches, export=True)
     formatted = format_data(data, dict(addr=format_addr, certainty=format_percentage))
     table = tabulate(formatted, headers="keys", showindex=range(1, len(matches) + 1))
@@ -97,9 +97,13 @@ def _analyze(
     targets: List[Path],
     parallelize: bool,
     min_size: int,
+    max_rel_fuzz: float,
 ):
-    graph = prepare_graph(history, annotation, targets, min_size)
+    graph = prepare_graph(history, annotation, min_size, max_rel_fuzz)
     Match.reset()
+    if graph is None:
+        typer.echo("Got empty graph")
+        return
     for target_path in targets:
         match_and_print(graph, target_path, parallelize)
 
@@ -113,6 +117,7 @@ def analyze(
     target: List[Path] = typer.Option([], help="add target for analysis"),
     parallelize: bool = typer.Option(False, help="use multiprocessing for analysis"),
     min_size: int = typer.Option(28, help="minimum function size"),
+    max_rel_fuzz: float = typer.Option(0.5, help="maximum relative matcher fuzziness"),
     project: str = typer.Option(":memory:", help="project file location"),
 ):
     """
@@ -133,7 +138,7 @@ def analyze(
 
     """
 
-    if not len(history) == len(annotation):
+    if len(history) != len(annotation):
         typer.echo("provide one annotation per history. See --help")
         raise typer.Abort
     if any(not p.is_file() for p in itertools.chain(history, annotation, target)):
@@ -143,7 +148,7 @@ def analyze(
     logger.remove()
     logger.add(sys.stderr, level=max(5, 30 - verbose * 10))
     bind_db(project)
-    _analyze(history, annotation, target, parallelize, min_size)
+    _analyze(history, annotation, target, parallelize, min_size, max_rel_fuzz)
 
 
 if __name__ == "__main__":

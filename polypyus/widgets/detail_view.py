@@ -3,7 +3,7 @@ import textwrap
 
 from loguru import logger
 from polypyus.widgets.table import HexTableItem, IntTableItem, Table
-from polypyus.widgets.tools import fixed_policy
+from polypyus.tools import retrieve_bytes, retrieve_int
 from PyQt5 import QtCore, QtWidgets
 
 
@@ -107,7 +107,9 @@ class MatchDetail(DetailView):
         for matcher in matchers:
             self.table.add_row(matcher)
         preview = QtWidgets.QTextEdit(
-            self.generate_match_string(data.get("addr"), data.get("match_data"))
+            self.generate_match_string(
+                retrieve_int(data, "addr", 0), retrieve_bytes(data, "match_data")
+            )
         )
         preview.setReadOnly(True)
         form = QtWidgets.QFormLayout()
@@ -124,11 +126,11 @@ class MatchDetail(DetailView):
     @QtCore.pyqtSlot(int, int)
     @logger.catch
     def request_matcher_detail(self, row: int, column: int):
-        id_ = self.table.item(row, 0)
-        if id_ is None:
+        id_item = self.table.item(row, 0)
+        if id_item is None:
             return
 
-        id_ = int(id_.text())
+        id_ = int(id_item.text())
         self.MatcherDetailRequest.emit(id_)
 
     def sizeHint(self):

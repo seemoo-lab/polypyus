@@ -7,15 +7,19 @@ import operator
 from collections import defaultdict
 from enum import IntEnum, auto
 from itertools import chain
-from multiprocessing import Pool, Process, Queue, cpu_count
+from multiprocessing import Process, Queue, cpu_count
 from queue import Empty
-from typing import Iterable, List, NewType, Tuple, Union
+from typing import Iterable, Tuple, List, Optional, Dict, cast
 
 from loguru import logger
 from polypyus.partionioner import slice_partitions
 from polypyus.tools import MatchFragment
 
-MatchRes = Tuple[NewType("data", object), NewType("Size", int), NewType("EndAddr", int)]
+Data = List[object]
+Size = int
+Pos = int
+MatchRes = Tuple[Data, Size, Pos]
+Bin = int
 
 
 class PathClassification(IntEnum):
@@ -36,13 +40,10 @@ class Edge:
         self.to = to
         self.path = path
         self.len = len(path)
-        if match_size is None:
-            self.match_size = self.len
-        else:
-            self.match_size = match_size
+        self.match_size = self.len if match_size is None else match_size
         self.weight = self.match_size
 
-    def matches(self, against: bytes) -> bool:
+    def matches(self, against: memoryview) -> bool:
         return self.path == against
 
     def longest_common_prefix(self, against: MatchFragment) -> int:
@@ -63,10 +64,10 @@ class Edge:
             classification = PathClassification.BRANCH
         return classification, longest_prefix
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.path} -> {self.to}"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self)
 
 
@@ -81,16 +82,16 @@ class Graph:
         "finalized",
     )
 
-    def __init__(self, bin_count=256):
-        self.data = defaultdict(list)
-        self.adjacency = [defaultdict(list)]
-        self.fuzzy_starts = [[]]
-        self.longest_path = 0
+    def __init__(self, bin_count: int = 256):
+        self.data: Dict[int, Data] = defaultdict(list)
+        self.adjacency: List[Dict[Bin, List[Edge]]] = [defaultdict(list)]
+        self.fuzzy_starts: List[List[Edge]] = [[]]
+        self.longest_path: int = 0
         self.bin_count = bin_count
-        self.nodes = 1
-        self.finalized = False
+        self.nodes: int = 1
+        self.finalized: bool = False
 
-    def _new_node(self, data: object = None):
+    def _new_node(self, data: object = None) -> None:
         if data is not None:
             self.data[self.nodes].append(data)
         self.adjacency.append(defaultdict(list))
@@ -107,7 +108,7 @@ class Graph:
             bin_ = self._to_bin(path.template[0])
             self.adjacency[from_][bin_].append(edge)
 
-    def _split_edge(self, edge: Edge, at: int):
+    def _split_edge(self, edge: Edge, at: Pos) -> None:
         fragment = edge.path.split_at(at)
         edge.len = at
         self._new_node()
@@ -115,10 +116,10 @@ class Graph:
         edge.to = self.nodes - 1
         edge.match_size -= at
 
-    def insert(self, path: MatchFragment, data: object) -> bool:
+    def insert(self, path: MatchFragment, data_obj: object) -> bool:
         self.finalized = False
-        match_size = len(path)
-        next_node = 0
+        match_size: int = len(path)
+        next_node: int = 0
         while len(path) > 0:
             if path.fuzziness[0]:
                 edges = self.fuzzy_starts[next_node]
@@ -136,8 +137,8 @@ class Graph:
                 if (
                     class_ == PathClassification.EQUAL
                 ):  # Path is already in tree - add data
-                    logger.debug(f"{data} is duplicate to {self.data[edge.to]}")
-                    self.data[edge.to].append(data)
+                    logger.debug(f"{data_obj} is duplicate to {self.data[edge.to]}")
+                    self.data[edge.to].append(data_obj)
                     return False
                 if (
                     class_ == PathClassification.BRANCH
@@ -146,26 +147,27 @@ class Graph:
                     path.drop_before(prefix_len)
                     if len(path) > 0:
                         self._add_edge(self.nodes - 1, self.nodes, path, match_size)
-                        self._new_node(data)
+                        self._new_node(data_obj)
                     else:
-                        logger.debug(f"{data} was added after a new branch")
-                        self.data[self.nodes - 1].append(data)  # add data to split edge
+                        logger.debug(f"{data_obj} was added after a new branch")
+                        self.data[self.nodes - 1].append(
+                            data_obj
+                        )  # add data to split edge
                     return True
             else:
-                logger.debug(f"{data} was added as a new leaf")
+                logger.debug(f"{data_obj} was added as a new leaf")
                 self._add_edge(next_node, self.nodes, path, match_size)
-                self._new_node(data)
+                self._new_node(data_obj)
                 return True
+        return False
 
     def edges_at(self, node: int) -> Iterable[Edge]:
         """
         Retrieves all nodes (fuzzy and none fuzzy) at given node
         """
         for _, edges in self.adjacency[node].items():
-            for edge in edges:
-                yield edge
-        for edge in self.fuzzy_starts[node]:
-            yield edge
+            yield from edges
+        yield from self.fuzzy_starts[node]
 
     def _get_max_match_size(self, node: int = 0) -> int:
         max_match_size = 0
@@ -176,14 +178,14 @@ class Graph:
 
     def _get_mean_fuzziness(self, node: int = 0) -> Tuple[float, int]:
         def weighted_mean(ratios, counts):
-            num = sum(counts)
+            num: int = sum(counts)
             if not num:
                 return 0, 0
-            total = sum(r * c for r, c in zip(ratios, counts)) / num
+            total: float = sum(r * c for r, c in zip(ratios, counts)) / num
             return total, num
 
-        ratios = []
-        counts = []
+        ratios: List[float] = []
+        counts: List[int] = []
         for edge in self.edges_at(node):
             t_ratio, t_count = self._get_mean_fuzziness(edge.to)
             ratio, count = weighted_mean(
@@ -194,7 +196,7 @@ class Graph:
             counts.append(count)
         return weighted_mean(ratios, counts)
 
-    def _sort_edges_by_weight(self, reverse=False):
+    def _sort_edges_by_weight(self, reverse=False) -> None:
         weight_op = operator.attrgetter("weight")
         for node in range(self.nodes):
             self.fuzzy_starts[node] = sorted(
@@ -205,7 +207,7 @@ class Graph:
                     self.adjacency[node][key], key=weight_op, reverse=reverse
                 )
 
-    def finalize(self):
+    def finalize(self) -> None:
         if self.finalized:
             return
         self._get_mean_fuzziness(0)
@@ -215,28 +217,25 @@ class Graph:
         self._sort_edges_by_weight()  # will sort by longest path.
         self.finalized = True
 
-    def _to_bin(self, byte_) -> int:
+    def _to_bin(self, byte_: int) -> int:
         return byte_ % self.bin_count
 
     def match(
-        self, target: Union[bytes, str], offset: int = 0, align: int = 2
+        self, target: memoryview, offset: int = 0, align: int = 2
     ) -> Iterable[MatchRes]:
         self.finalize()
-        if type(target) == str:
-            target = target.encode("utf-8")
-
         bins = self.adjacency
         fuzzy_starts = self.fuzzy_starts
         node_data = self.data
-        pos = 0
-        end_pos = len(target)
+        pos: Pos = 0
+        end_pos: Pos = len(target)
 
         while pos < end_pos:
             bin_id = self._to_bin(target[pos])
             edge_stack = [(pos, edge) for edge in bins[0][bin_id]]
             edge_stack.extend(((pos, edge) for edge in fuzzy_starts[0]))
 
-            intermediate: Tuple[object, int, int] = None
+            intermediate: Optional[MatchRes] = None
             while edge_stack:
                 p, edge = edge_stack.pop()
                 if edge.matches(target[p : p + edge.len]):
@@ -248,7 +247,7 @@ class Graph:
                             break
                         else:
                             if intermediate is not None:
-                                _, old_size, _ = intermediate
+                                _, old_size, _ = cast(MatchRes, intermediate)
                                 if old_size >= edge.match_size:
                                     continue
                             intermediate = (data, edge.match_size, p + edge.len)
@@ -276,26 +275,28 @@ class Graph:
 
 
 def yield_matches_to_queue(
-    graph: Graph, target: Union[bytes, str], queue: Queue, offset: int, align=int
+    graph: Graph, target: memoryview, queue: Queue, offset: int, align=int
 ):
     for data, length, pos in graph.match(target, offset, align):
         queue.put((data, length, pos))
     queue.put(None)
 
 
-def prepartioned_graph_match(graph: Graph, binary: bytes, partitions, align=2):
-    matches = chain.from_iterable(
+def prepartioned_graph_match(
+    graph: Graph, binary: memoryview, partitions, align=2
+) -> Iterable[MatchRes]:
+    return chain.from_iterable(
         (
             graph.match(binary[slice_], offset=slice_.start, align=align)
             for slice_ in partitions
         )
     )
-    return matches
 
 
 @logger.catch
-def worker(graph: Graph, binary: bytes, job_queue: Queue, done_queue: Queue):
-    binary = memoryview(binary)
+def worker(
+    graph: Graph, binary: memoryview, job_queue: Queue, done_queue: Queue
+) -> None:
     while True:
         try:
             slice_, align = job_queue.get_nowait()
@@ -308,36 +309,40 @@ def worker(graph: Graph, binary: bytes, job_queue: Queue, done_queue: Queue):
 
 def parallel_prepartioned_graph_match(
     graph: Graph,
-    binary: bytes,
+    binary: memoryview,
     partitions,
     align: int = 2,
-    workers: int = None,
-    overlap: int = None,
+    workers: Optional[int] = None,
+    overlap: Optional[int] = None,
     delta: int = 10,
-):
+) -> Iterable[MatchRes]:
     graph.finalize()
     partitions = list(partitions)
     if overlap is None:
-        overlap = int(math.ceil(graph.longest_path / 2))
+        overlap = int(math.ceil(graph.longest_path / 2.0))
     if not workers:
         workers = cpu_count()
-    slices = slice_partitions(
-        partitions, workers, graph.longest_path * delta, overlap=overlap, align=align
+    slices: List[slice] = list(
+        slice_partitions(
+            partitions,
+            workers,
+            graph.longest_path * delta,
+            overlap=overlap,
+            align=align,
+        )
     )
-    slices = list(slices)
     work = len(slices)
-    job_queue = Queue(maxsize=work)
+    job_queue: Queue = Queue(maxsize=work)
     for slice_ in slices:
         job_queue.put((slice_, align))
-    ret_queue = Queue()
+    ret_queue: Queue = Queue()
 
-    done = 0
+    done: int = 0
     for _ in range(workers):
         Process(target=worker, args=(graph, binary, job_queue, ret_queue)).start()
     while done < work:
-        match = ret_queue.get()
+        match: Optional[MatchRes] = ret_queue.get()
         if match is None:
             done += 1
             continue
-        data, length, end = match
-        yield data, length, end
+        yield match

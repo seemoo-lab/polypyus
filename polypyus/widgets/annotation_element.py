@@ -1,12 +1,14 @@
-from enum import IntEnum, auto
 from pathlib import Path
+from typing import Any, Dict
+
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QHBoxLayout, QLabel
 
 from polypyus.annotation_parser import guess_type
 from polypyus.widgets.file_list import FileListItem
 from polypyus.widgets.tools import fixed_policy, layout_wrap
-from PyQt5.QtCore import Qt, pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import (QHBoxLayout, QLabel, QPushButton, QSizePolicy,
-                             QWidget)
+from polypyus.widgets.type_label import TypeLabel
+from polypyus.tools import optional_int
 
 
 class AnnotationElement(FileListItem):
@@ -17,9 +19,9 @@ class AnnotationElement(FileListItem):
     ):
         super().__init__(path, *args, **kwargs)
         self.path = Path(path)
-        self.data = data or {}
+        self.data: Dict[str, Any] = data or {}
 
-        self.pk = self.data.get("id", None)
+        self.pk = optional_int(self.data, "id")
         self.info = self.data.get("path", info or str(path))
         self.name = self.data.get("name", name or self.path.name)
         self.name = self.truncat_name(self.name)
@@ -47,10 +49,7 @@ class AnnotationElement(FileListItem):
             return f"...{name[-size:]}"
 
     def _setup_layout(self):
-        type_label = QLabel(self.type_, self)
-        type_label.setAlignment(Qt.AlignCenter)
-        type_label.setSizePolicy(fixed_policy)
-        type_label.setProperty("class", "type_label")
+        type_label = TypeLabel(self.type_, self)
         name = QLabel(self.name, self)
         name.setToolTip(str(self.info))
         layout = layout_wrap(

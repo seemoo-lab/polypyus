@@ -4,19 +4,27 @@ Polypyos control flow
 """
 
 import itertools
-from typing import Callable, Iterable, NewType, Tuple
+from typing import Callable, Iterable, Tuple
+from pony import orm  # type: ignore
 
-from loguru import logger
-from polypyus.graph import (Graph, parallel_prepartioned_graph_match,
-                            prepartioned_graph_match)
-from polypyus.models import (Binary, Function, Match, Matcher, SettingsStorage,
-                             StartMatcher, upsert)
-from pony import orm
+from polypyus.graph import (
+    Graph,
+    parallel_prepartioned_graph_match,
+    prepartioned_graph_match,
+)
+from polypyus.models import (
+    Binary,
+    Function,
+    Match,
+    Matcher,
+    SettingsStorage,
+    StartMatcher,
+)
 
 Addr = int
 Align = int
 StartMatch = Tuple[Addr, StartMatcher]
-FuncStartScout = Callable[[bytes, Addr, Align], Iterable[StartMatch]]
+FuncStartScout = Callable[[bytes, Addr], Iterable[StartMatch]]
 
 
 def create_start_matchers(cut: int = 8):
@@ -42,9 +50,7 @@ def make_start_scout(start_matchers: Iterable[StartMatcher] = None) -> FuncStart
     cut_sizes = set(m.cut_size for m in start_matchers)
     min_cut_size = min(cut_sizes)
 
-    def find_matches(
-        data: bytes, offset: int = 0, align: int = 2
-    ) -> Iterable[StartMatch]:
+    def find_matches(data: bytes, offset: int, align: int = 2) -> Iterable[StartMatch]:
         for addr in range(0, len(data) - min_cut_size, align):
             for c in cut_sizes:
                 matcher = patterns.get(data[addr : addr + c], None)
@@ -55,7 +61,7 @@ def make_start_scout(start_matchers: Iterable[StartMatcher] = None) -> FuncStart
     return find_matches
 
 
-def find_starts(target: Binary, start_cut: int = 8) -> Iterable[Match]:
+def find_starts(target: Binary) -> Iterable[Match]:
     match_finder = make_start_scout()
     itree = target.partition_without_matches()
     matches = []
@@ -83,7 +89,7 @@ def create_matchers(
 
     match_groups = (
         Matcher.from_functions(
-            name, *fnc_group, min_fnc_size=min_fnc_size, max_fuzz=max_rel_fuzziness
+            name, fnc_group, min_fnc_size=min_fnc_size, max_fuzz=max_rel_fuzziness
         )
         for name, fnc_group in groups
     )
@@ -112,12 +118,12 @@ def makeGraph(matchers: Iterable[Matcher] = None) -> Graph:
 
 
 def match_matchers_against(
-    target: Binary, graph=None, parallelize=True
+    target: Binary, graph=None, parallelize=False
 ) -> Iterable[Match]:
     """match_candidates_against matches all candidates against the given
     Binary.
 
-	Args:
+        Args:
         target: the target binary to match the candidates against
     """
 
@@ -125,7 +131,7 @@ def match_matchers_against(
     parallelize = parallelize or settings.get("matcher_parallelization", False)
     if graph is None:
         graph = makeGraph()
-    bin_ = target.read()
+    bin_: memoryview = target.read()
     partitions = target.partition()
     if parallelize:
         matches = parallel_prepartioned_graph_match(graph, bin_, partitions)
@@ -145,7 +151,7 @@ def match_matchers_against(
     orm.commit()
 
     if settings.get("find_fnc_starts", False):
-        starts = find_starts(target, start_cut=settings.get("fnc_start_size", 8))
+        starts = find_starts(target)
         match_results.extend(starts)
         orm.commit()
     return match_results

@@ -1,13 +1,21 @@
-import math
 import os
 import sys
-from enum import IntEnum, auto
-from operator import itemgetter
 from pathlib import Path
-from typing import Callable, Dict, Iterable, List
+import pkg_resources
+from typing import Optional, Dict
+from tempfile import mkdtemp
 
 import typer
 from loguru import logger
+from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtCore import QUrl
+from PyQt5.QtGui import QDesktopServices, QIcon, QTextCursor
+from PyQt5.QtWidgets import (
+    QLabel,
+    QStyle,
+    QVBoxLayout,
+)
+
 from polypyus.control import Controller, Events, TableTypes
 from polypyus.widgets.binary_list import BinaryList
 from polypyus.widgets.detail_view import MatchDetail, MatcherDetail
@@ -18,12 +26,6 @@ from polypyus.widgets.settings import SettingsDialog
 from polypyus.widgets.state_button import DeactivateOnStartAction
 from polypyus.widgets.table import FloatTableItem, HexTableItem, IntTableItem
 from polypyus.widgets.tools import BASE_FONT, fixed_policy, layout_wrap
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtCore import QTimer, QUrl
-from PyQt5.QtGui import QDesktopServices, QIcon, QKeySequence, QTextCursor
-from PyQt5.QtWidgets import (QAbstractItemView, QDialogButtonBox, QFileDialog,
-                             QFormLayout, QHBoxLayout, QLabel, QShortcut,
-                             QStyle, QVBoxLayout)
 
 pyqtSlot = QtCore.pyqtSlot
 pyqtSignal = QtCore.pyqtSignal
@@ -33,14 +35,16 @@ app = typer.Typer()
 
 POLYPYUS_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = POLYPYUS_DIR.joinpath("assets")
+ASSETS_PKG = "polypyus.assets"
 
 
 class AboutWindow(QtWidgets.QDialog):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         text = QtWidgets.QTextBrowser()
-        with open(ASSETS_DIR.joinpath("style.css"), "r") as css:
-            text.document().setDefaultStyleSheet(css.read())
+        text.document().setDefaultStyleSheet(
+            str(pkg_resources.resource_string(ASSETS_PKG, "style.css"), "utf-8")
+        )
         text.setReadOnly(True)
         text.setOpenLinks(False)
         text.setOpenExternalLinks(False)
@@ -49,8 +53,9 @@ class AboutWindow(QtWidgets.QDialog):
         )
         text.textCursor().insertImage(str(ASSETS_DIR.joinpath("Polypyus.png")))
         text.textCursor().insertHtml("<br>")
-        with open(ASSETS_DIR.joinpath("about.html")) as html:
-            text.textCursor().insertHtml(html.read())
+        text.textCursor().insertHtml(
+            str(pkg_resources.resource_string(ASSETS_PKG, "about.html"), "utf-8")
+        )
         self.setLayout(layout_wrap(QtWidgets.QVBoxLayout(), text))
         text.moveCursor(QTextCursor.Start)
         self.text = text
@@ -73,14 +78,16 @@ class MainWindow(QtWidgets.QMainWindow):
     MatchDetailRequest = pyqtSignal(int)
     WriteSettingsRequest = pyqtSignal(dict)
 
-    def __init__(self, controller, thread, *args, **kwargs):
+    def __init__(self, controller, thread: QtCore.QThread, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setWindowTitle("Polypyus Firmware Historian")
         self.setFont(BASE_FONT)
-
-        self.setWindowIcon(QIcon(str(ASSETS_DIR.joinpath("polypyus.ico"))))
-        with open(ASSETS_DIR.joinpath("style.css"), "r") as css:
-            self.setStyleSheet(css.read())
+        self.setWindowIcon(
+            QIcon(pkg_resources.resource_filename(ASSETS_PKG, "polypyus.png"))
+        )
+        self.setStyleSheet(
+            str(pkg_resources.resource_string(ASSETS_PKG, "style.css"), "utf-8")
+        )
         self.setWindowTitle("Polypyus - Firmware Historian")
 
         self.binary_list = BinaryList()
@@ -114,7 +121,7 @@ class MainWindow(QtWidgets.QMainWindow):
             Events.MatchesUnblocked,
             "Create &matchers from history",
         )
-        self.target_selection = None
+        self.target_selection: Optional[Dict] = None
         self.target_label = QLabel("", parent=self)
         self.set_target_label()
         self.target_matching = DeactivateOnStartAction(
@@ -139,7 +146,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.controller = controller
         self._make_menu(controller)
-        self.thread = thread
+        self._thread = thread
         self._setup_layout()
         self._connect_signals(controller)
 
@@ -175,9 +182,9 @@ class MainWindow(QtWidgets.QMainWindow):
     @pyqtSlot(dict)
     @logger.catch
     def on_target_selected(self, data: dict):
-        t_id = (
-            None if not self.target_selection else self.target_selection.get("id", None)
-        )
+        t_id = None
+        if self.target_selection is not None:
+            t_id = self.target_selection.get("id", None)
         d_id = data["id"]
         logger.info(f"target selection: {t_id} -> {d_id}")
         if self.target_selection is None or data["id"] != self.target_selection["id"]:
@@ -220,7 +227,7 @@ class MainWindow(QtWidgets.QMainWindow):
             QtWidgets.QSplitter(), firmware_group, common_group
         )
         width = history_and_common_layout.size().width()
-        history_and_common_layout.setSizes([width * 0.5, width * 0.5])
+        history_and_common_layout.setSizes([int(width * 0.5), int(width * 0.5)])
 
         target_group = QtWidgets.QGroupBox("Target selection")
         target_form = QtWidgets.QFormLayout()
@@ -248,7 +255,7 @@ class MainWindow(QtWidgets.QMainWindow):
             QtWidgets.QSplitter(), history_and_common_layout, match_frame
         )
         width = main_layout.size().width()
-        main_layout.setSizes([width * (1 - 0.2), width * (0.2)])
+        main_layout.setSizes([int(width * (1 - 0.2)), int(width * (0.2))])
         layout = QVBoxLayout()
         layout.addWidget(main_layout)
         widget_frame = QtWidgets.QFrame()
@@ -303,7 +310,7 @@ class MainWindow(QtWidgets.QMainWindow):
             lambda: self.BatchMatchRequest.emit(self._get_target_selection())
         )
 
-    def _get_target_selection(self):
+    def _get_target_selection(self) -> dict:
         if self.target_selection:
             return self.target_selection
         else:
@@ -312,21 +319,21 @@ class MainWindow(QtWidgets.QMainWindow):
     @pyqtSlot(int, int)
     @logger.catch
     def request_matcher_detail(self, row: int, column: int):
-        id_ = self.commons.item(row, 0)
-        if id_ is None:
+        id_obj = self.commons.item(row, 0)
+        if id_obj is None:
             return
 
-        id_ = int(id_.text())
+        id_ = int(id_obj.text())
         self.MatcherDetailRequest.emit(id_)
 
     @pyqtSlot(int, int)
     @logger.catch
     def request_match_detail(self, row: int, column: int):
-        id_ = self.matches.item(row, 0)
-        if id_ is None:
+        id_obj = self.matches.item(row, 0)
+        if id_obj is None:
             return
 
-        id_ = int(id_.text())
+        id_ = int(id_obj.text())
         self.MatchDetailRequest.emit(id_)
 
     @pyqtSlot(dict)
@@ -341,9 +348,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def show_match_detail(self, data: dict):
         if data:
             detail = MatchDetail(data, parent=self)
-            detail.MatcherDetailRequest.connect(
-                lambda x: self.MatcherDetailRequest.emit(x)
-            )
+            detail.MatcherDetailRequest.connect(self.MatcherDetailRequest.emit)
             detail.show()
 
     @pyqtSlot()
@@ -365,8 +370,8 @@ class MainWindow(QtWidgets.QMainWindow):
     @logger.catch
     def closeEvent(self, event):
         self.controller.stop()
-        self.thread.quit()
-        self.thread.wait()
+        self._thread.quit()
+        self._thread.wait()
         super().closeEvent(event)
 
 
@@ -378,7 +383,7 @@ def main(
 ):
     logger.remove()
     logger.add(sys.stderr, level=max(5, 30 - verbose * 10))
-    app = QtWidgets.QApplication(sys.argv)
+    qt_app = QtWidgets.QApplication(sys.argv)
     controller = Controller()
     controller.set_memory_location(project)
     thread = QtCore.QThread()
@@ -387,7 +392,7 @@ def main(
     ex = MainWindow(controller, thread)
     ex.show()
     thread.start()
-    sys.exit(app.exec_())
+    sys.exit(qt_app.exec_())
 
 
 if __name__ == "__main__":

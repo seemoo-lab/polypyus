@@ -1,19 +1,19 @@
-from enum import IntEnum, auto
-from os import getcwd
-from os.path import abspath, basename, dirname, isfile, join, splitext
-from urllib.parse import unquote, urlparse
+from os.path import dirname
 
-from PyQt5 import QtGui
-from PyQt5.QtCore import QEvent, Qt, pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import (QDialog, QDialogButtonBox, QFileDialog, QGroupBox,
-                             QHBoxLayout, QLabel, QListWidget, QPushButton,
-                             QVBoxLayout, QWidget)
+from PyQt5.QtCore import pyqtSignal, pyqtSlot
+from PyQt5.QtWidgets import (
+    QDialog,
+    QDialogButtonBox,
+    QGroupBox,
+    QHBoxLayout,
+    QLabel,
+    QVBoxLayout,
+    QWidget,
+)
 
-from polypyus.annotation_parser import FileType, guess_type
 from polypyus.widgets.annotation_element import AnnotationElement
-from polypyus.widgets.file_list import FileList, FileListItem
-from polypyus.widgets.file_selection import FileSelection
-from polypyus.widgets.tools import fixed_policy, layout_wrap
+from polypyus.widgets.file_list import FileList
+from polypyus.widgets.tools import layout_wrap
 
 
 class AnnotationList(FileList):
@@ -71,7 +71,7 @@ class AnnotationDialog(QDialog):
     def __init__(self, data: dict, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.data = data
-        self.result = None
+        self.results = None
         self.buttonBox = self._make_buttonbox()
         dir_ = dirname(self.data.get("filepath", ""))
         self.list = AnnotationList(dir_)
@@ -98,12 +98,12 @@ class AnnotationDialog(QDialog):
         """show dialog"""
         ok = super().exec_()
         if not ok:
-            return ok
+            return False
         removed = self.list._removeLater
         added = list(self.list.new_annotations())
-        if len(removed) == 0 and len(added) == 0:
+        if not (removed or added):
             return ok
-        self.result = self.data.copy()
-        self.result["removed_annotations"] = removed
-        self.result["new_annotations"] = added
+        self.results = self.data.copy()
+        self.results["removed_annotations"] = removed
+        self.results["new_annotations"] = added
         return ok

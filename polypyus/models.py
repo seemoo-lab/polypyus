@@ -3,20 +3,38 @@
 Object relational mapping for storage of project into an sql database.
 Includes logic to group function symbols and form matcher objects from them.
 """
-import itertools
-import operator
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
-import pony.orm.dbproviders.sqlite  # pyinstaller needs this
+from pony.orm import (  # type: ignore
+    Database,
+    Discriminator,
+    Json,
+    ObjectNotFound,
+    Optional,
+    PrimaryKey,
+    Required,
+    Set,
+    db_session,
+    delete,
+    select,
+)
+
+# hidden requirement!
+import pony.orm.dbproviders.sqlite  # type: ignore
+
 from loguru import logger
 from polypyus.annotation_parser import FunctionMode
 from polypyus.partionioner import intervaltree_from_slices, partition_null_f
-from polypyus.tools import (MatchFragment, drop_least_similar, fuzz_cost,
-                            hex_slices)
-from pony.orm import (Database, Discriminator, Json, ObjectNotFound, Optional,
-                      PrimaryKey, Required, Set, db_session, delete, select)
+
+from polypyus.tools import (
+    MatchFragment,
+    least_similar,
+    fuzz_cost,
+    hex_slices,
+    Serializable,
+)
 
 DB = Database()
 
@@ -41,7 +59,7 @@ def upsert(cls, identify: dict, defaults: dict = None) -> Tuple[DB.Entity, bool]
     return cls(**identify, **defaults), True
 
 
-class Binary(DB.Entity):
+class Binary(DB.Entity, Serializable):
     """Binary model that stores raw bin blob as well as filepath.
 
     Attributes:
@@ -113,7 +131,7 @@ class Binary(DB.Entity):
         fnc_count = self.functions.count()
         return f"{self.name}({fnc_count})"
 
-    def serialize(self, source=False):
+    def serialize(self, source=False, **kwargs) -> dict:
         dict_ = self.to_dict(exclude="raw")
         if source:
             dict_["functions"] = self.functions.count()
@@ -128,19 +146,19 @@ class Binary(DB.Entity):
 
     def addr_is_valid(self, addr: int) -> bool:
         """test address against binary bounds or partitions"""
-        if self._validator:
+        if hasattr(self, "_validator"):
             return self._validator(addr)
         return 0 <= addr < len(self.read())
 
     def range_is_valid(self, start: int, stop: int) -> bool:
         """test range against binary bounds or partitions"""
-        if self._validator:
+        if hasattr(self, "_validator"):
             return self._validator(start, stop)
         return 0 <= start <= stop <= len(self.read())
 
     def slice_is_valid(self, range_: slice) -> bool:
         """test range against binary bounds or partitions"""
-        if self._validator:
+        if hasattr(self, "_validator"):
             return self._validator(range_.start, range_.stop)
         return 0 <= range_.start <= range_.stop <= len(self.read())
 
@@ -160,7 +178,7 @@ class Binary(DB.Entity):
         cls.select().delete()
 
 
-class Annotation(DB.Entity):
+class Annotation(DB.Entity, Serializable):
     type_ = Discriminator(str)
     _discriminator_ = "History"
     binary = Required(Binary)
@@ -174,7 +192,7 @@ class Annotation(DB.Entity):
     def name(self):
         return "Matched against history"
 
-    def serialize(self):
+    def serialize(self, **kwargs) -> dict:
         dict_ = self.to_dict(exclude=["binary", "functions"])
         dict_["name"] = self.name()
         dict_["functions"] = self.functions.count()
@@ -205,7 +223,7 @@ class SymdefsAnnotation(Annotation):
         return self.path_obj.name
 
 
-class Function(DB.Entity):
+class Function(DB.Entity, Serializable):
     """Represents a function symbol as model."""
 
     binary = Required(Binary)
@@ -221,7 +239,7 @@ class Function(DB.Entity):
     def cleanup(cls):
         delete(f for f in cls if not f.sources)
 
-    def serialize(self, details=False):
+    def serialize(self, *args, details=False, **kwargs) -> dict:
         data = self.to_dict()
         data["mode"] = FunctionMode(self.mode)
         if details:
@@ -282,18 +300,17 @@ class Function(DB.Entity):
         logger.info(f"{count} functions in {groups} groups, skipped {skips}")
 
     @classmethod
-    def start_blobs(cls, cut: int = 8) -> Dict[bytes, int]:
-        starts = defaultdict(list)
+    def start_blobs(cls, cut: int = 8) -> Iterable[Tuple[bytes, List["Function"]]]:
+        starts: Dict[bytes, List[Function]] = defaultdict(list)
         # TODO: consider different exec modes
         for fnc in cls.select(lambda f: f.size >= cut):
             data = fnc.dump()[:cut]
-            if not all(d == 0x0 for d in data) and not all(d == 0xFF for d in data):
+            if any(d != 0x0 for d in data) and any(d != 0xFF for d in data):
                 starts[bytes(data)].append(fnc)
-        starts = sorted(starts.items(), key=lambda x: len(x[1]), reverse=True)
-        return starts
+        return sorted(starts.items(), key=lambda x: len(x[1]), reverse=True)
 
 
-class Matcher(DB.Entity):
+class Matcher(DB.Entity, Serializable):
     """Database representation of a controlled fuzzy function symbol matcher"""
 
     type_ = Discriminator(str)
@@ -305,7 +322,7 @@ class Matcher(DB.Entity):
     fuzzy_rate = Required(float)
     matches = Set("Match")
 
-    def serialize(self, details=False):
+    def serialize(self, details=False, **kwargs) -> dict:
         if details:
             dict_ = self.to_dict(exclude=["functions", "matches"])
             dict_["functions"] = [fnc.serialize(details=True) for fnc in self.functions]
@@ -339,7 +356,7 @@ class Matcher(DB.Entity):
     @classmethod
     def fuzzy_constraints_satisfied(
         cls, fuzziness: bytes, max_fuzz: float = 0.4, min_fnc_size=24
-    ) -> bool:
+    ) -> Tuple[float, bool]:
         cost = fuzz_cost(fuzziness)
         return cost / len(fuzziness), cost <= (len(fuzziness) - min_fnc_size) * max_fuzz
 
@@ -347,7 +364,7 @@ class Matcher(DB.Entity):
     def from_functions(
         cls,
         name,
-        *fncs: List[Function],
+        fncs: Iterable[Function],
         min_fnc_size: float = 24,
         max_fuzz: float = 0.4,
     ) -> Iterable["Matcher"]:
@@ -358,7 +375,7 @@ class Matcher(DB.Entity):
                                 into one matcher.
         """
 
-        fncs = list(fncs)  # comes as tuples
+        fncs = list(fncs)
 
         def generator(fncs):
             def fuzzy_check(first, *values):
@@ -376,7 +393,8 @@ class Matcher(DB.Entity):
         )
 
         while not satisfies and len(fncs) > 3:
-            drop_least_similar(fncs)
+            select = least_similar(list(fnc.dump() for fnc in fncs))
+            fncs.pop(select)
             fuzziness = bytes(generator(fncs))
             cost, satisfies = cls.fuzzy_constraints_satisfied(
                 fuzziness, max_fuzz, min_fnc_size
@@ -419,7 +437,13 @@ class StartMatcher(Matcher):
         raise NotImplementedError
 
     @classmethod
-    def from_functions(cls, name, *fncs: List[Function]) -> Iterable["Matcher"]:
+    def from_functions(
+        cls,
+        name,
+        fncs: Iterable[Function],
+        min_fnc_size: float = 24,
+        max_fuzz: float = 0.4,
+    ) -> Iterable["Matcher"]:
         raise NotImplementedError
 
     @classmethod
@@ -439,7 +463,7 @@ class StartMatcher(Matcher):
         return matcher
 
 
-class Match(DB.Entity):
+class Match(DB.Entity, Serializable):
     """Represents a successful match on a target binary.
     """
 
@@ -460,7 +484,7 @@ class Match(DB.Entity):
         matchers = ", ".join(str(matcher) for matcher in self.matched_by)
         return f"[{self.certainty:.0%}] @x{self.addr:#X} - {self.addr + self.size:#X}: {matchers}"
 
-    def serialize_export(self):
+    def serialize_export(self, **kwargs) -> dict:
         dict_ = self.to_dict(exclude=["id", "matches"])
         dict_["name"] = ", ".join(self.matched_by.name)
         mode = next(iter(self.matched_by.functions.mode), None)
@@ -472,7 +496,7 @@ class Match(DB.Entity):
 
         return dict_
 
-    def serialize_details(self):
+    def serialize_details(self, **kwargs) -> dict:
         dict_ = self.to_dict()
         dict_["name"] = ", ".join(self.matched_by.name)
         dict_["matches"] = self.matches.serialize()
@@ -481,7 +505,7 @@ class Match(DB.Entity):
 
         return dict_
 
-    def serialize(self, details=False, export=False):
+    def serialize(self, details=False, export=False, **kwargs) -> dict:
         if details:
             return self.serialize_details()
         if export:

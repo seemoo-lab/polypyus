@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from os import path
 
+from PyQt5 import QtCore, QtWidgets
 from loguru import logger
+
 from polypyus.widgets.file_list import FileList, FileListItem
 from polypyus.widgets.tools import layout_wrap
-from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class BinaryListItem(FileListItem):
@@ -112,9 +113,7 @@ class BinaryList(FileList):
     @logger.catch
     def add_existing_binary(self, data):
         elem = self.list_widget_item_cls.from_dict(data, parent=self)
-        elem.ExportMatchesRequested.connect(
-            lambda x, y: self.ExportMatchesRequested.emit(x, y)
-        )
+        elem.ExportMatchesRequested.connect(self.ExportMatchesRequested.emit)
         self.add_widget(elem)
 
     @QtCore.pyqtSlot(dict)
@@ -128,10 +127,10 @@ class BinaryList(FileList):
 
     def currentBinary(self) -> dict:
         item = self.list.currentItem()
-        data = self.list.itemWidget(item).to_dict()
-        return data
+        return self.list.itemWidget(item).to_dict()
 
     def first_binary(self) -> dict:
         for entry in self.element_iter():
             if entry.pk:
                 return entry.to_dict()
+        return {}

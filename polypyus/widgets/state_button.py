@@ -1,13 +1,12 @@
 from enum import IntEnum, auto
 
-from polypyus.widgets.tools import fixed_policy
 from PyQt5 import QtCore, QtWidgets
 
 
 class StateButton(QtWidgets.QPushButton):
 
-    states: IntEnum = None
-    default_state: IntEnum = None
+    states: IntEnum
+    default_state: IntEnum
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -17,7 +16,7 @@ class StateButton(QtWidgets.QPushButton):
         self.state = self.default_state
 
     @QtCore.pyqtSlot(list)
-    def statemachine(self, event: str):
+    def statemachine(self, msg: str, event: list):
         raise NotImplementedError()
 
 

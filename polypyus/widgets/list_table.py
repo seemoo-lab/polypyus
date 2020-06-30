@@ -1,10 +1,11 @@
-from typing import Callable, Dict, Iterable, List
+from typing import List
 
+from PyQt5 import QtCore
 from loguru import logger
+
 from polypyus.control import TableTypes
 from polypyus.widgets.table import Table
 from polypyus.widgets.tools import BlockSignals
-from PyQt5 import QtCore, QtWidgets
 
 
 class ListTable(Table):
@@ -24,7 +25,6 @@ class ListTable(Table):
         Args:
             data: the list of data to add.
         """
-        row_count = self.rowCount()
         if self.isSortingEnabled():
             self.setSortingEnabled(False)
             self.last_change_timer.singleShot(200, self._restore_sort)
@@ -41,7 +41,7 @@ class ListTable(Table):
 
     @QtCore.pyqtSlot(int, bool)
     def toggle_sorting(self, type_: TableTypes, off: bool):
-        if not self.type_ == type_:
+        if self.type_ != type_:
             return
         old = self._stop_counter
         if off:

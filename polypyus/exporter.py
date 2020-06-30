@@ -1,6 +1,5 @@
 import csv
 from pathlib import Path
-from typing import Iterable
 
 from loguru import logger
 from polypyus.annotation_parser import CSV_KEYS_LONG

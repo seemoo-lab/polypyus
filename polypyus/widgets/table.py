@@ -1,7 +1,6 @@
 from collections import defaultdict
-from typing import Callable, Dict, Iterable, List
+from typing import Callable, Dict, List, Set, Type
 
-from polypyus.control import TableTypes
 from PyQt5 import QtCore, QtWidgets
 
 
@@ -59,7 +58,7 @@ class Table(QtWidgets.QTableWidget):
         *args,
         field_mapping: Dict[str, int] = None,
         format_map: Dict[str, Callable] = None,
-        item_overrides: Dict[str, QtWidgets.QTableWidgetItem] = None,
+        item_overrides: Dict[str, Type[QtWidgets.QTableWidgetItem]] = None,
         stretch_fields: List[str] = None,
         hide_fields: List[str] = None,
         **kwargs,
@@ -75,7 +74,9 @@ class Table(QtWidgets.QTableWidget):
 
         """
 
-        self.field_items = defaultdict(lambda: QtWidgets.QTableWidgetItem)
+        self.field_items: Dict[str, Type[QtWidgets.QTableWidgetItem]] = defaultdict(
+            lambda: QtWidgets.QTableWidgetItem
+        )
         if item_overrides:
             for field, item in item_overrides.items():
                 self.field_items[field] = item
@@ -89,7 +90,7 @@ class Table(QtWidgets.QTableWidget):
         self.format_map = format_map
         self.hide_fields = hide_fields
         self.stretch_fields = stretch_fields or []
-        self.hide_ids = set()
+        self.hide_ids: Set[int] = set()
         self.headers = headers
         self.setSortingEnabled(True)
         self.setAlternatingRowColors(True)

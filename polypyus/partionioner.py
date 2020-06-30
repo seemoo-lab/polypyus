@@ -4,13 +4,10 @@ Logic for partitioning a binary in regions that may include functions and region
 """
 
 import math
-from collections import defaultdict
 from itertools import chain, tee
-from typing import Callable, List
+from typing import List
 
-from intervaltree import Interval, IntervalTree
-
-from polypyus.tools import safe_op
+from intervaltree import Interval, IntervalTree  # type: ignore
 
 
 def partition_null_f(
