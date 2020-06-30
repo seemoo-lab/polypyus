@@ -1,3 +1,5 @@
+![PyTest](https://github.com/seemoo-lab/polypyus/workflows/Python%20package/badge.svg)
+
 ![Polypyus](doc/polypyus_logo.svg)
 
 
