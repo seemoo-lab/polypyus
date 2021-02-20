@@ -142,6 +142,51 @@ After some internal testing, we can recommend the following workflow when workin
 ...now your IDA database might be somewhat useful :) Still a lot of things the disassembler
 fails at within ARM Thumb2 but way better than anything IDA does on its own.
 
+
+## Broadcom Bluetooth firmware history
+
+The `examples` folder contains various firmware with and without symbols.
+Everything in the [history](examples/history) contains symbols, everything in [targets](examples/targets) is without symbols.
+
+##### History
+
+| Chip       | Device                      | Build Date  | Symbols |
+| ---------- | --------------------------- | ----------- | ------- |
+| BCM20703A2 | MacBook/iMac 2016-2017      | Oct 22 2015 | ✔       |
+| CYW20719B1 | Evaluation board            | Jan 17 2017 | ✔       |
+| CYW20735B1 | Evaluation board            | Jan 18 2018 | ✔       |
+| CYW20819A1 | Evaluation board            | May 22 2018 | ✔       |
+
+##### Targets
+
+| Chip       | Device                      | Build Date  | Symbols |
+| ---------- | --------------------------- | ----------- | ------- |
+| BCM2046A2  | iMac Late 2009              |       2007? | -       |
+| BCM2070B0  | MacBook 2011, Thinkpad T420 | Jul 9 2008  | -       |
+| BCM20702A1 | Asus USB Dongle             | Feb (?) 2010 | -      |
+| BCM4345B0  | iPhone 6                    | Jul 15 2013 | -       |
+| BCM4335C0  | Google Nexus 5              | Dec 11 2012 | -       |
+| BCM4345B0  | Google Nexus 6P / Galaxy S6 | Oct 23 2014 | -       |
+| BCM43430A1 | Raspberry Pi 3 and Zero W   | Jun  2 2014 | -       |
+| BCM4345C0  | Raspberry Pi 3+ and 4       | Aug 19 2014 | -       |
+| BCM4347B0  | Samsung Galaxy S8 series    | Jun  3 2016 | -       |
+| BCM4375B1  | Samsung Galaxy S10/20 series| Apr 13 2018 | -       |
+| BCM4378B1  | iPhone 11/SE2               | Oct 25 2018 | Strings |
+
+For the Samsung series, S8 also includes the Note 8 and S8+ etc., and the
+S10/S20 also includes everything from the S10e up to the Note 20 5G.
+
+Dump quality might vary, some are with RAM and some are just the ROM.
+We have access to most of the devices in this list. If you need a dump with
+most recent patch levels and including RAM, feel free to ping us.
+
+A few devices mentioned in the paper are not included here, since these might
+not be research-only devices etc. A few iPhones and MacBooks are missing as well,
+since we have them as research-only devices but the original dump wasn't. These
+devices will be added soon :)
+
+
+
 ## License & Credits
 
 We thank Anna Stichling for creating the *Polypyus* logo.
