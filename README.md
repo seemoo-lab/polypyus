@@ -29,7 +29,10 @@ byte-identical functions. We assume that *BinDiff* fails at these functions due 
 call graph produced by missing functions and false positives. Sometimes, these functions were already recognized
 by *IDA*, but often, *IDA* did either not recognize these as code or not mark them as function.
 Note that *Diaphora* has similar problems, as it exports functions identified by *IDA* before further processing
-them.
+them. The following shows a benchmark on the *CYW20735B1* Bluetooth firmware binary that compares various
+disassemblers and how the disassembler failures result in follow-up diffing issues.
+
+![Benchmark comparing IDA Pro, Ghidra, Binary Ninja, radare2, BinDiff and Diaphora](doc/disassembler_bindiff_benchmark.svg)
 
 Moreover, while we found that *Amnesia* finds many functions, it also finds many
 false positives. However, many functions have a similar stack frame
@@ -37,6 +40,16 @@ setup in the beginning. Thus, *Polypyus* has an option to learn common function 
 input binaries and apply this to other binaries to identify functions without matching their name.
 This optional step is only applied to the regions in which no functions were previously located,
 this way the common function starts method and the main function finding do not conflict.
+
+Since these matchers work on the raw binary, they do not depend on a disassembler. This also has
+one important drawback: if there were different compiler options or a different target architecture,
+Polypyus will not detect similar functions. Moreover, while the identified matches are very reliable,
+the function start identification is a bit less reliable, so use the latter with care.
+In the following, you can see that the
+Cypress evaluation kits are very similar to each other, but the MacBook firmware is very different.
+
+![Benchmark on four different firmwares](doc/polypyus_results.svg)
+
 
 ## How it works
 
@@ -47,11 +60,12 @@ Currently, the following annotations are supported:
 
 * A *WICED Studio* `patch.elf` file, which is a special ELF file containing only symbol definitions.
 * A `.symdefs` file as it is produced by most ARM compilers.
-* A `.csv` file with a format documented in the examples.
+* A `.csv` file with a format documented in the `firmware` folder.
 
 These annotations contain the address, size, and name of known functions.
 The more commonalities the input binaries in the history collection have, the better for *Polypyus* performance
 and results. Given several slightly different functions, *Polypyus* creates very good matchers.
+
 
 ## How to install it
 
@@ -107,8 +121,8 @@ As of now, the output format of the CLI is subject to change.
 However, here is an example of calling it:
 
 ```bash
-polypyus-cli --history examples/history/20819-A1.bin --annotation examples/history/20819-A1_patch.elf --history examples/history/20735B1.bin --annotation examples/history/20735B1_patch.elf --project test.sqlite
-polypyus-cli --target examples/history/20739B1.bin --project test.sqlite
+polypyus-cli --history firmware/history/20819-A1.bin --annotation firmware/history/20819-A1_patch.elf --history firmware/history/20735B1.bin --annotation firmware/history/20735B1_patch.elf --project test.sqlite
+polypyus-cli --target firmware/history/20739B1.bin --project test.sqlite
 ```
 
 The first command creates `test.sqlite` as a new project file and imports `20819-A1.bin` and `20735B1.bin`
@@ -119,12 +133,50 @@ These two commands could also be combined into one by adding the `--target` argu
 
 ### How does it work internally?
 
-We will release a paper soon. Until then, you can take a look into 
+A paper that explains the internals was published at the *Workshop on Binary Analysis Research (BAR) 2021*
+with the title *Polypyus - The Firmware Historian*.
+Some more details are also contained in 
 [Jan's Master thesis final presentation](doc/jan_msc-final-presentation.pdf), which covers the issues encountered
 when working with conventional binary diffing approaches in ARM Thumb2 mode, and how the alternate binary-only
 approach works.
 
-## Recommended IDA Workflow
+
+## Additional PDOM type information export and import
+
+The leaked symbols in the `patch.elf` or `.symdefs` format only contain function and
+global variable names. However, there are also a couple `.pdom` Eclipse project files
+in WICED Studio 6.2 and 6.4. These contain additional type information. Eclipse uses them
+internally for auto completion, function search, etc., and we can utilize them in reverse
+to add type information. Since `.pdom` files only contain partial, cached information, it
+can be helpful to combine multiple of them.
+
+In a first step, we export `.pdom` type information into an SQLite database. The export
+takes a while, but it can even be aborted and continued later on. Export works as follows:
+
+```
+java -jar pdom/export/export.jar -P BCM20739-B0.1462220149391.pdom
+```
+
+The PDOM import searches for function names in an IDA database, looks them up in the PDOM to search
+for type information, and then applies that type information into the IDA database. Thus, the IDA
+database needs to contain correct function names in advance. In principle, these can be created with
+the [import_export](import_export) scripts from Polypyus. However, the somewhat more advanced scripts
+that support PDOM import can also handle `patch.elf` sections. Run the importer as follows:
+
+* Open the firmware binary in IDA.
+* Set Thumb mode to `T=0x1` (Alt-g).
+* Set the compiler options (Options -> Compiler...) to GNU C++.
+* Run the script file [pdom/import/main.py](pdom/import/main.py) (File -> Script file).
+* Select an `patch.elf` file (Select file).
+* Import it (Import ELF). After a few seconds you will have sections and function names.
+* Select a reference database, which should be the PDOM that belongs to your firmware binary.
+* Select multiple additional databases, and the importer will pick the best combined matches.
+* Import it (Import PDOM). This will take a while.
+* You can also import a hardware register file `20739mapb0.h` to name hardware registers (Import map.h).
+
+This script was tested on IDA Pro 7.4 and 7.5.
+
+## Recommended IDA Pro workflow
 
 After some internal testing, we can recommend the following workflow when working with *IDA Pro* and *Polypyus*:
 
@@ -145,8 +197,8 @@ fails at within ARM Thumb2 but way better than anything IDA does on its own.
 
 ## Broadcom Bluetooth firmware history
 
-The `examples` folder contains various firmware with and without symbols.
-Everything in the [history](examples/history) contains symbols, everything in [targets](examples/targets) is without symbols.
+The `firmware` folder contains various firmware with and without symbols.
+Everything in the [history](firmware/history) contains symbols, everything in [targets](firmware/targets) is without symbols.
 
 ##### History
 
@@ -187,7 +239,7 @@ devices will be added soon :)
 
 
 
-## License & Credits
+## License and credits
 
 We thank Anna Stichling for creating the *Polypyus* logo.
 We also thank Christian Blichmann and Joxean Koret for their feedback.

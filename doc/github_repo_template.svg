@@ -56,8 +56,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="501.08186"
+     inkscape:zoom="1.4"
+     inkscape:cx="586.79614"
      inkscape:cy="308.66932"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -95,7 +95,10 @@
        width="338.66666"
        height="169.33333"
        x="-192.0119"
-       y="67.190475" />
+       y="67.190475"
+       inkscape:export-filename="/tmp/polypyus.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <image
        y="-108.869"
        x="-299.13574"
