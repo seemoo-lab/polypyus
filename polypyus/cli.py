@@ -12,7 +12,6 @@ from typing import Callable, Iterable, List, Optional
 import typer
 from loguru import logger
 from pony import orm  # type: ignore
-from pandas import DataFrame
 from tabulate import tabulate
 
 from polypyus.actions import (
@@ -117,26 +116,24 @@ def _cli_list(
 ):
     def format_binary_list(
         binary_list: Iterable[Binary], is_annotated: Optional[bool] = False
-    ) -> DataFrame:
+    ) -> Iterable[dict]:
 
         ignore_keys = ["is_target", "partitions", "raw"]
         data = []
         for binary in list(binaries):
-            b_dict = binary.to_dict()
+            b_dict = binary.to_dict(exclude=ignore_keys)
             if is_annotated is True:
                 b_dict["#annotations"] = binary.annotations.count()
                 b_dict["#functions"] = binary.functions.count()
             data.append(b_dict)
 
-        df = DataFrame(data)
-        df = df.drop(ignore_keys, axis=1)
-        return df
+        return data
 
     if list_history is True:
         typer.echo("History Files")
         binaries = Binary.select_annotated()
         formatted = format_binary_list(binaries, is_annotated=True)
-        table = tabulate(formatted, headers=formatted.columns, showindex=False)
+        table = tabulate(formatted, headers="keys")
         typer.echo(table)
 
     if list_history is True and list_targets is True:
@@ -146,7 +143,7 @@ def _cli_list(
         typer.echo("Target Files")
         binaries = Binary.select_unannotated()
         formatted = format_binary_list(binaries, is_annotated=False)
-        table = tabulate(formatted, headers=formatted.columns, showindex=False)
+        table = tabulate(formatted, headers="keys")
         typer.echo(table)
 
 

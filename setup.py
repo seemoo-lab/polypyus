@@ -23,7 +23,6 @@ setup(
         "loguru == 0.4.*",
         "tabulate == 0.8.*",
         "dataclasses",
-        "pandas"
     ],
     tests_require=test_deps,
     extras_require={"development": ["PyQt5-stubs == 5.*", "pylama"], "test": test_deps},
