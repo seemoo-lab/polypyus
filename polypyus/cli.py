@@ -118,10 +118,10 @@ def _cli_list(
         binary_list: Iterable[Binary], is_annotated: Optional[bool] = False
     ) -> Iterable[dict]:
 
-        ignore_keys = ["is_target", "partitions", "raw"]
+        keys = ["id", "name", "filepath"]
         data = []
         for binary in list(binaries):
-            b_dict = binary.to_dict(exclude=ignore_keys)
+            b_dict = binary.to_dict(only=keys)
             if is_annotated is True:
                 b_dict["#annotations"] = binary.annotations.count()
                 b_dict["#functions"] = binary.functions.count()
