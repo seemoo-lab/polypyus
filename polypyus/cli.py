@@ -7,11 +7,12 @@ import itertools
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Callable, List, Optional
+from typing import Callable, Iterable, List, Optional
 
 import typer
 from loguru import logger
 from pony import orm  # type: ignore
+from pandas import DataFrame
 from tabulate import tabulate
 
 from polypyus.actions import (
@@ -108,6 +109,46 @@ def _analyze(
         match_and_print(graph, target_path, parallelize)
 
 
+@orm.db_session
+@logger.catch
+def _cli_list(
+    list_history: bool, list_targets: bool,
+):
+    def format_binary_list(
+        binary_list: Iterable[Binary], is_annotated: Optional[bool] = False
+    ) -> DataFrame:
+
+        ignore_keys = ["is_target", "partitions", "raw"]
+        data = []
+        for binary in list(binaries):
+            b_dict = binary.to_dict()
+            if is_annotated is True:
+                b_dict["#annotations"] = len(binary.annotations)
+                b_dict["#functions"] = len(binary.annotations.functions)
+            data.append(b_dict)
+
+        df = DataFrame(data)
+        df = df.drop(ignore_keys, axis=1)
+        return df
+
+    if list_history is True:
+        typer.echo("History Files")
+        binaries = Binary.select_annotated()
+        formatted = format_binary_list(binaries, is_annotated=True)
+        table = tabulate(formatted, headers=formatted.columns, showindex=False)
+        typer.echo(table)
+
+    if list_history is True and list_targets is True:
+        typer.echo()  # additional newline for readability
+
+    if list_targets is True:
+        typer.echo("Target Files")
+        binaries = Binary.select_unannotated()
+        formatted = format_binary_list(binaries, is_annotated=False)
+        table = tabulate(formatted, headers=formatted.columns, showindex=False)
+        typer.echo(table)
+
+
 @app.command()
 @show_time
 def analyze(
@@ -119,6 +160,10 @@ def analyze(
     min_size: int = typer.Option(28, help="minimum function size"),
     max_rel_fuzz: float = typer.Option(0.5, help="maximum relative matcher fuzziness"),
     project: str = typer.Option(":memory:", help="project file location"),
+    list_history: bool = typer.Option(
+        False, help="List annotated binaries registered in project"
+    ),
+    list_targets: bool = typer.Option(False, help="List targets registered in project"),
 ):
     """
     Analyze targets with matchers generated from the given history (annotated binaries).
@@ -148,7 +193,10 @@ def analyze(
     logger.remove()
     logger.add(sys.stderr, level=max(5, 30 - verbose * 10))
     bind_db(project)
-    _analyze(history, annotation, target, parallelize, min_size, max_rel_fuzz)
+    if list_history is True or list_targets is True:
+        _cli_list(list_history, list_targets)
+    else:
+        _analyze(history, annotation, target, parallelize, min_size, max_rel_fuzz)
 
 
 if __name__ == "__main__":
