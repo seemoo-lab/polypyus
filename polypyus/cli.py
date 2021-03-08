@@ -112,7 +112,8 @@ def _analyze(
 @orm.db_session
 @logger.catch
 def _cli_list(
-    list_history: bool, list_targets: bool,
+    list_history: bool,
+    list_targets: bool,
 ):
     def format_binary_list(
         binary_list: Iterable[Binary], is_annotated: Optional[bool] = False
@@ -123,8 +124,8 @@ def _cli_list(
         for binary in list(binaries):
             b_dict = binary.to_dict()
             if is_annotated is True:
-                b_dict["#annotations"] = len(binary.annotations)
-                b_dict["#functions"] = len(binary.annotations.functions)
+                b_dict["#annotations"] = binary.annotations.count()
+                b_dict["#functions"] = binary.functions.count()
             data.append(b_dict)
 
         df = DataFrame(data)
