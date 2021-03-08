@@ -118,7 +118,7 @@ def _cli_list(
         binary_list: Iterable[Binary], is_annotated: Optional[bool] = False
     ) -> Iterable[dict]:
 
-        keys = ["id", "name", "filepath"]
+        keys = ["id", "name", "filepath", "comment"]
         data = []
         for binary in list(binaries):
             b_dict = binary.to_dict(only=keys)
@@ -147,6 +147,16 @@ def _cli_list(
         typer.echo(table)
 
 
+@orm.db_session
+@logger.catch
+def _binary_ops(binary: str, comment: str, remove: bool):
+    b = Binary.get(name=binary)
+    if comment is not None:
+        b.comment = comment
+    if remove is True:
+        Binary.delete(b)
+
+
 @app.command()
 @show_time
 def analyze(
@@ -162,6 +172,9 @@ def analyze(
         False, help="List annotated binaries registered in project"
     ),
     list_targets: bool = typer.Option(False, help="List targets registered in project"),
+    binary: str = typer.Option("", help="Perform action on specific binary"),
+    comment: str = typer.Option(None, help="Add comment to binary"),
+    remove: bool = typer.Option(False, help="remove binary from database"),
 ):
     """
     Analyze targets with matchers generated from the given history (annotated binaries).
@@ -179,6 +192,14 @@ def analyze(
 
     --min-size the minimum size in bytes a function needs to have to be considered for matcher creation.
 
+    --list-history/target lists the registered history or target binaries
+
+    --binary specifies a specific binary to perform operations on
+
+    --comment adds given comment to binary (requires --binary)
+
+    --remove removes binary from database
+
     """
 
     if len(history) != len(annotation):
@@ -193,6 +214,8 @@ def analyze(
     bind_db(project)
     if list_history is True or list_targets is True:
         _cli_list(list_history, list_targets)
+    elif binary != "":
+        _binary_ops(binary, comment, remove)
     else:
         _analyze(history, annotation, target, parallelize, min_size, max_rel_fuzz)
 

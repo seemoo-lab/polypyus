@@ -67,6 +67,7 @@ class Binary(DB.Entity, Serializable):
          raw (bytes): binary blob, obtained by reading the binary
          functions (Set): Set of functions found in the binary
          matched_by (Set): Set of matches that matched something in this binary
+         comment (str): A user defined comment for additional information
 
     """
 
@@ -78,6 +79,7 @@ class Binary(DB.Entity, Serializable):
     functions = Set("Function")
     is_target = Required(bool, default=False)
     partitions = Optional(Json)
+    comment = Optional(str)
 
     @property
     def path_obj(self):
