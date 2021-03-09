@@ -21,6 +21,7 @@ from polypyus.actions import (
 )
 from polypyus.graph import Graph
 from polypyus.importer import get_or_create_annotation, get_or_create_binary
+from polypyus.exporter import export_csv_combined
 from polypyus.models import DB, Binary, Function, Match, Matcher
 from polypyus.tools import format_addr, format_data, format_percentage, serialize
 
@@ -151,10 +152,12 @@ def _cli_list(
 
 @orm.db_session
 @logger.catch
-def _binary_ops(binary: str, comment: str, remove: bool):
+def _binary_ops(binary: str, comment: str, export_csv: str, remove: bool):
     b = Binary.get(name=binary)
     if comment is not None:
         b.comment = comment
+    if export_csv is not None:
+        export_csv_combined(b, export_csv)
     if remove is True:
         Binary.delete(b)
 
@@ -176,6 +179,9 @@ def analyze(
     list_targets: bool = typer.Option(False, help="List targets registered in project"),
     binary: str = typer.Option("", help="Perform action on specific binary"),
     comment: str = typer.Option(None, help="Add comment to binary"),
+    export_csv: str = typer.Option(
+        None, help="Export annotations/matches to specified csv file"
+    ),
     remove: bool = typer.Option(False, help="remove binary from database"),
 ):
     """
@@ -200,6 +206,8 @@ def analyze(
 
     --comment adds given comment to binary (requires --binary)
 
+    --export-csv exports all matches/annotations for given binary to specified csv file
+
     --remove removes binary from database
 
     """
@@ -217,7 +225,7 @@ def analyze(
     if list_history is True or list_targets is True:
         _cli_list(list_history, list_targets)
     elif binary != "":
-        _binary_ops(binary, comment, remove)
+        _binary_ops(binary, comment, export_csv, remove)
     else:
         _analyze(history, annotation, target, parallelize, min_size, max_rel_fuzz)
 
