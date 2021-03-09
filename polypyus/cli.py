@@ -125,6 +125,8 @@ def _cli_list(
             if is_annotated is True:
                 b_dict["#annotations"] = binary.annotations.count()
                 b_dict["#functions"] = binary.functions.count()
+            else:  # this is a target binary
+                b_dict["#matches"] = binary.matches.count()
             data.append(b_dict)
 
         return data
