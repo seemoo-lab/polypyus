@@ -40,7 +40,6 @@ def _export_csv_internal(stream: Iterable[dict], path: Path):
         for entry in stream:
             entry["addr"] = hex(entry["addr"])
             entry["name"] = entry["name"].split(", ")[0]
-            print(entry)
             writer.writerow(
                 {
                     key: value
