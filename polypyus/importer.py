@@ -41,7 +41,7 @@ def import_annotation(binary: Binary, type_: FileType, path: Path) -> Annotation
     Args:
         binary: The Binary to which to import functions.
 
-	Returns:
+        Returns:
         the Annotation, with newly created functions.
     """
 
@@ -94,10 +94,10 @@ def get_or_create_annotation(binary: Binary, path: Path) -> Optional[Annotation]
 def get_or_create_binary(path: Path, make_target=False) -> Binary:
     """import_binary creates a Binary and stores it in database
 
-	Args:
-        binary_path: the file path of the binary
+    Args:
+    binary_path: the file path of the binary
 
-	Returns: Binary
+    Returns: Binary
     """
 
     logger.info(f"retrieving binary for path {path}")

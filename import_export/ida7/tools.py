@@ -1,6 +1,7 @@
 import os
 import json
-#import exceptions
+
+# import exceptions
 
 from collections import defaultdict
 
@@ -22,15 +23,18 @@ def is_code(ea):
     flags = ida_bytes.get_full_flags(ea)
     return ida_bytes.is_code(flags) and ida_bytes.is_head(flags)
 
+
 def is_data_start(ea):
     flags = ida_bytes.get_full_flags(ea)
     data = ida_bytes.is_data(flags)
     head = ida_bytes.is_head(flags)
     return data and head
 
+
 def is_tail(ea):
     flags = ida_bytes.get_full_flags(ea)
     return ida_bytes.is_tail(flags)
+
 
 def get_func_start(ea):
     return idc.get_func_attr(ea, idc.FUNCATTR_START)
@@ -39,8 +43,10 @@ def get_func_start(ea):
 def is_func(ea):
     return get_func_start(ea) != idaapi.BADADDR
 
+
 def is_func_chunk(ea):
-    return 0 < 	idc.get_fchunk_attr(ea, idc.FUNCATTR_REFQTY) < idaapi.BADADDR
+    return 0 < idc.get_fchunk_attr(ea, idc.FUNCATTR_REFQTY) < idaapi.BADADDR
+
 
 def func_is_generic(ea):
     return is_func(ea) and idc.get_func_name(ea) == "sub_{0:X}".format(ea)
@@ -69,6 +75,7 @@ def strip_names(name_dict_path):
         json.dump(names, f, indent=4)
     return names
 
+
 def import_functions(fncs, add_names=True, always_thumb=True):
 
     name_counter = defaultdict(int)
@@ -77,8 +84,8 @@ def import_functions(fncs, add_names=True, always_thumb=True):
     symbol_defects = list()
     failed_fncs = list()
 
-    countername_Fail=0
-    counterfct_fail=0
+    countername_Fail = 0
+    counterfct_fail = 0
 
     def set_name(addr, name):
         # FIXME creates unnamed_178 etc. instead of proper function name in IDA 7.2 on CYW20735
@@ -105,17 +112,17 @@ def import_functions(fncs, add_names=True, always_thumb=True):
             data = (name, size, addr)
             failed_fncs.append((data, "name"))
             print("{0:#x}: cannot add name, {1}".format(addr, name))
-            countername_Fail = countername_Fail+1
+            countername_Fail = countername_Fail + 1
         else:
             imported_functions[addr].add(name)
 
     for name, size, addr, thumb in fncs:
         name_counter[name] += 1
-        
+
         if not always_thumb:
             idc.split_sreg_range(addr, "T", int(thumb), idc.SR_user)
         idc.create_insn(addr)
-        
+
         code = is_code(addr)
         fnc = is_func(addr)
         fnc_chnk = is_func_chunk(addr)
@@ -139,22 +146,30 @@ def import_functions(fncs, add_names=True, always_thumb=True):
             set_name(addr, name)
         elif start != addr:
             if fnc_chnk:
-               idc.remove_fchunk(addr, addr)
+                idc.remove_fchunk(addr, addr)
             elif fnc:
-                idc.set_func_end(addr, addr) # force previous function to end here.
+                idc.set_func_end(addr, addr)  # force previous function to end here.
             ok = idaapi.add_func(addr, end)
             if not ok:
                 failed_fncs.append((data, "fnc"))
                 print("{0:#x}: cannot add fnc, {1}, {2:#x}".format(addr, size, end))
-                counterfct_fail = counterfct_fail+1
+                counterfct_fail = counterfct_fail + 1
             else:
                 set_name(addr, name)
         else:
             failed_fncs.append((data, "unknown"))
-            print("{0:#x}: unknown problem - code: {1}, fnc: {2}, start {3:#x}, size {4}, end {5}".format(addr, code, fnc, start, size, end))
-            
+            print(
+                "{0:#x}: unknown problem - code: {1}, fnc: {2}, start {3:#x}, size {4}, end {5}".format(
+                    addr, code, fnc, start, size, end
+                )
+            )
+
     ida_auto.auto_wait()
-    print("not added functions: {1} , not added names: {0}".format(countername_Fail,counterfct_fail))
+    print(
+        "not added functions: {1} , not added names: {0}".format(
+            countername_Fail, counterfct_fail
+        )
+    )
     return name_counter, imported_functions, failed_fncs, cfg_conflicts, symbol_defects
 
 
@@ -184,7 +199,8 @@ def import_objects(objs, add_names=True, always_thumb=True):
             ok = idc.set_name(addr, name, idc.SN_CHECK)
             if not ok:
                 reason = "Could not add name {name} at {addr:#x}".format(
-                    name=name, addr=addr)
+                    name=name, addr=addr
+                )
                 data = (name, size, addr)
                 failed_objs.append((data, reason))
     print("waiting for ida to finish analysis")
@@ -288,7 +304,7 @@ def create_section(start_ea, end_ea, perm, name, all_thumb=True):
         idc.set_segm_name(start, name)
         idc.set_segm_attr(start, idc.SEGATTR_PERM, perm)
         if all_thumb:
-            	idc.split_sreg_range(start, "T", 1, idc.SR_autostart)
+            idc.split_sreg_range(start, "T", 1, idc.SR_autostart)
         return True
     return False
 
@@ -297,4 +313,3 @@ def ask_file_option(option_prompt, file_mask, file_promt):
     if not idaapi.ask_yn(0, option_prompt):
         return None
     return idaapi.ask_file(0, file_mask, file_promt)
-

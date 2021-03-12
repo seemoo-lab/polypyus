@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: '4aa5ceee521d1f0bb117685fce386d07de654151'  
+    hooks:
+    -   id: editorconfig-checker
+  - repo: https://github.com/psf/black
+    rev: 20.8b1 # Replace by any tag/version: https://github.com/psf/black/tags
+    hooks:
+      - id: black
+        language_version: python3 
