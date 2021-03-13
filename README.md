@@ -237,7 +237,68 @@ not be research-only devices etc. A few iPhones and MacBooks are missing as well
 since we have them as research-only devices but the original dump wasn't. These
 devices will be added soon :)
 
+## Contributing
 
+There is an .editorconfig file in this repository. It configures indention style, charset and line separators. Follow this configuration when contributing, which can be made easier if you use an IDE plugin for .editorconfig.
+
+### How to install test and development dependencies
+
+To install test dependencies execute
+
+```bash
+pip install '.[test]'
+```
+
+this will install packages that are only needed for executing test cases.
+
+
+Developement dependencies, provide for example stubs for package types. To install them run
+
+```bash
+pip install '.[development]'
+```
+
+### Testing
+
+`pytest` will run all tests.  
+
+#### Locally testing against different versions of Python
+
+The project uses tox to locally run the tests against different versions of python.
+Tox is setup to test against versions 3.6, 3.7, 3.8 and 3.9
+To run tox install the test dependencies and install these 4 mentioned versions of python.
+Our recommended way to install and manage several versions of python on is pyenv.
+
+Steps:
+
+1. Install [ Pyenv ]( https://github.com/pyenv/pyenv )
+2. Install [ Pyenv virtualenv ]( https://github.com/pyenv/pyenv-virtualenv )
+3. Run 
+   ```bash
+   pyenv install 3.9.1
+   pyenv install 3.8.6
+   pyenv install 3.7.9
+   pyenv install 3.6.12
+   pyenv virtualenv 3.9.1 polypyus
+   penv local polypyus 3.8.6 3.7.9 3.6.12
+   pip install '.[test]'
+   pip install '.[development]'
+   ```
+4. Run `tox`
+
+### Local automation
+
+Polypyus uses GitHub Actions for automated test runs and some linting. If you
+want you can run the linting steps locally with on pre-commit git hooks.
+
+Every time before a new commit is created this will trigger the linting and
+show the issues that would prevent this code from succeed in the GitHub Actions
+linting step. It will also format changed files with [ black ](https://github.com/psf/black).
+
+```bash
+pip install '.[development]'
+pre-commit install
+```
 
 ## License and credits
 

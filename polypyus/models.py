@@ -63,10 +63,10 @@ class Binary(DB.Entity, Serializable):
     """Binary model that stores raw bin blob as well as filepath.
 
     Attributes:
-         filepath (str): relative filepath to the binary
-         raw (bytes): binary blob, obtained by reading the binary
-         functions (Set): Set of functions found in the binary
-         matched_by (Set): Set of matches that matched something in this binary
+        filepath (str): relative filepath to the binary
+        raw (bytes): binary blob, obtained by reading the binary
+        functions (Set): Set of functions found in the binary
+        matched_by (Set): Set of matches that matched something in this binary
 
     """
 
@@ -254,8 +254,7 @@ class Function(DB.Entity, Serializable):
         return str(self)
 
     def dump(self):
-        """dumps corresponding bytes from binary
-        """
+        """dumps corresponding bytes from binary"""
         return self.binary.read()[self.addr : self.addr + self.size]
 
     @classmethod
@@ -464,8 +463,7 @@ class StartMatcher(Matcher):
 
 
 class Match(DB.Entity, Serializable):
-    """Represents a successful match on a target binary.
-    """
+    """Represents a successful match on a target binary."""
 
     addr = Required(int)
     size = Required(int)

@@ -47,14 +47,16 @@ class SettingsDialog(QtWidgets.QDialog):
         importer_group = QtWidgets.QGroupBox("Importer settings")
         importer_group_layout = QtWidgets.QFormLayout()
         importer_group_layout.addRow(
-            "Minimum gap between between code partitions", self.partitioning_gap,
+            "Minimum gap between between code partitions",
+            self.partitioning_gap,
         )
         importer_group_layout.addRow(
             "Experimental: Validate symbol sizes through disassembly",
             self.experimental_disassembly,
         )
         importer_group_layout.addRow(
-            "Hint", QtWidgets.QLabel("Changing these values will reset the project!"),
+            "Hint",
+            QtWidgets.QLabel("Changing these values will reset the project!"),
         )
         importer_group.setLayout(importer_group_layout)
 
@@ -63,7 +65,8 @@ class SettingsDialog(QtWidgets.QDialog):
         common_settings_form.addRow("Min. function size", self.min_fnc_size)
         common_settings_form.addRow("Max. relative Fuzziness", self.max_rel_fuzziness)
         common_settings_form.addRow(
-            "Mark common function prologues in unmatched regions", self.find_fnc_starts,
+            "Mark common function prologues in unmatched regions",
+            self.find_fnc_starts,
         )
         common_settings_form.addRow("Function prologue size", self.fnc_start_size)
         common_settings_form.addRow(

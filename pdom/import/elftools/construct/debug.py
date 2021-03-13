@@ -33,15 +33,24 @@ class Probe(Construct):
         UBInt8("b"),
     )
     """
+
     __slots__ = [
-        "printname", "show_stream", "show_context", "show_stack",
-        "stream_lookahead"
+        "printname",
+        "show_stream",
+        "show_context",
+        "show_stack",
+        "stream_lookahead",
     ]
     counter = 0
 
-    def __init__(self, name = None, show_stream = True,
-                 show_context = True, show_stack = True,
-                 stream_lookahead = 100):
+    def __init__(
+        self,
+        name=None,
+        show_stream=True,
+        show_context=True,
+        show_stack=True,
+        stream_lookahead=100,
+    ):
         Construct.__init__(self, None)
         if name is None:
             Probe.counter += 1
@@ -51,12 +60,16 @@ class Probe(Construct):
         self.show_context = show_context
         self.show_stack = show_stack
         self.stream_lookahead = stream_lookahead
+
     def __repr__(self):
         return "%s(%r)" % (self.__class__.__name__, self.printname)
+
     def _parse(self, stream, context):
         self.printout(stream, context)
+
     def _build(self, obj, stream, context):
         self.printout(stream, context)
+
     def _sizeof(self, context):
         return 0
 
@@ -89,6 +102,7 @@ class Probe(Construct):
         print(obj)
         print("=" * 80)
 
+
 class Debugger(Subconstruct):
     """
     A pdb-based debugger. When an exception occurs in the subcon, a debugger
@@ -106,24 +120,29 @@ class Debugger(Subconstruct):
         )
     )
     """
+
     __slots__ = ["retval"]
+
     def _parse(self, stream, context):
         try:
             return self.subcon._parse(stream, context)
         except Exception:
             self.retval = NotImplemented
-            self.handle_exc("(you can set the value of 'self.retval', "
-                "which will be returned)")
+            self.handle_exc(
+                "(you can set the value of 'self.retval', " "which will be returned)"
+            )
             if self.retval is NotImplemented:
                 raise
             else:
                 return self.retval
+
     def _build(self, obj, stream, context):
         try:
             self.subcon._build(obj, stream, context)
         except Exception:
             self.handle_exc()
-    def handle_exc(self, msg = None):
+
+    def handle_exc(self, msg=None):
         print("=" * 80)
         print("Debugging exception of %s:" % (self.subcon,))
         print("".join(traceback.format_exception(*sys.exc_info())[1:]))

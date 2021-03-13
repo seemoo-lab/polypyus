@@ -11,11 +11,11 @@ class FileSelection(QtWidgets.QWidget):
         or by text input.
 
         Args:
-             prompt: Title of the dialog
-             file_type: Allowed file types
-             *args: positional arguments to pass to QWidget
-             button: optional button text overwrite
-             **kwargs: keyword arguments to pass to QtWidget
+            prompt: Title of the dialog
+            file_type: Allowed file types
+            *args: positional arguments to pass to QWidget
+            button: optional button text overwrite
+            **kwargs: keyword arguments to pass to QtWidget
         """
         super().__init__(*args, **kwargs)
         self.prompt = prompt

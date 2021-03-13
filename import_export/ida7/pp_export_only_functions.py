@@ -5,8 +5,10 @@ import idc
 
 
 EXPORT_FIELDS = ["name", "addr", "size", "type", "mode"]
+
+
 def write_func_csv(target):
-    
+
     with open(target, "w") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=EXPORT_FIELDS, delimiter=" ")
         writer.writeheader()
@@ -21,7 +23,6 @@ def write_func_csv(target):
             )
             writer.writerow(data)
     print("functions exported to " + target)
-
 
 
 exportPath = ""

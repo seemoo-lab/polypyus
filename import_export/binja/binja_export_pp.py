@@ -27,8 +27,7 @@ from binaryninja import *
 
 
 def get_functions(bv):
-    """Populate dictionary of function names and offsets
-    """
+    """Populate dictionary of function names and offsets"""
     functions = []
     for func in bv.functions:
 
@@ -53,8 +52,7 @@ def get_functions(bv):
 
 
 def export_bn(csv_file, bv):
-    """Construct csv array of everything we want to export
-    """
+    """Construct csv array of everything we want to export"""
     export_fields = ["name", "addr", "size", "type", "mode"]
     csv_array = get_functions(bv)
 
@@ -110,8 +108,7 @@ class ExportBNInBackground(BackgroundTaskThread):
 
 
 def export_bn_headless():
-    """Export data running as headless script
-    """
+    """Export data running as headless script"""
     options = GetOptions(False)
     bv = BinaryViewType.get_view_of_file(options.bn_database)
     bv.update_analysis_and_wait()
@@ -121,8 +118,7 @@ def export_bn_headless():
 
 
 def export_bn_in_background(bv):
-    """Export data in background from BN UI
-    """
+    """Export data in background from BN UI"""
     options = GetOptions(True)
     background_task = ExportBNInBackground(bv, options)
     background_task.start()

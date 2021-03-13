@@ -74,7 +74,7 @@ def guess_type(filename: Path):
 def get_elf_symbols(elf_path: Path) -> Iterable[Tuple[Name, Addr, Size, str]]:
     """get_elf_symbols extract name, addr and type of symbol.
 
-	Args:
+        Args:
         elf_path: the path to the elf file
     Returns:
         name, addr and type of symbols
@@ -120,10 +120,10 @@ def estimate_symbol_size(symbols: Iterable[FunctionBounds]) -> Iterable[Function
     Note:
         Expects symbols to be sorted ascending by address
 
-	Args:
+        Args:
         symbols: symbols consisting of name and start address, symbol type
 
-	Returns:
+        Returns:
         symbols with size estimation
     """
 
@@ -225,5 +225,5 @@ def parse_symdefs_functions(path: Path) -> Iterable[FunctionBounds]:
     https://developer.arm.com/docs/101754/0613/armlink-reference/accessing-and-managing-symbols-with-armlink/access-symbols-in-another-image/symdefs-file-format
     """
     symdefs = get_symdefs(path)
-    meta = estimate_symbol_size(symdefs)
+    meta = estimate_symbol_size(parse_symdef_flag(symdefs))
     yield from parse_symdef_flag(meta)

@@ -1,11 +1,11 @@
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 # elftools: dwarf/namelut.py
 #
 # DWARF pubtypes/pubnames section decoding (.debug_pubtypes, .debug_pubnames)
 #
 # Vijay Ramasami (rvijayc@gmail.com)
 # This code is in the public domain
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 import os
 import collections
 from collections import OrderedDict
@@ -15,7 +15,8 @@ from bisect import bisect_right
 import math
 from ..construct import CString, Struct, If
 
-NameLUTEntry = collections.namedtuple('NameLUTEntry', 'cu_ofs die_ofs')
+NameLUTEntry = collections.namedtuple("NameLUTEntry", "cu_ofs die_ofs")
+
 
 class NameLUT(Mapping):
     """
@@ -163,20 +164,26 @@ class NameLUT(Mapping):
         # an offset field containing zero (and no following string). Because
         # of sequential parsing, every next entry may be that terminator.
         # So, field "name" is conditional.
-        entry_struct = Struct("Dwarf_offset_name_pair",
-                self._structs.Dwarf_offset('die_ofs'),
-                If(lambda ctx: ctx['die_ofs'], CString('name')))
+        entry_struct = Struct(
+            "Dwarf_offset_name_pair",
+            self._structs.Dwarf_offset("die_ofs"),
+            If(lambda ctx: ctx["die_ofs"], CString("name")),
+        )
 
         # each run of this loop will fetch one CU worth of entries.
         while offset < self._size:
 
             # read the header for this CU.
-            namelut_hdr = struct_parse(self._structs.Dwarf_nameLUT_header,
-                    self._stream, offset)
+            namelut_hdr = struct_parse(
+                self._structs.Dwarf_nameLUT_header, self._stream, offset
+            )
             cu_headers.append(namelut_hdr)
             # compute the next offset.
-            offset = (offset + namelut_hdr.unit_length +
-                     self._structs.initial_length_field_size())
+            offset = (
+                offset
+                + namelut_hdr.unit_length
+                + self._structs.initial_length_field_size()
+            )
 
             # before inner loop, latch data that will be used in the inner
             # loop to avoid attribute access and other computation.
@@ -190,9 +197,9 @@ class NameLUT(Mapping):
                 if entry.die_ofs == 0:
                     break
                 # add this entry to the look-up dictionary.
-                entries[entry.name.decode('utf-8')] = NameLUTEntry(
-                        cu_ofs = hdr_cu_ofs,
-                        die_ofs = hdr_cu_ofs + entry.die_ofs)
+                entries[entry.name.decode("utf-8")] = NameLUTEntry(
+                    cu_ofs=hdr_cu_ofs, die_ofs=hdr_cu_ofs + entry.die_ofs
+                )
 
         # return the entries parsed so far.
         return (entries, cu_headers)
