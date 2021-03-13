@@ -6,7 +6,7 @@ from polypyus.annotation_parser import CSV_KEYS_LONG
 from polypyus.models import Binary
 from polypyus.tools import serialize
 
-csv.register_dialect("space_delimiter", delimiter=" ", quoting=csv.QUOTE_NONE)
+csv.register_dialect("space_delimiter", delimiter=" ", quoting=csv.QUOTE_MINIMAL)
 
 
 def export_matches_csv(binary: Binary, path: Path):
