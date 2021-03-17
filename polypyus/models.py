@@ -63,11 +63,11 @@ class Binary(DB.Entity, Serializable):
     """Binary model that stores raw bin blob as well as filepath.
 
     Attributes:
-         filepath (str): relative filepath to the binary
-         raw (bytes): binary blob, obtained by reading the binary
-         functions (Set): Set of functions found in the binary
-         matched_by (Set): Set of matches that matched something in this binary
-         comment (str): A user defined comment for additional information
+        filepath (str): relative filepath to the binary
+        raw (bytes): binary blob, obtained by reading the binary
+        functions (Set): Set of functions found in the binary
+        matched_by (Set): Set of matches that matched something in this binary
+        comment (str): A user defined comment for additional information
     """
 
     name = Required(str)
@@ -305,7 +305,7 @@ class Function(DB.Entity, Serializable):
         # TODO: consider different exec modes
         for fnc in cls.select(lambda f: f.size >= cut):
             data = fnc.dump()[:cut]
-            if any(d != 0x0 for d in data) and any(d != 0xFF for d in data):
+            if any(d != 0x0 for d in data) and any(d != 0xff for d in data):
                 starts[bytes(data)].append(fnc)
         return sorted(starts.items(), key=lambda x: len(x[1]), reverse=True)
 
