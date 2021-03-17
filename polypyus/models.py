@@ -305,7 +305,7 @@ class Function(DB.Entity, Serializable):
         # TODO: consider different exec modes
         for fnc in cls.select(lambda f: f.size >= cut):
             data = fnc.dump()[:cut]
-            if any(d != 0x0 for d in data) and any(d != 0xff for d in data):
+            if any(d != 0x0 for d in data) and any(d != 0xFF for d in data):
                 starts[bytes(data)].append(fnc)
         return sorted(starts.items(), key=lambda x: len(x[1]), reverse=True)
 

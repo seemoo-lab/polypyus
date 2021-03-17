@@ -11,7 +11,6 @@ from typing import Iterable
 csv.register_dialect("space_delimiter", delimiter=" ", quoting=csv.QUOTE_MINIMAL)
 
 
-
 def export_csv_combined(binary: Binary, path: Path):
     if binary.is_target is True:
         export_matches_csv(binary, path)
