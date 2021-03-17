@@ -1,1371 +1,1371 @@
-name,addr,size,mode,type
-DHM_peekFrontTxLmp,98962,46,THUMB_32,FUNC
-_lrm_isWholeHolePresent,225796,40,THUMB_32,FUNC
-DHM_isTxLmpListEmpty,99022,32,THUMB_32,FUNC
-_lrm_needRearrangeCAT0Link,226634,32,THUMB_32,FUNC
-handlePacketBoundary_FlushTimeout_Logic,99166,132,THUMB_32,FUNC
-_lrm_isPartialHolePresent,226666,38,THUMB_32,FUNC
-_dhm_okToSendLZP,100018,96,THUMB_32,FUNC
-bcs_ecsiTaskInit,228016,66,THUMB_32,FUNC
-DHM_SetHostPktTypeFlags,101264,82,THUMB_32,FUNC
-bcs_ecsiDisable,228084,44,THUMB_32,FUNC
-DHM_HandleRxPktL2CAPFlowBit,103204,40,THUMB_32,FUNC
-calcA2DPBufferECSITimer,228380,92,THUMB_32,FUNC
-bthci_event_SendCommandCompleteEventWithStatus,109014,40,THUMB_32,FUNC
-_tx_semaphore_info_get,228732,72,THUMB_32,FUNC
-bthci_event_SendCommandStatusEventWithStatus,109190,40,THUMB_32,FUNC
-_tx_block_pool_create,228928,156,THUMB_32,FUNC
-bthci_event_SendInquiryRespNotif,109858,42,THUMB_32,FUNC
-_afhcc_genReportMap,231326,120,THUMB_32,FUNC
-bthci_event_SendEncryptionChangeCompleteEvent,110886,74,THUMB_32,FUNC
-afhccQualifingAclConn,231560,42,THUMB_32,FUNC
-bthci_event_SendLinkKeyRequestEvent,111438,38,THUMB_32,FUNC
-afhcc_bleRxPkt,235438,76,THUMB_32,FUNC
-bthci_event_InstallHCIEventFilter,112976,34,THUMB_32,FUNC
-_afhcc_updatePer,235692,48,THUMB_32,FUNC
-bcs_syncTaskPiconetsAligned,115102,66,THUMB_32,FUNC
-afhcc_nextScanCh,236188,40,THUMB_32,FUNC
-mlse_getIntValue,119308,32,THUMB_32,FUNC
-apepApu_init,237704,38,THUMB_32,FUNC
-mlse_initMlseInfo,119340,154,THUMB_32,FUNC
-intctl_enable,239280,42,THUMB_32,FUNC
-mlse_reset_le,119494,134,THUMB_32,FUNC
-intctl_disable,239322,38,THUMB_32,FUNC
-mlse_covCalcs,120890,340,THUMB_32,FUNC
-intctl_ClrPendingInt,239388,48,THUMB_32,FUNC
-DetInvCalc,121230,54,THUMB_32,FUNC
-pcm_scoLinkUp,240638,344,THUMB_32,FUNC
-LinkQual_GlobalInit,124268,40,THUMB_32,FUNC
-pcm_scoLinkDown,240982,38,THUMB_32,FUNC
-LinkQual_ResetAclConn,124308,66,THUMB_32,FUNC
-pcm_loopback,241020,38,THUMB_32,FUNC
-LinkQual_ResetScoConn,124374,46,THUMB_32,FUNC
-slimboot_rfm_R_RC_cal_data_store_to_aon,241624,40,THUMB_32,FUNC
-LinkQual_1_SecUpdate,124420,76,THUMB_32,FUNC
-slimboot_rfm_R_RC_calInit,241664,38,THUMB_32,FUNC
-LinkQual_SetTestModeCnts,124526,46,THUMB_32,FUNC
-slimboot_rfm_txpower_init,241702,102,THUMB_32,FUNC
-LinkQual_GetPktInfo,124572,46,THUMB_32,FUNC
-slimboot_rfm_agc_wrssi_init,241810,76,THUMB_32,FUNC
-LinkQual_GetBERLQ,125612,64,THUMB_32,FUNC
-slimboot_rfm_iq_lo_data_store_to_aon,241916,128,THUMB_32,FUNC
-bcs_scanTaskFsmSetup,128280,56,THUMB_32,FUNC
-slimboot_rfm_iq_lo_calInit,242044,114,THUMB_32,FUNC
-bcs_scanTaskGetInfoPtr,128336,46,THUMB_32,FUNC
-spiffy_slaveRxData,242938,38,THUMB_32,FUNC
-bcs_scanTaskResample,129550,88,THUMB_32,FUNC
-fmsr_hclk_enable,243500,32,THUMB_32,FUNC
-_sco_sendScoConnChangedEvent,314562,46,THUMB_32,FUNC
-lm_SendLmpIOCapReq,436610,128,THUMB_32,FUNC
-btm_ble_resume_bg_conn,909932,48,THUMB_32,FUNC
-update_wlan_multi_channels,167378,112,THUMB_32,FUNC
-_sco_startTxn,315250,64,THUMB_32,FUNC
-_sp_start,437064,62,THUMB_32,FUNC
-__rt_memcpy_w,911096,72,THUMB_32,FUNC
-gci_getWlanImplicitBTCMode,169386,36,THUMB_32,FUNC
-_sco_procHostAddFinal,315314,54,THUMB_32,FUNC
-_sp_handlePeerReq,437126,72,THUMB_32,FUNC
-hw_pka_pt_IsAffine,912940,38,THUMB_32,FUNC
-get_FabID_gci,169448,40,THUMB_32,FUNC
-_sco_adjstTescoRange4IntegerCheck,316126,66,THUMB_32,FUNC
-lmulp_sendLcpVSFeatureReq,440812,40,THUMB_32,FUNC
-hw_pka_ecp_pt_dbl_prj_pka,914378,254,THUMB_32,FUNC
-_escoTaskPreActivate,172080,92,THUMB_32,FUNC
-_sco_lmpPktType2HciPktType,317552,78,THUMB_32,FUNC
-lmulp_handleSendVersionID,440852,64,THUMB_32,FUNC
-rfc_calc_fcs,919728,32,THUMB_32,FUNC
-_escoTaskRxHeaderDonePacketCheck,174752,200,THUMB_32,FUNC
-_sco_adjustTescoRange,317630,104,THUMB_32,FUNC
-lmulp_sendLcpVSFeatureRsp,441730,40,THUMB_32,FUNC
-rfc_check_fcs,919760,42,THUMB_32,FUNC
-wbs_init_link_service_cb,176586,36,THUMB_32,FUNC
-_sco_retrieveRemoteProposal,318164,218,THUMB_32,FUNC
-lmulp_sendLcpVSEnableBcsTimeline,441874,42,THUMB_32,FUNC
-rfcomm_process_timeout,920128,32,THUMB_32,FUNC
-wbs_alloc_link_service_cb,176622,56,THUMB_32,FUNC
-_sco_setupCurHciParam,318724,172,THUMB_32,FUNC
-lmulp_handleDisconnect,441916,46,THUMB_32,FUNC
-"rfc_dec_credit, rfc_dec_credit",920248,36,THUMB_32,FUNC
-wbs_free_link_service_cb,176678,66,THUMB_32,FUNC
-lm_HandleRemoveScoLinkReqPduAcked,319264,34,THUMB_32,FUNC
-lmulp_formConnUpdateReqPkt,442146,52,THUMB_32,FUNC
-rfc_add_tx_complete_pending,920284,38,THUMB_32,FUNC
-wbs_get_num_free_service_cbs,176744,38,THUMB_32,FUNC
-_sco_procBufTimeout,320346,42,THUMB_32,FUNC
-lmulp_formChanMapUpdateReqPkt,442684,34,THUMB_32,FUNC
-wiced_transport_uart_set_baud_rate,921260,36,THUMB_32,FUNC
-wbs_fill_up_msbc_dec_params_and_dec_init,177238,56,THUMB_32,FUNC
-endTest,322552,50,THUMB_32,FUNC
-lm_ClaenUpDataRateMode,444960,90,THUMB_32,FUNC
-uart_transport_allocate_rx_buffer,921328,32,THUMB_32,FUNC
-wbs_fill_up_msbc_enc_params_and_enc_init,177294,38,THUMB_32,FUNC
-initBerTest,322738,186,THUMB_32,FUNC
-lm_HandleLmpPktTypeTableReqNotAcceptedPdu,445132,36,THUMB_32,FUNC
-bthci_cmd_lp_GetCommandHandler,921444,32,THUMB_32,FUNC
-wbs_add_H2_hdr_and_padding,177704,72,THUMB_32,FUNC
-ber_startBerPerTest,322924,58,THUMB_32,FUNC
-lm_llt_FormConnParamRsp,445406,124,THUMB_32,FUNC
-bthci_cmd_info_GetCommandHandler,922388,32,THUMB_32,FUNC
-wbs_com_crc,179118,126,THUMB_32,FUNC
-ber_resetTest,323026,32,THUMB_32,FUNC
-lm_llt_FindPreferredInterval,445530,34,THUMB_32,FUNC
-bthci_cmd_cbb_HandleWrite_Scan_Enable,923204,42,THUMB_32,FUNC
-WBS_SwitchPLC_BEC,181162,50,THUMB_32,FUNC
-_batchScanSaveAndSetState,324468,58,THUMB_32,FUNC
-lm_llt_SendConnUpdate,446106,34,THUMB_32,FUNC
-bthci_cmd_cbb_HandleSet_Mws_Signaling,925380,36,THUMB_32,FUNC
-SBC_Decoder_Enable_BEC,182008,44,THUMB_32,FUNC
-_batchScanRestoreState,324526,40,THUMB_32,FUNC
-lm_llt_HandleRxLcpConnParamReqPending,447004,82,THUMB_32,FUNC
-bthci_cmd_status_GetCommandHandler,926908,32,THUMB_32,FUNC
-SBC_Decoder_Enable_PLC,182052,60,THUMB_32,FUNC
-_batchScanTaskDelete,324658,38,THUMB_32,FUNC
-lm_llt_ConnParamReqNeed2ReportHost,447086,64,THUMB_32,FUNC
-bthci_cmd_status_HandleGet_MWS_Transport_Layer_Configuration,927494,32,THUMB_32,FUNC
-SBC_Decoder_is_PLC_Enabled,182112,32,THUMB_32,FUNC
-utils_memcpy8_postinc,325556,76,THUMB_32,FUNC
-pinConfig_saveUart,449080,82,THUMB_32,FUNC
-q_ucmp,930144,66,THUMB_32,FUNC
-SBC_Encoder_encode,182968,824,THUMB_32,FUNC
-utils_memcpy8,325632,56,THUMB_32,FUNC
-"pinConfig_restorePinConfig, pinConfig_savePinConfig",449234,32,THUMB_32,FUNC
-q_add,930210,68,THUMB_32,FUNC
-SBC_Encoder_Init,183792,248,THUMB_32,FUNC
-utils_memset8,325700,60,THUMB_32,FUNC
-"pinConfig_restorePinConfig, pinConfig_savePinConfig",449266,32,THUMB_32,FUNC
-q_add_int,930278,40,THUMB_32,FUNC
-dma_Init,184146,82,THUMB_32,FUNC
-utils_memcpy10,325768,72,THUMB_32,FUNC
-pinConfig_setSpi,449338,72,THUMB_32,FUNC
-q_sub,930348,112,THUMB_32,FUNC
-dma_StartTransfer,184270,108,THUMB_32,FUNC
-utils_copy_afh_table,325840,100,THUMB_32,FUNC
-pinConfig_setI2c,449410,76,THUMB_32,FUNC
-q_sub_int,930460,38,THUMB_32,FUNC
-dma_RequestTransfer,184378,134,THUMB_32,FUNC
-interrupt_ClearPendingState,326034,50,THUMB_32,FUNC
-pinConfig_setDbUart,449838,42,THUMB_32,FUNC
-q_cmp,930498,96,THUMB_32,FUNC
-ptuaux_scoMuxDown,191876,50,THUMB_32,FUNC
-_tx_semaphore_create,326320,84,THUMB_32,FUNC
-pinConfig_setUart,450150,50,THUMB_32,FUNC
-q_cmp_int,930594,40,THUMB_32,FUNC
-SBC_Decoder_fill_status_flag,192172,64,THUMB_32,FUNC
-bluerf_Write_16,326908,40,THUMB_32,FUNC
-config_VerifyChecksum,450538,86,THUMB_32,FUNC
-q_lsb,930634,46,THUMB_32,FUNC
-SBC_Decoder_get_status_flag,193226,84,THUMB_32,FUNC
-bluerf_Read_16,326948,40,THUMB_32,FUNC
-config_InitForRAMConfig,450864,50,THUMB_32,FUNC
-q_msb,930680,48,THUMB_32,FUNC
-SBC_Decoder_get_PCM,193310,424,THUMB_32,FUNC
-i2c_master_CPUClockSwitchPost,327936,114,THUMB_32,FUNC
-config_FindSSorDSItemInfoInGroup,451236,48,THUMB_32,FUNC
-q_shift_l,930728,144,THUMB_32,FUNC
-SbcSynthesisFilter4sb,194248,774,THUMB_32,FUNC
-i2c_master_Init,328050,72,THUMB_32,FUNC
-config_HandleCRC,452100,60,THUMB_32,FUNC
-q_shift_r,930872,138,THUMB_32,FUNC
-SbcSynthesisFilter8sb,195022,1540,THUMB_32,FUNC
-_inqScanTaskInit,69766,50,THUMB_32,FUNC
-EncPacking,196884,592,THUMB_32,FUNC
-sfi_allow_deep_sleep,481360,48,THUMB_32,FUNC
-BTM_CheckEirData,605284,44,THUMB_32,FUNC
-_scanTaskUpdateUpperLimit,277884,88,THUMB_32,FUNC
-bcs_inqScanTaskCreate,69816,38,THUMB_32,FUNC
-SBC_HeaderBEC_1,200508,424,THUMB_32,FUNC
-DHM_GetSCOInfoPtr,481688,42,THUMB_32,FUNC
-btm_eir_get_uuid_list,605328,88,THUMB_32,FUNC
-_scanTaskChangePriority,279818,102,THUMB_32,FUNC
-_inqScanTaskLcuCmd,70224,126,THUMB_32,FUNC
-SBC_BEC_1,200932,432,THUMB_32,FUNC
-_dhmsco_pcmBcsCbFunc,481930,92,THUMB_32,FUNC
-btm_read_inq_tx_power_complete,606102,64,THUMB_32,FUNC
-SBC_GetframeLen,280568,356,THUMB_32,FUNC
-_inqScanTaskLcuSoftReset,70350,84,THUMB_32,FUNC
-aa_freeMemoryBlock,208266,36,THUMB_32,FUNC
-smdpitch_coarse_nb,484212,424,THUMB_32,FUNC
-BTM_RemoveEirService,606268,36,THUMB_32,FUNC
-Audio_BufInit,281050,106,THUMB_32,FUNC
-_inqScanTaskSwitch,70442,62,THUMB_32,FUNC
-sbc_com_bit_alloc_mono,210380,504,THUMB_32,FUNC
-smdpitch_coarse_wb,484636,430,THUMB_32,FUNC
-gap_ble_find_clcb_by_conn_id,606658,46,THUMB_32,FUNC
-Audio_ReadOneFrame,281156,58,THUMB_32,FUNC
-bb_Init,70568,52,THUMB_32,FUNC
-sbc_com_bit_alloc_ste,210884,652,THUMB_32,FUNC
-__memmove_lastfew,485162,36,THUMB_32,FUNC
-gap_ble_c_connect_cback,607178,58,THUMB_32,FUNC
-Audio_UpdateReadPointer,281214,36,THUMB_32,FUNC
-bb_SettingStage1,70638,52,THUMB_32,FUNC
-SBC_com_crc,211536,196,THUMB_32,FUNC
-__rt_memcpy,485198,102,THUMB_32,FUNC
-bthci_ble_isDataLenInvalid,613982,56,THUMB_32,FUNC
-Audio_UpdateWritePointer,281250,64,THUMB_32,FUNC
-bb_timing_Init,71872,40,THUMB_32,FUNC
-SBC_FastDCT4,211740,112,THUMB_32,FUNC
-_memcpy_lastbytes,485300,36,THUMB_32,FUNC
-bthci_cmd_ble_addDev2ResolveList_callback,617274,46,THUMB_32,FUNC
-Audio_PlayBackBuf,281314,160,THUMB_32,FUNC
-bcs_isrWaitForRxUntilGivenClk,71912,58,THUMB_32,FUNC
-SBC_FastDCT8,211852,420,THUMB_32,FUNC
-hciulp_sendEncryptionChangeCompleteEvent,490182,40,THUMB_32,FUNC
-"strlen, strlen",618448,62,THUMB_32,FUNC
-Audio_RecordBuf,281474,38,THUMB_32,FUNC
-bcs_isrProfileTime,71970,58,THUMB_32,FUNC
-SBC_FastIDCT8,212272,368,THUMB_32,FUNC
-hciulp_sendEncryptionKeyRefreshCompleteEvent,490222,36,THUMB_32,FUNC
-mpaf_pmu_postSleep,618844,58,THUMB_32,FUNC
-rfm_RegisterWrite,285742,32,THUMB_32,FUNC
-gpio_configurePortPins,75008,40,THUMB_32,FUNC
-SBC_FastIDCT4,212640,128,THUMB_32,FUNC
-lmulp_lcp_GetLcpInfo,490552,86,THUMB_32,FUNC
-mpaf_pmu_sleepHandlerInit,618904,40,THUMB_32,FUNC
-rfm_RegisterRead,285774,32,THUMB_32,FUNC
-gpio_inputDisableAll,75048,80,THUMB_32,FUNC
-SBC_BEC_2,212768,620,THUMB_32,FUNC
-lmulp_lcp_SetPendingLcp,490638,48,THUMB_32,FUNC
-mpaf_pmu_selectEnhancedLPOSource,618944,142,THUMB_32,FUNC
-rfm_RestoreRegisters,285938,50,THUMB_32,FUNC
-gpio_getPinConfig,75240,32,THUMB_32,FUNC
-calc_rccal,213484,70,THUMB_32,FUNC
-lmulp_lcp_ClearPendingLcp,490686,34,THUMB_32,FUNC
-mpaf_transProcHostData,619430,40,THUMB_32,FUNC
-a2dp_findConn,289934,32,THUMB_32,FUNC
-gpio_slimboot_reinforce_cfg,75530,108,THUMB_32,FUNC
-rfm_ProgramRfPllValues,213892,86,THUMB_32,FUNC
-rfm_hci_WriteHoppingChannels,491176,46,THUMB_32,FUNC
-mpaf_sendTransStausInd,619794,54,THUMB_32,FUNC
-ulp_fwenc_genSx,292744,74,THUMB_32,FUNC
-ksq_removeCurElement,75908,34,THUMB_32,FUNC
-rfm_agc_wrssi_init,214100,122,THUMB_32,FUNC
-rfm_hci_WriteRfProgrammingTable,491358,62,THUMB_32,FUNC
-mpaf_sendDevSatusInd,619848,44,THUMB_32,FUNC
-bcsulp_setupNonce,293018,204,THUMB_32,FUNC
-keyscan_keystuckCheckRowGpios,75980,54,THUMB_32,FUNC
-rfm_cal_pwrControlInit,214268,68,THUMB_32,FUNC
-Get_TempertureIndex,491504,32,THUMB_32,FUNC
-mpaf_transAclAdapter,620296,58,THUMB_32,FUNC
-bcsulp_encryptTxBuffer,293294,52,THUMB_32,FUNC
-keyscan_reset,76088,60,THUMB_32,FUNC
-rfm_switchRfmRegs,214374,42,THUMB_32,FUNC
-tca_enableControl_fast,491606,46,THUMB_32,FUNC
-mpaf_tranChanConfig,620642,74,THUMB_32,FUNC
-lechan2_setChanInitChan2Bit,293412,38,THUMB_32,FUNC
-keyscan_turnOff,76148,64,THUMB_32,FUNC
-findTargetInList,214696,48,THUMB_32,FUNC
-get_pad_reg_adr,491794,62,THUMB_32,FUNC
-"_config_VS_SetEEPROMEntryUse, _config_VS_SetEEPROMEntryUse",621458,58,THUMB_32,FUNC
-lechan2_perm,293488,64,THUMB_32,FUNC
-_keyscan_hwResetOnce,77030,34,THUMB_32,FUNC
-data_patch_installPatchEntry,215250,52,THUMB_32,FUNC
-get_rf_bin_index,491856,160,THUMB_32,FUNC
-_config_VS_GetEEPROMEntryUse,621750,72,THUMB_32,FUNC
-lechan2_hopDataChannel,293870,52,THUMB_32,FUNC
-mia_init,77706,94,THUMB_32,FUNC
-patch_installPatchEntry,215302,58,THUMB_32,FUNC
-bignum_xor,495308,40,THUMB_32,FUNC
-_config_VS_findMoveDest,621822,74,THUMB_32,FUNC
-diag_getByteCount,294176,86,THUMB_32,FUNC
-mia_enableKeyscanPriorToHidOff,78268,58,THUMB_32,FUNC
-data_patch_uninstallPatchEntry,215360,36,THUMB_32,FUNC
-bignum_lshift,495348,120,THUMB_32,FUNC
-_config_VS_AddItemPrepAddHoleInfo,624958,64,THUMB_32,FUNC
-_ll_shift_l,294968,38,THUMB_32,FUNC
-mia_turnOffLhlLpoIfPossible,78326,78,THUMB_32,FUNC
-patch_swapPatchEntry,215426,58,THUMB_32,FUNC
-bignum_bits,495494,64,THUMB_32,FUNC
-debuguart_Write,626920,42,THUMB_32,FUNC
-_tx_semaphore_put,295124,88,THUMB_32,FUNC
-quad_configurePortPins,79870,262,THUMB_32,FUNC
-_patch_generateBranchWordInstruction,215484,84,THUMB_32,FUNC
-sha1_round,496264,74,THUMB_32,FUNC
-debuguart_SetBaudrate,627072,52,THUMB_32,FUNC
-bt_boot_hci_HandleDownload_Minidriver,296004,46,THUMB_32,FUNC
-quad_hwInit,80132,300,THUMB_32,FUNC
-patch_autoInstall,215568,40,THUMB_32,FUNC
-E21,508664,74,THUMB_32,FUNC
-dbguart_read,627250,94,THUMB_32,FUNC
-bt_boot_hci_WriteBytesToNonByteAddressableMemory,296148,248,THUMB_32,FUNC
-quad_miaFreezeCallBack,80524,132,THUMB_32,FUNC
-_lrm_insertHeadOrTail,225122,166,THUMB_32,FUNC
-E22,508738,52,THUMB_32,FUNC
-bthci_cmd_info_GetCommandHandler,635240,32,THUMB_32,FUNC
-bt_boot_hci_ReadBytesFromNonByteAddressableMemory,296594,142,THUMB_32,FUNC
-quad_getXYMotion,80712,34,THUMB_32,FUNC
-_lrm_adjustLinkBandwidth,225372,72,THUMB_32,FUNC
-E22_PIN,508790,156,THUMB_32,FUNC
-bthci_cmd_info_HandleRead_Local_Extended_Features,635654,74,THUMB_32,FUNC
-eeprom_ReadPrivate,297940,74,THUMB_32,FUNC
-rtc_getRTCRawClock,80840,66,THUMB_32,FUNC
-_lrm_HIDBlockInsertLink,225444,78,THUMB_32,FUNC
-ape_MAC,508946,58,THUMB_32,FUNC
-bthci_cmd_info_HandleRead_Buffer_Size,635728,84,THUMB_32,FUNC
-eeprom_Read,298014,68,THUMB_32,FUNC
-rtc_RtcTime2Sec,80976,156,THUMB_32,FUNC
-_lrm_isThisLinkGoodForHole,225522,274,THUMB_32,FUNC
-sc_h3,509748,78,THUMB_32,FUNC
-celt_plc_saturate,640172,32,THUMB_32,FUNC
-"_pageTaskLcuSoftReset, bcsulp_testTaskLcuSoftReset",298968,44,THUMB_32,FUNC
-rtc_setRTCTime,81150,44,THUMB_32,FUNC
-ulp_rand,509892,32,THUMB_32,FUNC
-q_fill_random,931010,36,THUMB_32,FUNC
-avct_bcb_last_ccb,1119434,50,THUMB_32,FUNC
-bttransport_txStateIdle,36806,34,THUMB_32,FUNC
-rtc_sec2RtcTime,81194,164,THUMB_32,FUNC
-bthci_cmd_vs_ReadSleepMode,512232,72,THUMB_32,FUNC
-q_IsZero,931046,32,THUMB_32,FUNC
-avct_bcb_chk_disc,1119484,40,THUMB_32,FUNC
-bttransport_configureSleepLineControl,36840,38,THUMB_32,FUNC
-bcsulp_runCoexAlgorithm,81708,54,THUMB_32,FUNC
-bthci_cmd_vs_CrystalPpm,512470,42,THUMB_32,FUNC
-q_SetOne,931098,34,THUMB_32,FUNC
-avct_bcb_discard_msg,1119644,76,THUMB_32,FUNC
-wiced_bt_sco_output_stream,37690,88,THUMB_32,FUNC
-irtx_sendData,82826,78,THUMB_32,FUNC
-bthci_cmd_vs_WritePcmPins,513272,54,THUMB_32,FUNC
-q_LeadingOne,931142,34,THUMB_32,FUNC
-avct_lcb_chnl_open,1120464,42,THUMB_32,FUNC
-btuartcommon_Init,39136,44,THUMB_32,FUNC
-irtx_doneHandler,82920,72,THUMB_32,FUNC
-bthci_cmd_vs_WriteI2sPcmInterface,513350,56,THUMB_32,FUNC
-btm_ble_update_srvc_data_change,933004,32,THUMB_32,FUNC
-avct_lcb_open_ind,1120518,148,THUMB_32,FUNC
-btuartcommon_LengthOfTXPacketList,39180,36,THUMB_32,FUNC
-puart_calculateBaudrate,83020,54,THUMB_32,FUNC
-bthci_cmd_vs_ReadAudioRouteInfo,513794,42,THUMB_32,FUNC
-mapScalar,943276,74,THUMB_32,FUNC
-avct_lcb_close_cfm,1120806,102,THUMB_32,FUNC
-btuartcommon_RemoveFromTXPacketListHead,39322,32,THUMB_32,FUNC
-puart_setBaudrate,83074,130,THUMB_32,FUNC
-bthci_cmd_vs_ReadGoldenRange,514076,32,THUMB_32,FUNC
-btm_ble_update_resolving_list,948832,76,THUMB_32,FUNC
-avct_lcb_chk_disc,1120944,50,THUMB_32,FUNC
-btuartcommon_RemoveFromTXPacketListTail,39354,58,THUMB_32,FUNC
-puart_synchronousRead,83418,36,THUMB_32,FUNC
-bthci_cmd_vs_LTETriggerWCI2Message,515822,62,THUMB_32,FUNC
-btm_ble_remove_resolving_list_entry_complete,948994,50,THUMB_32,FUNC
-A2D_SbcDescramble,1122348,104,THUMB_32,FUNC
-_lmulp_chooseOnePhyFromMany,39622,64,THUMB_32,FUNC
-puart_interruptHandler,83536,92,THUMB_32,FUNC
-"XOR_MOD256, XOR_MOD256",524840,36,THUMB_32,FUNC
-btm_ble_enable_resolving_list,949924,48,THUMB_32,FUNC
-A2D_BldSbcInfo,1122452,118,THUMB_32,FUNC
-multi_av_WordAlignedCopy,40984,56,THUMB_32,FUNC
-puart_checkRtsPortPin,83750,38,THUMB_32,FUNC
-MP_Copy,526070,36,THUMB_32,FUNC
-_printf_longlong_hex,952320,92,THUMB_32,FUNC
-A2D_BldSbcMplHdr,1122736,52,THUMB_32,FUNC
-_coexFWSampleRx,313586,40,THUMB_32,FUNC
-multi_av_FastArmCopy,41040,228,THUMB_32,FUNC
-puart_checkCtsPortPin,83788,38,THUMB_32,FUNC
-MP_CMP,526106,52,THUMB_32,FUNC
-__printf,952476,396,THUMB_32,FUNC
-avdt_ad_tc_close_ind,1123394,60,THUMB_32,FUNC
-uart_CheckReceiveFIFOLevelBytes,41600,60,THUMB_32,FUNC
-"puart_checkTxdPortPin, puart_checkTxdPortPin",83826,50,THUMB_32,FUNC
-sha256_final,527582,134,THUMB_32,FUNC
-_printf_wctomb,952996,188,THUMB_32,FUNC
-avdt_ad_tc_open_ind,1123454,104,THUMB_32,FUNC
-wiced_bt_l2cap_cancel_ble_connect_req,2585904,44,THUMB_32,FUNC
-"puart_checkRxdPortPin, puart_checkRxdPortPin",83876,50,THUMB_32,FUNC
-bthci_cmd_lc_GetCommandHandler,527924,66,THUMB_32,FUNC
-_printf_longlong_dec,953184,120,THUMB_32,FUNC
-avdt_ad_open_req,1123656,74,THUMB_32,FUNC
-wiced_hal_gpio_select_rxpu,2585996,56,THUMB_32,FUNC
-puart_selectUartPads,83926,326,THUMB_32,FUNC
-bthci_cmd_lc_HandlePeriodic_Inquiry_Mode,528100,58,THUMB_32,FUNC
-_printf_longlong_oct,953304,76,THUMB_32,FUNC
-avdt_process_timeout,1123776,72,THUMB_32,FUNC
-wiced_hal_gpio_select_txpu,2586052,52,THUMB_32,FUNC
-FSMdefaultTransitTo,84252,60,THUMB_32,FUNC
-bthci_cmd_lc_HandleRead_Lmp_Handle,531218,38,THUMB_32,FUNC
-q_asm_addc,953424,36,THUMB_32,FUNC
-AVDT_DiscoverReq,1124164,64,THUMB_32,FUNC
-_bcs_appNotifiTaskDeferredHandler,49452,32,THUMB_32,FUNC
-FSMinit,84626,86,THUMB_32,FUNC
-bthci_cmd_lc_EnhancedVoiceSetting,532060,134,THUMB_32,FUNC
-_printf_int_common,953688,184,THUMB_32,FUNC
-AVDT_DelayReport,1124338,42,THUMB_32,FUNC
-bcs_appNotifiEnable,49484,52,THUMB_32,FUNC
-aclk_updateClkGating,84712,70,THUMB_32,FUNC
-GKI_update_timer_list,538084,72,THUMB_32,FUNC
-_ll_udiv10,953872,138,THUMB_32,FUNC
-AVDT_ConfigRsp,1124470,60,THUMB_32,FUNC
-bcs_appNotifiTaskChangeInterval,49588,90,THUMB_32,FUNC
-aclk_disableClock,84938,46,THUMB_32,FUNC
-GKI_add_to_timer_list,538156,110,THUMB_32,FUNC
-__lib_sel_fp_printf,954010,430,THUMB_32,FUNC
-AVDT_StartRsp,1124672,58,THUMB_32,FUNC
-DHM_CallbackReleaseHCICredits,58010,72,THUMB_32,FUNC
-LedCtrl_SetLEDToSleepState,85974,34,THUMB_32,FUNC
-GKI_remove_from_timer_list,538266,126,THUMB_32,FUNC
-_wcrtomb,955110,64,THUMB_32,FUNC
-AVDT_ReconfigReq,1124876,40,THUMB_32,FUNC
-DHM_GetSlotsFromLmpBitMap,58082,34,THUMB_32,FUNC
-LedCtrl_TimerCallback,86108,372,THUMB_32,FUNC
-btm_vsc_cfg_ver_info_complete,538784,40,THUMB_32,FUNC
-btm_sco_flush_sco_data,955188,48,THUMB_32,FUNC
-AVDT_SecurityRsp,1125000,54,THUMB_32,FUNC
-DHM_ReleaseHciListItemReturnBuffer,58298,46,THUMB_32,FUNC
-__2snprintf,86512,56,THUMB_32,FUNC
-btm_vsc_brcm_features_complete,538942,46,THUMB_32,FUNC
-btm_sco_voice_settings_2_legacy,955268,116,THUMB_32,FUNC
-AVDT_WriteReqOpt,1125054,52,THUMB_32,FUNC
-DHM_GetBBPktInfoPtr,58572,96,THUMB_32,FUNC
-_dmaReqInit,86676,110,THUMB_32,FUNC
-GAP_SetPairableMode,539648,48,THUMB_32,FUNC
-btm_sco_check_send_pkts,955584,48,THUMB_32,FUNC
-AVDT_GetSignalChannel,1125262,64,THUMB_32,FUNC
-DHM_UpdateACLStats,58668,66,THUMB_32,FUNC
-_dmaReqSend,87104,46,THUMB_32,FUNC
-GAP_ReadDeviceClass,539936,44,THUMB_32,FUNC
-btm_find_scb_by_handle,955632,34,THUMB_32,FUNC
-avdt_l2c_disconnect_cfm_cback,1126068,38,THUMB_32,FUNC
-config_OTP_get_XTAL_kHz,59532,64,THUMB_32,FUNC
-bcs_aclTaskSetTpoll,89714,36,THUMB_32,FUNC
-HID_HostGetLeRepDesc,541398,130,THUMB_32,FUNC
-BTM_ConfigI2SPCM,955726,44,THUMB_32,FUNC
-avdt_l2c_congestion_ind_cback,1126106,42,THUMB_32,FUNC
-pmu_PowerDownSRAM,62156,176,THUMB_32,FUNC
-bcs_aclTaskReadjustClock,89904,54,THUMB_32,FUNC
-PORT_SetState,542140,56,THUMB_32,FUNC
-BTM_ConfigScoPath,955770,50,THUMB_32,FUNC
-avdt_l2c_data_ind_cback,1126148,44,THUMB_32,FUNC
-pmu_PowerUpSRAM,62332,200,THUMB_32,FUNC
-_aclTaskQosGrantPostMortem,93250,34,THUMB_32,FUNC
-PORT_GetRxQueueCnt,542196,32,THUMB_32,FUNC
-btm_is_sco_active,957928,40,THUMB_32,FUNC
-avdt_scb_event,1126192,88,THUMB_32,FUNC
-hcivs_reset_proximity_vars,63088,66,THUMB_32,FUNC
-_aclTaskQosTaskReschedule,94328,134,THUMB_32,FUNC
-PORT_GetState,542228,42,THUMB_32,FUNC
-BTM_GetNumScoLinks,957968,44,THUMB_32,FUNC
-avdt_scb_by_hdl,1126486,46,THUMB_32,FUNC
-bb_computeAC,63492,118,THUMB_32,FUNC
-_aclTaskGetInfoPtr,95468,48,THUMB_32,FUNC
-PORT_Write,543302,92,THUMB_32,FUNC
-gatt_determine_sec_act,958428,232,THUMB_32,FUNC
-avdt_scb_verify,1126532,108,THUMB_32,FUNC
-pmu_config_execute,69154,56,THUMB_32,FUNC
-lite_host_check_supported_route,397090,178,THUMB_32,FUNC
-hidh_le_close_api,737562,78,THUMB_32,FUNC
-celt_plc_Norm64,1264916,52,THUMB_32,FUNC
-celt_plc_add,640204,34,THUMB_32,FUNC
-lite_host_get_audio_route_mix,397324,38,THUMB_32,FUNC
-hidh_le_gatt_close,737648,74,THUMB_32,FUNC
-celt_bitexact_cos,1267632,74,THUMB_32,FUNC
-celt_plc_sub,640238,34,THUMB_32,FUNC
-lite_host_get_max_frame_length,397496,60,THUMB_32,FUNC
-hidh_le_open_fail,737722,44,THUMB_32,FUNC
-celt_resampling_factor,1276576,68,THUMB_32,FUNC
-celt_plc_shr,640294,46,THUMB_32,FUNC
-hook_init,402876,58,THUMB_32,FUNC
-hidh_le_encrypt_cback,737766,90,THUMB_32,FUNC
-celt_ec_enc_init,1298436,34,THUMB_32,FUNC
-celt_plc_shl,640340,106,THUMB_32,FUNC
-lm_HandleLmpSetupCompleteSent,405224,68,THUMB_32,FUNC
-hidh_le_security_cmpl,738208,62,THUMB_32,FUNC
-celt_ec_enc_bits,1298844,84,THUMB_32,FUNC
-celt_plc_mult,640446,52,THUMB_32,FUNC
-lm_HandleLmpBPCS_featuresResPdu,405554,36,THUMB_32,FUNC
-hidh_le_read_char_cmpl,738784,76,THUMB_32,FUNC
-_celt_preemphasis_loop,1307764,58,THUMB_32,FUNC
-celt_plc_L_add,640544,42,THUMB_32,FUNC
-BTMSync_SCOTestInit,405860,142,THUMB_32,FUNC
-hidh_le_find_rpt_by_id_or_type,739468,68,THUMB_32,FUNC
-_celt_l1_metric,1308312,144,THUMB_32,FUNC
-celt_plc_round,640586,46,THUMB_32,FUNC
-"_pageTaskLcuSoftReset, bcsulp_testTaskLcuSoftReset",406948,44,THUMB_32,FUNC
-hidh_le_conn_snd_data,739752,204,THUMB_32,FUNC
-_celt_preemphasis_early_cc1,1308456,66,THUMB_32,FUNC
-celt_plc_L_mac,640632,66,THUMB_32,FUNC
-hciulp_determineCeLen,407796,38,THUMB_32,FUNC
-L2CA_FlowControl,740744,78,THUMB_32,FUNC
-_celt_preemphasis_early_cc2,1308522,74,THUMB_32,FUNC
-celt_plc_L_sub,640698,42,THUMB_32,FUNC
-_ll_sshift_r,409528,40,THUMB_32,FUNC
-btm_dev_support_switch,750142,66,THUMB_32,FUNC
-_celt_fir5,1309332,140,THUMB_32,FUNC
-celt_plc_L_msu,640740,66,THUMB_32,FUNC
-_mblmTaskLcuCmd,415582,56,THUMB_32,FUNC
-btm_bda_to_acl,750576,70,THUMB_32,FUNC
-_celt_find_best_pitch_loop,1309472,86,THUMB_32,FUNC
-celt_plc_L_add_c,640806,118,THUMB_32,FUNC
-"ulp_nextRand, ulp_nextRand",416388,54,THUMB_32,FUNC
-"BTM_GetRole, BTM_GetRole",750664,32,THUMB_32,FUNC
-_celt_ec_enc_carry_out,1309560,116,THUMB_32,FUNC
-celt_plc_L_sub_c,640950,118,THUMB_32,FUNC
-ulp_rand,416502,32,THUMB_32,FUNC
-BTM_GetNumAclLinks,750710,38,THUMB_32,FUNC
-_celt_maxabs16_unroll_16,1309676,210,THUMB_32,FUNC
-celt_plc_mult_r,641228,60,THUMB_32,FUNC
-hciulp_SendRssiAlert,416902,82,THUMB_32,FUNC
-btm_handle_to_acl_index,750850,40,THUMB_32,FUNC
-_celt_rcp,1309886,98,THUMB_32,FUNC
-celt_plc_L_shr,641288,46,THUMB_32,FUNC
-hciulp_HandleLeAudioConfig,420484,68,THUMB_32,FUNC
-BTM_SetLinkPolicy,751052,122,THUMB_32,FUNC
-_celt_sqrt,1309984,120,THUMB_32,FUNC
-celt_plc_L_shl,641334,84,THUMB_32,FUNC
-hciulp_HandleWriteExtendedPacketLengthConfig,421012,74,THUMB_32,FUNC
-btm_establish_continue,751234,72,THUMB_32,FUNC
-_celt_comb_filter_const_sp,1310104,172,THUMB_32,FUNC
-celt_plc_shr_r,641418,84,THUMB_32,FUNC
-bthci_cmd_vs_LeScanRssiThresholdSetup,421354,116,THUMB_32,FUNC
-BTM_SetDefaultLinkPolicy,752986,78,THUMB_32,FUNC
-_celt_stereo_split,1310854,114,THUMB_32,FUNC
-celt_plc_mac_r,641502,52,THUMB_32,FUNC
-uart_ReceiveAsynchComplete,425466,32,THUMB_32,FUNC
-l2cu_find_lcb_by_bd_addr,756132,66,THUMB_32,FUNC
-_celt_mdct_prerotate,1311792,240,THUMB_32,FUNC
-celt_plc_msu_r,641554,106,THUMB_32,FUNC
-MABEC_QPSK_acc,428062,44,THUMB_32,FUNC
-"l2cu_dequeue_ccb, l2cu_dequeue_ccb",756526,78,THUMB_32,FUNC
-_celt_mdct_rearrange,1312032,242,THUMB_32,FUNC
-celt_plc_L_shr_r,641666,40,THUMB_32,FUNC
-MABEC_GFSK_lpf,428106,78,THUMB_32,FUNC
-l2cu_get_num_hi_priority,757328,44,THUMB_32,FUNC
-_celt_dec_tdac,1312274,106,THUMB_32,FUNC
-celt_plc_L_sat,641726,32,THUMB_32,FUNC
-mpaf_cfa_ConfigVSReadLongItem,430312,124,THUMB_32,FUNC
-"l2cu_enqueue_ccb, l2cu_enqueue_ccb",760902,50,THUMB_32,FUNC
-_celt_norm_with_br,1313984,170,THUMB_32,FUNC
-celt_plc_norm_s,641758,50,THUMB_32,FUNC
-_sp_handleHciOOBDataReplyAndLmpSimplePairingNumber,433210,54,THUMB_32,FUNC
-l2cu_find_ccb_by_cid,762058,94,THUMB_32,FUNC
-_celt_kf_bfly2_loop,1314324,190,THUMB_32,FUNC
-celt_plc_div_s,641808,124,THUMB_32,FUNC
-_sp_handleHciPasskeyReplyAndLmpSimplePairingNumberConfirm,433264,48,THUMB_32,FUNC
-Flush_send_burst_ind,764908,50,THUMB_32,FUNC
-_celt_kf_bfly3_loop,1314514,302,THUMB_32,FUNC
-celt_plc_norm_l,641932,48,THUMB_32,FUNC
-_sp_handleHciConfirmReplyAndLmpDHKeyCheck,433312,48,THUMB_32,FUNC
-hostctlr_findHostPair,773472,38,THUMB_32,FUNC
-_celt_kf_bfly5_loop,1314816,336,THUMB_32,FUNC
-celt_plc_div_l,642006,214,THUMB_32,FUNC
-lm_SendLmpOOBFailed,433360,40,THUMB_32,FUNC
-hostctlr_regSPipe,773510,54,THUMB_32,FUNC
-_celt_kf_bfly4_loop,1315152,272,THUMB_32,FUNC
-celt_plc_L_mac0,642270,46,THUMB_32,FUNC
-lm_SendLmpSimplePairingNumber,433472,62,THUMB_32,FUNC
-hostctlr_updatePair,773564,58,THUMB_32,FUNC
-_celt_kf_bfly4_find_max_loop,1315424,336,THUMB_32,FUNC
-celt_plc_L_msu0,642316,46,THUMB_32,FUNC
-lm_SendLmpDhkeyCheck,433602,62,THUMB_32,FUNC
-hostctlr_regDPipe,773622,54,THUMB_32,FUNC
-_celt_ki_bfly4_loop,1315760,256,THUMB_32,FUNC
-celt_plc_L_Extract,642362,84,THUMB_32,FUNC
-_sp_txV,434232,158,THUMB_32,FUNC
-hostctlr_isHcpFromHidInhibited,773700,68,THUMB_32,FUNC
-_celt_ki_bfly4_find_max_loop,1316016,336,THUMB_32,FUNC
-celt_plc_Mpy_32,642452,144,THUMB_32,FUNC
-bcs_timeline_WriteBitstream,833202,122,THUMB_32,FUNC
-bcs_timeline_CopyBitstream,833324,44,THUMB_32,FUNC
-bcs_timeline_GetPriorityHashIndex,834006,50,THUMB_32,FUNC
-bcs_timeline_GetTaskIdHashIndex,834056,46,THUMB_32,FUNC
-bcs_timeline_GetRecordHashIndex,834102,72,THUMB_32,FUNC
-bcs_timeline_GetDebugDataHashIndex,834832,64,THUMB_32,FUNC
-bcs_timeline_GetDebugIdHashIndex,834896,62,THUMB_32,FUNC
-bcs_timeline_Disable,837830,36,THUMB_32,FUNC
-bcs_timeline_Start,837866,164,THUMB_32,FUNC
-rmulp_pal_clear,839052,54,THUMB_32,FUNC
-rmulp_pal_allocate,839544,68,THUMB_32,FUNC
-rmulp_mr4p_allocate,839644,32,THUMB_32,FUNC
-rmulp_getConnTaskPtr,840042,34,THUMB_32,FUNC
-rmulp_getConnTaskPtr,840076,34,THUMB_32,FUNC
-rmulp_assignHciConnHandle,840452,66,THUMB_32,FUNC
-rmulp_getWdAddr,841122,34,THUMB_32,FUNC
-rmulp_SetTxPower_MaxPwr,841904,64,THUMB_32,FUNC
-bcsulp_initAfterMemoryInit,843180,32,THUMB_32,FUNC
-bcsulp_init,843212,48,THUMB_32,FUNC
-bcsulp_setupWhitenning,843388,34,THUMB_32,FUNC
-bcsulp_encryptKeyUpdate,844630,44,THUMB_32,FUNC
-bcsulp_peekNxtTxHdr4TxDone,847134,42,THUMB_32,FUNC
-bcsulp_shiftTxPktHdr,847450,88,THUMB_32,FUNC
-bcsulp_bleToBtChannel,849542,56,THUMB_32,FUNC
-bpl_lcu_BqbHwInit,849600,34,THUMB_32,FUNC
-bpl_lcu_LEReset,849782,40,THUMB_32,FUNC
-bpl_lcu_ResyncDone,853246,48,THUMB_32,FUNC
-bpl_lcu_ScanResponseActive,853294,32,THUMB_32,FUNC
-ulp_advBatchingResetStorage,379942,104,THUMB_32,FUNC
-avdt_scb_hdl_setconfig_rsp,1127460,46,THUMB_32,FUNC
-bcs_scanTaskReschedule,129638,104,THUMB_32,FUNC
-fmsr_hclk_disable,243532,44,THUMB_32,FUNC
-ulp_advBatchingReset,380046,42,THUMB_32,FUNC
-avdt_scb_snd_abort_req,1128190,42,THUMB_32,FUNC
-_afhHssiTaskGetNewPtr,130396,42,THUMB_32,FUNC
-lc_mcMasterReceivedData,246378,32,THUMB_32,FUNC
-ulp_advBatchingGetPercentageUsage,380186,54,THUMB_32,FUNC
-avdt_scb_snd_stream_close,1128288,32,THUMB_32,FUNC
-bcs_afhHssiTaskGetPtr,130640,52,THUMB_32,FUNC
-lculp_checkAndUpdateScanRspInWait,251104,46,THUMB_32,FUNC
-rftune_setRfCh,381948,102,THUMB_32,FUNC
-avdt_scb_snd_setconfig_rej,1128654,34,THUMB_32,FUNC
-bcs_afhHssiTaskGetActiveCount,130732,36,THUMB_32,FUNC
-lculp_createAccessAddress,251784,62,THUMB_32,FUNC
-rftune_TurnOnallRxandTx,382050,34,THUMB_32,FUNC
-avdt_scb_snd_setconfig_rsp,1128758,46,THUMB_32,FUNC
-bcs_afhHssiTaskLmpSetAfhSent,130834,64,THUMB_32,FUNC
-lculp_checkAdvPkt,252464,32,THUMB_32,FUNC
-rftune_setTxIfFreq,382232,42,THUMB_32,FUNC
-avdt_scb_free_pkt,1128902,42,THUMB_32,FUNC
-bcs_afhRssiScanTaskCreate,130944,110,THUMB_32,FUNC
-lculp_correctCrcField,254446,36,THUMB_32,FUNC
-rftune_setRxCordicBypass,382274,46,THUMB_32,FUNC
-avdt_scb_clr_pkt,1128944,68,THUMB_32,FUNC
-bcs_afhWriteAfhRegisters,131054,92,THUMB_32,FUNC
-lm_HandleLmpPiconetClkAdjAck,256936,134,THUMB_32,FUNC
-rftune_setDemodCordicBypass,382320,46,THUMB_32,FUNC
-avdt_scb_chk_snd_pkt,1129012,60,THUMB_32,FUNC
-lmtxn_getTxnOp,134328,122,THUMB_32,FUNC
-lm_masterPCARecoveryModeFeatureCheck,257660,66,THUMB_32,FUNC
-rftune_setCordicAngle,382366,86,THUMB_32,FUNC
-avdt_msg_bld_cfg,1129088,158,THUMB_32,FUNC
-afh_sendLmpSetAfh,137014,104,THUMB_32,FUNC
-"lm_HandleLmpPiconetClkAdjReqAcceptedPdu, lm_HandleLmpPiconetClkAdjReqNotAcceptedPdu",258402,36,THUMB_32,FUNC
-rftune_tssiDigitalGainAdjust,382452,44,THUMB_32,FUNC
-avdt_msg_bld_setconfig_cmd,1129262,32,THUMB_32,FUNC
-bcs_timeline_ConvertBcsTaskIntoTaskIndex,832562,412,THUMB_32,FUNC
-afh_genEValue,137352,56,THUMB_32,FUNC
-"lm_HandleLmpPiconetClkAdjReqAcceptedPdu, lm_HandleLmpPiconetClkAdjReqNotAcceptedPdu",258438,36,THUMB_32,FUNC
-rftune_tssiDCOffsetAdjust,382496,68,THUMB_32,FUNC
-"avdt_msg_bld_delay_rpt, avdt_msg_bld_delay_rpt",1129390,38,THUMB_32,FUNC
-afh_bleLinkup,138300,32,THUMB_32,FUNC
-lm_slavePCARequestLMPTransactionCheck,258474,60,THUMB_32,FUNC
-rftune_setPaBias,382564,76,THUMB_32,FUNC
-avdt_msg_bld_discover_rsp,1129428,82,THUMB_32,FUNC
-afh_sendLmpChannelClassificationPdu,138672,76,THUMB_32,FUNC
-lm_handlePCABroadcastLmpSent,258754,134,THUMB_32,FUNC
-rftune_adjustDcOffset,382664,48,THUMB_32,FUNC
-avdt_msg_prs_setconfig_cmd,1129940,100,THUMB_32,FUNC
-lm_HandleLmpChannelClassificationEsc4Pdu,138978,36,THUMB_32,FUNC
-arip_audHandleFMRx2DAC_help,259172,32,THUMB_32,FUNC
-rftune_SelectOutput,382716,54,THUMB_32,FUNC
-avdt_msg_prs_multi,1130134,82,THUMB_32,FUNC
-afh_disconnect,139084,58,THUMB_32,FUNC
-afhcc_saveModemRegs,260128,54,THUMB_32,FUNC
-rftune_tx_reg92,382770,34,THUMB_32,FUNC
-avdt_msg_prs_security_cmd,1130216,48,THUMB_32,FUNC
-_pageScanTaskInit,140054,38,THUMB_32,FUNC
-afhcc_configModem,260252,92,THUMB_32,FUNC
-lm_power_AdjustPowerAndTarget,382892,60,THUMB_32,FUNC
-avdt_msg_prs_discover_rsp,1130264,116,THUMB_32,FUNC
-bcs_pageScanTaskCreate,140092,38,THUMB_32,FUNC
-afhcc_restoreModemRegs,260418,64,THUMB_32,FUNC
-"iqcal_forcepad, iqcal_restore_pad",386784,48,THUMB_32,FUNC
-avdt_msg_prs_svccap,1130380,38,THUMB_32,FUNC
-_pageScanTaskNewConnDone,140264,48,THUMB_32,FUNC
-msgqueue_Put,260542,102,THUMB_32,FUNC
-iqcal_save_pad,386832,50,THUMB_32,FUNC
-avdt_msg_prs_all_svccap,1130418,38,THUMB_32,FUNC
-_sniffTaskSubrateDropToSniffMode,143404,52,THUMB_32,FUNC
-msgqueue_PrivateGet,260744,132,THUMB_32,FUNC
-"iqcal_forcepad, iqcal_restore_pad",386882,48,THUMB_32,FUNC
-"avdt_msg_prs_rej, avdt_msg_prs_rej",1130464,38,THUMB_32,FUNC
-_sniffTaskGetInfoPtr,144672,70,THUMB_32,FUNC
-_psmSetMinPeriodicInfo,261046,76,THUMB_32,FUNC
-rfp_interpolate,387384,52,THUMB_32,FUNC
-avdt_msg_prs_delay_rpt,1130502,48,THUMB_32,FUNC
-apepTran_reset,145776,72,THUMB_32,FUNC
-bcs_psmTaskCreated,261122,38,THUMB_32,FUNC
-osapi_waitEvent,387574,46,THUMB_32,FUNC
-avdt_msg_send_rsp,1131340,96,THUMB_32,FUNC
-apepApu_init,145848,38,THUMB_32,FUNC
-Update_LC_PLC_wb,264244,122,THUMB_32,FUNC
-lite_host_proc_uipc_open,394694,62,THUMB_32,FUNC
-avdt_msg_send_rej,1131436,112,THUMB_32,FUNC
-apepTran_setup,146448,238,THUMB_32,FUNC
-LC_PLC_Indicate_BEC,268144,268,THUMB_32,FUNC
-lite_host_proc_avdt,395226,226,THUMB_32,FUNC
-avdt_ccb_hdl_start_cmd,1132404,76,THUMB_32,FUNC
-sbcenc_get_bit_rate,155252,76,THUMB_32,FUNC
-r_rc_cal_wr_adjustBT,269284,334,THUMB_32,FUNC
-lite_host_proc_start_req,396158,198,THUMB_32,FUNC
-avdt_ccb_hdl_suspend_cmd,1132540,86,THUMB_32,FUNC
-update_gci_for_LE_Audio,162846,164,THUMB_32,FUNC
-wiced_rtos_register_timed_event,272554,50,THUMB_32,FUNC
-lite_host_proc_stop_req,396424,36,THUMB_32,FUNC
-avdt_ccb_cmd_fail,1132870,84,THUMB_32,FUNC
-update_gci_with_common_info,163010,116,THUMB_32,FUNC
-bcs_mcsGetDataPtr,273036,32,THUMB_32,FUNC
-lite_host_proc_suspend_req,396460,36,THUMB_32,FUNC
-avdt_ccb_clear_cmds,1132954,92,THUMB_32,FUNC
-gci_semaphore_request_blocking,163126,40,THUMB_32,FUNC
-pcmfifo_getRxDataSize,275420,62,THUMB_32,FUNC
-lite_host_proc_cleanup_req,396496,64,THUMB_32,FUNC
-wiced_bt_rfcomm_set_buffer_pool,1135728,62,THUMB_32,FUNC
-gci_hw_variable_init,163192,80,THUMB_32,FUNC
-pcmfifo_getTxDataSize,275482,68,THUMB_32,FUNC
-lite_host_get_audio_route_source,396754,58,THUMB_32,FUNC
-wiced_bt_l2cap_le_data_write,1136372,66,THUMB_32,FUNC
-gci_write_aux_tx_register_byte,163346,76,THUMB_32,FUNC
-_scanTaskSetDefaultPriority,276138,34,THUMB_32,FUNC
-i2c_master_Read,328128,114,THUMB_32,FUNC
-_printf_pre_padding,552308,46,THUMB_32,FUNC
-avrc_bld_get_folder_items_cmd,1108136,188,THUMB_32,FUNC
-i2c_master_WaitForTransactionToCompletePrivate,328242,40,THUMB_32,FUNC
-_printf_post_padding,552354,36,THUMB_32,FUNC
-avrc_bld_change_path_cmd,1108324,86,THUMB_32,FUNC
-apipe_getEDFlagAndGroupFlag,329590,46,THUMB_32,FUNC
-"_printf_str, _printf_str",552390,82,THUMB_32,FUNC
-avrc_bld_get_item_attrs_cmd,1108410,180,THUMB_32,FUNC
-apipe_unMuteFunc,330832,60,THUMB_32,FUNC
-gap_convert_btm_status,561812,88,THUMB_32,FUNC
-"avrc_bld_search_cmd, avrc_bld_search_cmd",1108590,78,THUMB_32,FUNC
-apipe_muteFunc,330892,64,THUMB_32,FUNC
-find_conn_by_cid,562178,54,THUMB_32,FUNC
-avrc_bld_play_item_cmd,1108668,72,THUMB_32,FUNC
-apipe_fillDirect,332548,70,THUMB_32,FUNC
-hidh_l2cif_cong_ind,562232,50,THUMB_32,FUNC
-avrc_bld_get_capability_rsp,1109288,194,THUMB_32,FUNC
-ulp_dple_getEffeMaxRxOctets,333010,112,THUMB_32,FUNC
-hidh_l2cif_data_ind,562342,192,THUMB_32,FUNC
-avrc_bld_list_app_settings_attr_rsp,1109482,122,THUMB_32,FUNC
-pcm2_down,333192,52,THUMB_32,FUNC
-hidh_l2cif_disconnect_cfm,562534,88,THUMB_32,FUNC
-"avrc_bld_list_app_settings_values_rsp, avrc_bld_list_app_settings_values_rsp",1109604,90,THUMB_32,FUNC
-_pcm2_preConn,333302,62,THUMB_32,FUNC
-hidh_conn_initiate,562622,86,THUMB_32,FUNC
-avrc_bld_get_cur_app_setting_value_rsp,1109694,162,THUMB_32,FUNC
-avrc_bld_get_elem_attrs_rsp,1110164,282,THUMB_32,FUNC
-arip_fm_sco_pcm2_reset,333660,102,THUMB_32,FUNC
-hidh_le_ntfy_sdp_cb,737444,54,THUMB_32,FUNC
-"l2c_fcr_chk_chan_modes, l2c_fcr_chk_chan_modes",976502,44,THUMB_32,FUNC
-hidh_proc_repage_timeout,562708,56,THUMB_32,FUNC
-_discn_procTimerExp,334870,88,THUMB_32,FUNC
-hidh_l2cif_disconnect_ind,562764,226,THUMB_32,FUNC
-avrc_bld_get_play_status_rsp,1110446,80,THUMB_32,FUNC
-lm_HandleLmpDetachPdu,336234,48,THUMB_32,FUNC
-hidh_l2cif_intr_connected,562990,162,THUMB_32,FUNC
-avrc_bld_change_path_rsp,1112068,50,THUMB_32,FUNC
-BTMUtil_SetHoppingMode,336568,56,THUMB_32,FUNC
-hidh_l2cif_ctrl_connected,563152,176,THUMB_32,FUNC
-avrc_bld_search_rsp,1112510,66,THUMB_32,FUNC
-BTMUtil_SetWhiteningMode,336624,32,THUMB_32,FUNC
-hidh_conn_reg,563328,164,THUMB_32,FUNC
-avrc_pars_vendor_rsp,1113164,1008,THUMB_32,FUNC
-BTMUtil_CheckAUXPkt,336774,156,THUMB_32,FUNC
-MP_LShiftMod_P192_ASM,569380,118,THUMB_32,FUNC
-avrc_pars_browsing_rsp,1114172,1262,THUMB_32,FUNC
-BTMUtil_SetPktHwRegs,337116,110,THUMB_32,FUNC
-MP_RShift_P192_ASM,569498,58,THUMB_32,FUNC
-AVRC_ParsResponse,1115434,76,THUMB_32,FUNC
-"GetBCSLinkType, GetBCSLinkType",337428,54,THUMB_32,FUNC
-MP_Sub_P192_ASM,569556,52,THUMB_32,FUNC
-avrc_pars_vendor_cmd,1115510,702,THUMB_32,FUNC
-smulp_handleFlushRxData,340984,80,THUMB_32,FUNC
-MP_SubMod_P192_ASM,569608,70,THUMB_32,FUNC
-avrc_pars_browsing_cmd,1116212,448,THUMB_32,FUNC
-ulp_advFilter_getListCnt,342434,44,THUMB_32,FUNC
-MP_Add_P192_ASM,569678,52,THUMB_32,FUNC
-AVRC_ParsCommand,1116660,76,THUMB_32,FUNC
-ulp_advFilterGetListMask,343460,128,THUMB_32,FUNC
-MP_AddMod_P192_ASM,569730,102,THUMB_32,FUNC
-"AVRC_IsValidAvcType, AVRC_IsValidAvcType",1116736,100,THUMB_32,FUNC
-ulp_advFilterCheckSolicitUUID,344548,68,THUMB_32,FUNC
-MP_MersennsMultMod_P192_ASM,569832,770,THUMB_32,FUNC
-avrc_is_valid_player_attrib_value,1116836,50,THUMB_32,FUNC
-ulp_brcmFilter_addFilter,344646,110,THUMB_32,FUNC
-MP_MersennsSquaMod_P192_ASM,570602,626,THUMB_32,FUNC
-"avrc_pars_pass_thru, avrc_pars_pass_thru",1116904,64,THUMB_32,FUNC
-ulp_brcmFilter_clearList,345270,88,THUMB_32,FUNC
-MP_Add_P256_ASM,571228,62,THUMB_32,FUNC
-"avrc_opcode_from_pdu, avrc_opcode_from_pdu",1116968,46,THUMB_32,FUNC
-_ll_udiv,348560,238,THUMB_32,FUNC
-MP_AddMod_P256_ASM,571290,132,THUMB_32,FUNC
-AVCT_MsgReq,1117596,108,THUMB_32,FUNC
-sha1,1193446,46,THUMB_32,FUNC
-bcs_utilBbRxPktSetLength,350138,54,THUMB_32,FUNC
-MP_Sub_P256_ASM,571422,62,THUMB_32,FUNC
-avct_bcb_event,1118394,56,THUMB_32,FUNC
-bcs_utilCopyFromHwToFifo,351234,48,THUMB_32,FUNC
-MP_SubMod_P256_ASM,571484,88,THUMB_32,FUNC
-avct_lcb_has_pid,1118692,42,THUMB_32,FUNC
-bcs_utilCopyToHwFromFifo,351282,68,THUMB_32,FUNC
-MP_RShift_P256_ASM,571572,78,THUMB_32,FUNC
-avct_bcb_open_ind,1118964,186,THUMB_32,FUNC
-MP_LShiftMod_P256_ASM,571650,158,THUMB_32,FUNC
-avct_bcb_open_fail,1119150,36,THUMB_32,FUNC
-bcs_utilGetRSSI,351518,58,THUMB_32,FUNC
-sdpu_build_uuid_seq,1006132,118,THUMB_32,FUNC
-process_service_search_attr_rsp,1007248,178,THUMB_32,FUNC
-gatt_send_prepare_write,1009932,94,THUMB_32,FUNC
-gatt_act_write,1010026,150,THUMB_32,FUNC
-gatt_check_write_long_terminate,1010204,92,THUMB_32,FUNC
-gatt_discovery_result,1010296,34,THUMB_32,FUNC
-gatt_proc_disc_error_rsp,1010614,32,THUMB_32,FUNC
-rfc_port_sm_execute,1013402,32,THUMB_32,FUNC
-rfc_set_port_state,1013532,84,THUMB_32,FUNC
-rfc_process_l2cap_congestion,1014344,52,THUMB_32,FUNC
-gatt_sr_enqueue_cmd,1017476,48,THUMB_32,FUNC
-gatts_attibute_request,1018202,34,THUMB_32,FUNC
-__decompress1,1025048,92,THUMB_32,FUNC
-tsensor_equationInit,1025632,50,THUMB_32,FUNC
-tsensor_init,1025702,38,THUMB_32,FUNC
-tsensor_read,1025740,36,THUMB_32,FUNC
-tsensor_lpFilter,1025776,62,THUMB_32,FUNC
-init_cm4_fpu,1262,58,THUMB_32,FUNC
-tsensor_convert,1025838,36,THUMB_32,FUNC
-tsensor_filter,1025902,50,THUMB_32,FUNC
-tsensor_filterPreload,1025952,60,THUMB_32,FUNC
-XOR128,1085656,36,THUMB_32,FUNC
-hmac_aes_mmo_sign,1087184,78,THUMB_32,FUNC
-hmac_aes_mmo_verify,1087262,102,THUMB_32,FUNC
-i2cm_read,1088442,68,THUMB_32,FUNC
-adc_readSampleRaw,1091794,64,THUMB_32,FUNC
-adc_readVoltage,1091858,66,THUMB_32,FUNC
-adc_adcCalibrate,1092034,118,THUMB_32,FUNC
-adc_SetInputRange,1092152,40,THUMB_32,FUNC
-sha1_hmac_starts,1193492,114,THUMB_32,FUNC
-_lm_sam_InitializeSlotmapsForESam,787756,96,THUMB_32,FUNC
-utilslib_calculateCrc,889848,68,THUMB_32,FUNC
-_celt_ki_bfly3_find_max_loop,1316352,300,THUMB_32,FUNC
-sha1_hmac_finish,1193608,62,THUMB_32,FUNC
-lm_sam_ResetAll,787852,108,THUMB_32,FUNC
-approxLog2,889916,32,THUMB_32,FUNC
-_celt_ki_bfly2_find_max_loop,1316652,160,THUMB_32,FUNC
-sha1_hmac,1193670,48,THUMB_32,FUNC
-lm_sam_GetConnection,788070,34,THUMB_32,FUNC
-FifoOv_remove,890188,52,THUMB_32,FUNC
-_celt_ki_bfly5_find_max_loop,1316812,296,THUMB_32,FUNC
-BigIntegerToCstrEx,1196562,40,THUMB_32,FUNC
-lm_sam_InitiateSamDisable,788104,40,THUMB_32,FUNC
-micro_bcsOvrKvcoCalEn,892250,32,THUMB_32,FUNC
-srand,1317268,42,THUMB_32,FUNC
-t_sessionkey,1196798,210,THUMB_32,FUNC
-lm_sam_ResetRemote,788384,36,THUMB_32,FUNC
-_micro_bcsRestoreRegisters_bpl_lcu_Reset,892356,132,THUMB_32,FUNC
-strstr,1317348,36,THUMB_32,FUNC
-cstr_new_alloc,1197202,48,THUMB_32,FUNC
-lm_sam_DefineLocalType0,788684,32,THUMB_32,FUNC
-micro_bcsSaveVcoCapCalRegs,893828,60,THUMB_32,FUNC
-__default_signal_display,1318336,50,THUMB_32,FUNC
-cstr_free,1197526,40,THUMB_32,FUNC
-_lm_sam_MarkConnsForNewType0Submap,789168,88,THUMB_32,FUNC
-micro_bcsDriftPredictionReset,893888,46,THUMB_32,FUNC
-_dcmple,1618976,98,THUMB_32,FUNC
-NN_Sub,1202326,82,THUMB_32,FUNC
-_lm_sam_MarkConnsForSlotmapUpdate,789256,76,THUMB_32,FUNC
-micro_bcsDisableTCATaskQuick,894252,58,THUMB_32,FUNC
-_dmul,1619096,340,THUMB_32,FUNC
-NN_AddMod,1202548,174,THUMB_32,FUNC
-_lm_sam_UpdateSlotmap,789332,228,THUMB_32,FUNC
-_memset_w,894560,74,THUMB_32,FUNC
-__fpl_dnaninf,1619436,156,THUMB_32,FUNC
-NN_EmTick,1204090,50,THUMB_32,FUNC
-_lm_sam_CalculateAvailability,790404,98,THUMB_32,FUNC
-_memset,894638,64,THUMB_32,FUNC
-_drcmple,1619604,108,THUMB_32,FUNC
-wps_NN_set,1204486,36,THUMB_32,FUNC
-_lm_sam_LmpToSamStruct,790954,54,THUMB_32,FUNC
-clock_Init,897360,84,THUMB_32,FUNC
-"__semihosting_library_function, _maybe_terminate_alloc",1621248,63,THUMB_32,FUNC
-wps_NN_get,1204522,32,THUMB_32,FUNC
-_lm_sam_NumOfSlotsToPreferedSlot,792010,262,THUMB_32,FUNC
-dbfw_hal_coredump_ram_image_addr_info,897636,48,THUMB_32,FUNC
-rsa_check_pubkey,1205116,80,THUMB_32,FUNC
-_lm_sam_isSlotTypeMatched,792724,156,THUMB_32,FUNC
-u8toHexStr,898056,32,THUMB_32,FUNC
-besl_802_11_generate_pmk,1207666,76,THUMB_32,FUNC
-lc_bcsNewConnEvent,795620,62,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_sign_part2_cb,902088,40,THUMB_32,FUNC
-dhm_read_public,1208226,36,THUMB_32,FUNC
-lc_SetSRMode,796214,38,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_sign_part1_cb,902224,40,THUMB_32,FUNC
-dhm_calc_secret,1208410,74,THUMB_32,FUNC
-lc_changeScansParamDuringPageInquiry,796436,40,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part1_cb,902940,42,THUMB_32,FUNC
-dhm_tls_decode_premaster_secret,1208558,76,THUMB_32,FUNC
-lrm_ConvertRollover,796880,38,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part3_cb,903756,42,THUMB_32,FUNC
-dh_tls_create_premaster_secret,1208634,78,THUMB_32,FUNC
-"lrm_ComputeScoBZL, lrm_ComputeScoBZL",798900,56,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part4_isr,904284,42,THUMB_32,FUNC
-microrng_rand,1210574,440,THUMB_32,FUNC
-lrm_ConvertRealToLmp,799192,34,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part9_cb,904590,42,THUMB_32,FUNC
-aes_setkey_enc,1211014,416,THUMB_32,FUNC
-lrm_FindOffset,801894,112,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part8_cb,904662,42,THUMB_32,FUNC
-aes_crypt_cbc,1213492,134,THUMB_32,FUNC
-_lrm_NumOfIncompatibleIntervals,802006,80,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part7_cb,904740,42,THUMB_32,FUNC
-arc4_setup,1213752,64,THUMB_32,FUNC
-_lrm_ClearSamLinks,802776,66,THUMB_32,FUNC
-hw_pka_ecp_ecdsa_verf_part6_cb,904820,42,THUMB_32,FUNC
-camellia_crypt_cbc,1215536,134,THUMB_32,FUNC
-lrm_findBzl,803416,76,THUMB_32,FUNC
-hw_pka_dsa_sign_part2_cb,905418,40,THUMB_32,FUNC
-camellia_crypt_cfb128,1215670,874,THUMB_32,FUNC
-"lrm_SlotUsed, lrm_SlotUsed",806424,32,THUMB_32,FUNC
-hw_pka_dsa_sign_part1_cb,905494,40,THUMB_32,FUNC
-des_setkey_dec,1216548,176,THUMB_32,FUNC
-lrm_NewMulticastSlaveLink,807084,60,THUMB_32,FUNC
-hw_pka_dsa_verf_part2_cb,906460,40,THUMB_32,FUNC
-md4_starts,1218688,1270,THUMB_32,FUNC
-lrm_NewMulticastIndPollSlaveLink,807292,60,THUMB_32,FUNC
-hw_pka_dsa_verf_part1_cb,906536,40,THUMB_32,FUNC
-md4_update,1219958,114,THUMB_32,FUNC
-lrm_NewLteCoexLink,807352,64,THUMB_32,FUNC
-hw_pka_rsa_keygen_q,908636,44,THUMB_32,FUNC
-md5_finish,1220072,190,THUMB_32,FUNC
-lrm_SetBleConnBzl,807422,50,THUMB_32,FUNC
-hw_pka_rsa_keygen_p,908680,42,THUMB_32,FUNC
-dynamic_memory_Release,453474,60,THUMB_32,FUNC
-celt_plc_Mpy_32_16,642596,80,THUMB_32,FUNC
-lm_handleLmpSlotOffsetPdu,456632,70,THUMB_32,FUNC
-mpi_lsb,667590,46,THUMB_32,FUNC
-tssical_computeScaledTcaValue,460198,84,THUMB_32,FUNC
-mpi_msb,667636,50,THUMB_32,FUNC
-_ape_transactionDone,461060,90,THUMB_32,FUNC
-mpi_size,667686,66,THUMB_32,FUNC
-ape_HandleLmpPduCb,461150,32,THUMB_32,FUNC
-mpi_cmp_abs,668010,108,THUMB_32,FUNC
-lm_SendLmpStartEncryptReq,461242,80,THUMB_32,FUNC
-mpi_shift_r,670216,124,THUMB_32,FUNC
-lm_SendLmpPauseEncryptionAESReq,462752,86,THUMB_32,FUNC
-mpi_cmp_mpi,670340,148,THUMB_32,FUNC
-ape_check_fail_device,463494,56,THUMB_32,FUNC
-gatt_get_tcb_by_idx,674712,48,THUMB_32,FUNC
-_ape_action_txSres,463850,170,THUMB_32,FUNC
-gatt_sr_send_req_callback,675546,42,THUMB_32,FUNC
-lm_SendLmpEncryptModeReq,465334,104,THUMB_32,FUNC
-gatt_sr_dispatchExtValueCb,675588,116,THUMB_32,FUNC
-_ape_add_auth_fail_device,466242,190,THUMB_32,FUNC
-gatt_add_sdp_record,675818,216,THUMB_32,FUNC
-lm_HandleLmpSresPdu,467276,170,THUMB_32,FUNC
-gatt_is_clcb_allocated,676034,70,THUMB_32,FUNC
-_ape_action_procUnitKey,467710,74,THUMB_32,FUNC
-gatt_clcb_alloc,676104,102,THUMB_32,FUNC
-lm_SendLmpEncryptKeySizeReq,468334,52,THUMB_32,FUNC
-gatt_find_tcb_by_cid,676226,78,THUMB_32,FUNC
-lm_HandleLmpInRandAcceptedPdu,469752,48,THUMB_32,FUNC
-gatt_cmd_enq,676548,72,THUMB_32,FUNC
-lm_HandleLmpEncryptModeReqAcceptedPdu,470124,86,THUMB_32,FUNC
-gatt_cmd_dequeue,676620,92,THUMB_32,FUNC
-lm_HandleLmpUseSemiPermKeyAcceptedPdu,471328,62,THUMB_32,FUNC
-btm_sec_start_get_name,680444,52,THUMB_32,FUNC
-testulp_loadPrbs15Pattern,472894,88,THUMB_32,FUNC
-btm_sec_execute_procedure,680496,154,THUMB_32,FUNC
-autocor_nb,473696,1372,THUMB_32,FUNC
-btm_sec_use_smp_br_chnl,684408,44,THUMB_32,FUNC
-autocor_wb,475068,1360,THUMB_32,FUNC
-btm_sec_send_hci_disconnect,686458,104,THUMB_32,FUNC
-erasure_fx2,476428,360,THUMB_32,FUNC
-btm_sec_is_a_bonded_dev,687056,38,THUMB_32,FUNC
-cvsd_step_size_estimate,476788,252,THUMB_32,FUNC
-btm_sec_dev_rec_cback_event,687160,56,THUMB_32,FUNC
-Div_32_ARM,477068,56,THUMB_32,FUNC
-BTM_BleSetPrefConnParams,690558,146,THUMB_32,FUNC
-Norm64,477124,60,THUMB_32,FUNC
-btm_ble_increment_sign_ctr,691140,38,THUMB_32,FUNC
-smdpitch_fine_wb,477184,864,THUMB_32,FUNC
-btm_get_local_div,691200,34,THUMB_32,FUNC
-smdpitch_fine_nb,478048,468,THUMB_32,FUNC
-btm_ble_set_encryption,692220,132,THUMB_32,FUNC
-sfi_size,481182,42,THUMB_32,FUNC
-BTM_BleVerifySignature,694010,112,THUMB_32,FUNC
-sfi_deepPowerDownDisable,481324,36,THUMB_32,FUNC
-BTM_GetLeSecurityState,694122,108,THUMB_32,FUNC
-host_sendHcpMsg,773858,50,THUMB_32,FUNC
-hostctlr_isPidValid,773942,32,THUMB_32,FUNC
-hostctlr_getPipeRxState,773974,46,THUMB_32,FUNC
-hostctlr_findAnyHostPair,774268,58,THUMB_32,FUNC
-hostctlr_getPipeState,774326,46,THUMB_32,FUNC
-hostctlr_setPipeState,774372,52,THUMB_32,FUNC
-hostctlr_getDPipeList,774744,92,THUMB_32,FUNC
-hostctlr_findPid4HostPair,774836,48,THUMB_32,FUNC
-hostctlr_findPid4Gate,774884,62,THUMB_32,FUNC
-host_getHidTalkToDh,775310,36,THUMB_32,FUNC
-host_managePipeState,775346,56,THUMB_32,FUNC
-ulp_rl_locateItemByLocalRpa,778904,56,THUMB_32,FUNC
-ulp_rl_locateItemByPeerIdAddrAndType,778960,56,THUMB_32,FUNC
-ulp_rl_itemIdx2Ptr,779016,32,THUMB_32,FUNC
-ulp_rl_itemPtr2Idx,779048,70,THUMB_32,FUNC
-ulp_rl_getAnEmptyItem,779118,40,THUMB_32,FUNC
-ulp_rl_retireThisItem,779158,78,THUMB_32,FUNC
-ulp_rl_rpaNotBuffered,779650,130,THUMB_32,FUNC
-ulp_rl_rpaGenStMach_refreshOndemand,779878,146,THUMB_32,FUNC
-ulp_rl_rpaGenStMach_procGenDone,780160,238,THUMB_32,FUNC
-ulp_rl_rpaGenStMach_procLmTimerTick,780398,108,THUMB_32,FUNC
-ulp_rl_invalidateLocalRpa,781506,32,THUMB_32,FUNC
-ulp_rl_setRpaTimeout,781764,32,THUMB_32,FUNC
-arip_audRM_GetSynch,784076,40,THUMB_32,FUNC
-arip_audRM_GetFra,784116,40,THUMB_32,FUNC
-arip_audRM_GetFiFo,784156,34,THUMB_32,FUNC
-arip_audRM_GetHld,784358,40,THUMB_32,FUNC
-_lm_sam_InitializeSlotmapsForSIG,787664,92,THUMB_32,FUNC
-_tx_thread_initialize,7376,52,THUMB_32,FUNC
-"l2c_fcr_adj_monitor_retran_timeout, l2c_fcr_adj_monitor_retran_timeout",976740,50,THUMB_32,FUNC
-adc_convertGPIOtoADCInput,1092192,72,THUMB_32,FUNC
-_tx_thread_stack_build,8204,64,THUMB_32,FUNC
-l2c_fcr_adj_our_rsp_options,976790,64,THUMB_32,FUNC
-adc_convertADCInputtoGPIO,1092264,72,THUMB_32,FUNC
-OTP_Standby,9536,36,THUMB_32,FUNC
-l2c_fcr_process_peer_cfg_req,976854,302,THUMB_32,FUNC
-spiffyd_txWord,1096056,34,THUMB_32,FUNC
-OTP_PowerOn,9612,66,THUMB_32,FUNC
-smp_concatenate_local,979132,46,THUMB_32,FUNC
-spiffyd_txWord,1097148,34,THUMB_32,FUNC
-Read_Static_BitErrors,9896,60,THUMB_32,FUNC
-smp_process_stk,979738,38,THUMB_32,FUNC
-hidd_l2cif_cong_ind,1098388,66,THUMB_32,FUNC
-Apply_Static_BitError_Correction,9956,64,THUMB_32,FUNC
-smp_calc_num_to_disp_nc,980732,92,THUMB_32,FUNC
-hidd_no_conn_proc_evt,1099804,80,THUMB_32,FUNC
-Read_Entire_OTP_Data,10044,40,THUMB_32,FUNC
-smp_calc_peer_dhkey_chck,981484,102,THUMB_32,FUNC
-hidd_proc_repage_timeout,1099884,70,THUMB_32,FUNC
-pmu_sleep_PreSleep,10934,74,THUMB_32,FUNC
-smp_build_pairing_cmd,982218,66,THUMB_32,FUNC
-hidd_connecting_proc_evt,1099954,94,THUMB_32,FUNC
-synch_AcquireMutex,13120,98,THUMB_32,FUNC
-smp_pair_req_rsp_par_valid,983296,48,THUMB_32,FUNC
-hidd_connected_proc_evt,1100074,76,THUMB_32,FUNC
-reset_SetBluetoothUARTBaudRate,1206,50,THUMB_32,FUNC
-synch_ReleasePriorityMutex,13524,54,THUMB_32,FUNC
-smp_reject_unexp_pair_cmd,983368,38,THUMB_32,FUNC
-hidd_disc_ing_proc_evt,1100150,38,THUMB_32,FUNC
-btuarth4_InitiateReceive,15728,36,THUMB_32,FUNC
-"smp_select_assoc_model, smp_select_assoc_model",983606,48,THUMB_32,FUNC
-l2c_fcr_updcrc,1100188,36,THUMB_32,FUNC
-h4_IsPmuPauseAllowed,17556,34,THUMB_32,FUNC
-smp_reverse_array,983654,36,THUMB_32,FUNC
-avrc_ctrl_cback,1103190,54,THUMB_32,FUNC
-_tx_mutex_cleanup,17652,108,THUMB_32,FUNC
-_d2e_denorm_low,984236,70,THUMB_32,FUNC
-avrc_start_cmd_timer,1103244,42,THUMB_32,FUNC
-extract_even_bits,19040,36,THUMB_32,FUNC
-__btod_div_common,984306,824,THUMB_32,FUNC
-avrc_get_data_ptr,1103416,52,THUMB_32,FUNC
-high_pri_msg_Init,6062,40,THUMB_32,FUNC
-OTP_GetHammingParity,19136,710,THUMB_32,FUNC
-_e2e,985130,198,THUMB_32,FUNC
-avrc_prep_end_frag,1103468,94,THUMB_32,FUNC
-__tx_SVCallHandler,5388,158,THUMB_32,FUNC
-OTP_FEC_Locate_Bit_Error,19846,54,THUMB_32,FUNC
-__btod_mult_common,985328,580,THUMB_32,FUNC
-AVRC_PassCmd,1106054,112,THUMB_32,FUNC
-_tx_thread_context_restore,5288,68,THUMB_32,FUNC
-OTP_GetFECParityByte,19900,350,THUMB_32,FUNC
-"gki_add_pool_to_list, gki_add_pool_to_list",986164,50,THUMB_32,FUNC
-AVRC_PassRsp,1106166,54,THUMB_32,FUNC
-slimboot_start,2764,46,THUMB_32,FUNC
-pmu_lpo_update_average,20456,40,THUMB_32,FUNC
-GKI_enqueue,986968,86,THUMB_32,FUNC
-AVRC_VendorRsp,1107126,34,THUMB_32,FUNC
-pmu_lpo_SwitchLPOSource,20902,176,THUMB_32,FUNC
-GKI_find_buf_start,987640,62,THUMB_32,FUNC
-avrc_bld_get_capability_cmd,1107160,42,THUMB_32,FUNC
-_tx_thread_time_slice,22496,96,THUMB_32,FUNC
-gatt_channel_congestion,987904,68,THUMB_32,FUNC
-avrc_bld_get_cur_app_setting_value_cmd,1107252,134,THUMB_32,FUNC
-slimboot_clear_ram,2810,86,THUMB_32,FUNC
-uart_ReceiveSynch,23424,56,THUMB_32,FUNC
-gatt_update_app_hold_link_status,988178,80,THUMB_32,FUNC
-avrc_bld_get_app_setting_value_text_cmd,1107556,108,THUMB_32,FUNC
-high_pri_msg_RegisterHandler,6102,120,THUMB_32,FUNC
-uart_SynchToEnter_Download_Mode,23480,228,THUMB_32,FUNC
-gatt_update_app_use_link_flag,988258,78,THUMB_32,FUNC
-avrc_bld_inform_charset_cmd,1107664,68,THUMB_32,FUNC
-high_pri_msg_UnregisterHandler,6222,98,THUMB_32,FUNC
-uart_ProgramDHBR_DLBR,23732,76,THUMB_32,FUNC
-bleconn_proc_credits_from_peer,989348,70,THUMB_32,FUNC
-avrc_bld_inform_battery_status_cmd,1107732,38,THUMB_32,FUNC
-_tx_initialize_high_level,6380,32,THUMB_32,FUNC
-uart_PerformAutobaudMeasurement,23808,154,THUMB_32,FUNC
-l2c_bleconn_execute,990612,54,THUMB_32,FUNC
-avrc_bld_get_elem_attrs_cmd,1107770,142,THUMB_32,FUNC
-_tx_initialize_low_level,6412,48,THUMB_32,FUNC
-uart_PerformAutobaud,23962,52,THUMB_32,FUNC
-sdpu_build_attrib_seq,993154,92,THUMB_32,FUNC
-avrc_bld_notify_cmd,1107916,62,THUMB_32,FUNC
-spiffy_sw_reset,6680,62,THUMB_32,FUNC
-btuart_flex_HandleUpdate_Uart_Baud_Rate,28738,46,THUMB_32,FUNC
-sdpu_get_len_from_type,993246,88,THUMB_32,FUNC
-avrc_bld_set_addr_player_cmd,1108036,34,THUMB_32,FUNC
-spiffy_write_quad,6912,90,THUMB_32,FUNC
-bttransport_Disable,35412,52,THUMB_32,FUNC
-sdpu_extract_uid_seq,993506,258,THUMB_32,FUNC
-avrc_bld_set_abs_volume_cmd,1108070,32,THUMB_32,FUNC
-spiffy_get_base_clock_khz,7248,50,THUMB_32,FUNC
-bttransport_Detect,35584,62,THUMB_32,FUNC
-sdpu_extract_attr_seq,993764,254,THUMB_32,FUNC
-avrc_bld_set_browsed_player_cmd,1108102,34,THUMB_32,FUNC
-spiffy_get_tport_div,7298,78,THUMB_32,FUNC
-utilPower2dB,352012,54,THUMB_32,FUNC
-MP_MersennsMultMod_P256_ASM,571808,1130,THUMB_32,FUNC
-sdpu_get_first_attr,994026,34,THUMB_32,FUNC
-md5_starts,1220544,1742,THUMB_32,FUNC
-levelMinimaxTrack,352066,424,THUMB_32,FUNC
-MP_MersennsSquaMod_P256_ASM,572938,1458,THUMB_32,FUNC
-sdpu_get_first_attr,994128,34,THUMB_32,FUNC
-md5_update,1222286,114,THUMB_32,FUNC
-levelEstimatorInit,352490,66,THUMB_32,FUNC
-slidingWin_addTail,575696,148,THUMB_32,FUNC
-sdpu_compare_uuid_arrays,994282,226,THUMB_32,FUNC
-md5_finish,1222400,190,THUMB_32,FUNC
-VAD_TransmitSCO,353616,44,THUMB_32,FUNC
-_shdlc_handleNr,576294,76,THUMB_32,FUNC
-sdpu_compare_bt_uuids,994508,54,THUMB_32,FUNC
-seed_cbc_encrypt,1230944,90,THUMB_32,FUNC
-vad_hci_WriteVadMode,353660,78,THUMB_32,FUNC
-_shdlc_procS,576730,54,THUMB_32,FUNC
-sdpu_compare_uuid_with_attr,994562,58,THUMB_32,FUNC
-seed_cbc_decrypt,1231034,90,THUMB_32,FUNC
-radio_control_enableRadio,353856,58,THUMB_32,FUNC
-swpllcshdlc_isRSETSupported,576970,68,THUMB_32,FUNC
-sdpu_sort_attr_list,994620,58,THUMB_32,FUNC
-sha2_starts,1231124,7314,THUMB_32,FUNC
-radio_control_HandleMsgInIdleThread,354006,32,THUMB_32,FUNC
-swpllcshdlc_procPdu,577152,76,THUMB_32,FUNC
-sdpu_get_attr_id,994678,38,THUMB_32,FUNC
-sha2_update,1238438,114,THUMB_32,FUNC
-_sniff_sendHciSubratingEvent,355632,68,THUMB_32,FUNC
-swpllcshdlc_handleSeqnum,577516,72,THUMB_32,FUNC
-sdpu_get_list_len,994812,56,THUMB_32,FUNC
-sha2_finish,1238552,286,THUMB_32,FUNC
-_sniff_initiateSubrating,355700,86,THUMB_32,FUNC
-lm_SendLmpQoS,578008,46,THUMB_32,FUNC
-sdpu_get_rec_handle,994942,106,THUMB_32,FUNC
-asn1_read_length,1239172,56,THUMB_32,FUNC
-_sniff_rejectHostSniffReq,357660,52,THUMB_32,FUNC
-Command_ResponseMessage,578632,64,THUMB_32,FUNC
-smp_update_key_mask,995328,78,THUMB_32,FUNC
-lm_HandleLmpTestControlPdu,1244042,34,THUMB_32,FUNC
-BTMMstr_IsRxPayloadCorrect,360190,78,THUMB_32,FUNC
-celt_ec_enc_init,579984,34,THUMB_32,FUNC
-smp_key_pick_key,996190,56,THUMB_32,FUNC
-CELT_enc_encode,1245712,74,THUMB_32,FUNC
-_initTaskSetDefaultPriority,361676,54,THUMB_32,FUNC
-mpaf_core_read_buffer_size,587218,78,THUMB_32,FUNC
-smp_br_key_distribution,996448,82,THUMB_32,FUNC
-celt_opus_packet_get_bandwidth,1246120,62,THUMB_32,FUNC
-_initTaskLcuCmd,362078,74,THUMB_32,FUNC
-mpaf_core_read_local_version_information,587466,50,THUMB_32,FUNC
-smp_wait_both_publ_keys,997282,58,THUMB_32,FUNC
-celt_opus_packet_get_nb_frames,1246296,46,THUMB_32,FUNC
-_ll_ushift_r,368636,38,THUMB_32,FUNC
-mpaf_tranSapInstallHidCtrlChain,588348,40,THUMB_32,FUNC
-smp_br_check_auth_req,997824,104,THUMB_32,FUNC
-celt_opus_decode,1248480,52,THUMB_32,FUNC
-__memmove_aligned,368712,56,THUMB_32,FUNC
-mpaf_tranSapInstallHidCtrlChain,588422,40,THUMB_32,FUNC
-smp_start_enc,998442,54,THUMB_32,FUNC
-celt_plc_Init_LC_PLC,1249006,358,THUMB_32,FUNC
-mmu_IsAddressInRAM,368796,48,THUMB_32,FUNC
-mpaf_tranSapInstallHidCtrlChain,588462,40,THUMB_32,FUNC
-smp_check_auth_req,998536,174,THUMB_32,FUNC
-celt_ec_dec_init,1258836,120,THUMB_32,FUNC
-iqcal_scaleInput,373750,76,THUMB_32,FUNC
-SDP_CancelServiceSearch,589904,38,THUMB_32,FUNC
-port_find_port_cb,1000764,42,THUMB_32,FUNC
-celt_ec_decode,1258956,40,THUMB_32,FUNC
-iqcal_writeInput,373826,130,THUMB_32,FUNC
-"SDP_FindAttributeInDb, SDP_FindAttributeInDb",589972,38,THUMB_32,FUNC
-"port_find_verify_port_cb, port_find_verify_port_cb",1000806,36,THUMB_32,FUNC
-celt_ec_decode_bin,1258996,44,THUMB_32,FUNC
-iqcal_gssInit,374154,180,THUMB_32,FUNC
-SDP_FindServiceUUIDInRec,590024,218,THUMB_32,FUNC
-port_find_mcb_dlci_port,1001302,46,THUMB_32,FUNC
-celt_ec_dec_update,1259040,112,THUMB_32,FUNC
-apuRxTxState_copyChnToS0,377588,32,THUMB_32,FUNC
-"SDP_FindServiceInDb, SDP_FindServiceInDb",590242,200,THUMB_32,FUNC
-port_find_dlci_port,1001348,78,THUMB_32,FUNC
-celt_ec_dec_bit_logp,1259152,106,THUMB_32,FUNC
-bthci_event_filter_SetupInquiryFilterWithClassOfDevice,377734,114,THUMB_32,FUNC
-"sdp_fill_proto_elem, sdp_fill_proto_elem",590556,124,THUMB_32,FUNC
-port_get_signal_changes,1001612,70,THUMB_32,FUNC
-celt_ec_dec_icdf,1259258,116,THUMB_32,FUNC
-bthci_event_filter_SetupConnSetupFilterWithClassOfDevice,377974,120,THUMB_32,FUNC
-SDP_FindProtocolListElemInRec,590680,36,THUMB_32,FUNC
-sdp_db_service_search,1002002,164,THUMB_32,FUNC
-celt_ec_dec_bits,1259374,84,THUMB_32,FUNC
-bthci_event_filter_SetupConnSetupFilterWithBdAddr,378094,104,THUMB_32,FUNC
-SDP_FindProfileVersionInRec,590800,114,THUMB_32,FUNC
-sdp_db_find_record,1002166,78,THUMB_32,FUNC
-celt_opus_packet_parse,1260578,38,THUMB_32,FUNC
-bthci_event_filter_InquiryResultIsNotFiltered,378198,146,THUMB_32,FUNC
-wiced_transport_send_buffer,591616,84,THUMB_32,FUNC
-sdp_db_find_attr_in_rec,1002244,56,THUMB_32,FUNC
-celt_gen_toc,1260894,54,THUMB_32,FUNC
-bthci_event_filter_DetermineAutoAcceptAndRole,378344,34,THUMB_32,FUNC
-wiced_transport_get_tx_pool,591700,38,THUMB_32,FUNC
-"padding, padding",1002350,36,THUMB_32,FUNC
-opus_encoder_create,1260948,96,THUMB_32,FUNC
-hciulp_sendStartUntetheredRFTestCommandCompleteEvent,378724,34,THUMB_32,FUNC
-wiced_transport_free_buffer,591738,42,THUMB_32,FUNC
-rfc_mx_sm_sabme_wait_ua,1003292,88,THUMB_32,FUNC
-celt_user_bitrate_to_bitrate,1261044,64,THUMB_32,FUNC
-lculp_stopUntetheredRFTestTask,378842,38,THUMB_32,FUNC
-swpmac_isr,593258,36,THUMB_32,FUNC
-rfc_mx_sm_execute,1003490,50,THUMB_32,FUNC
-celt_downmix_int,1261108,398,THUMB_32,FUNC
-_batchingSizeOfFullRecord,379804,36,THUMB_32,FUNC
-BTM_AddEirService,605146,36,THUMB_32,FUNC
-rfc_send_buf_uih,1003900,204,THUMB_32,FUNC
-celt_frame_size_select,1261506,142,THUMB_32,FUNC
-_pageTaskTxDone,299764,38,THUMB_32,FUNC
-q_pka_sel_LIR,704088,150,THUMB_32,FUNC
-lm_handleCmdTrace,809308,70,THUMB_32,FUNC
-btclk_DelayXus,853852,46,THUMB_32,FUNC
-gatt_get_link_encrypt_status,958998,50,THUMB_32,FUNC
-wiced_trace_array,1136790,162,THUMB_32,FUNC
-_samInstantTaskGetNewPtr,300000,36,THUMB_32,FUNC
-q_pka_LIR_size,704238,98,THUMB_32,FUNC
-bcs_kernelGetCoarseScheduledSlotsWithCurrSlot,813588,76,THUMB_32,FUNC
-btclk_AdvanceNatClk_clkpclkHWWA,854482,104,THUMB_32,FUNC
-l2c_csm_execute,961318,62,THUMB_32,FUNC
-wiced_bt_trace_array,1136952,152,THUMB_32,FUNC
-bcs_sam_isSamActive,300322,64,THUMB_32,FUNC
-q_pka_hw_write_sequence,704372,64,THUMB_32,FUNC
-bcs_kernelIncreaseResyncWindows,816680,86,THUMB_32,FUNC
-btclk_GetSysClkOffsetAgainstNatClk_clkpclk,855246,40,THUMB_32,FUNC
-l2c_link_add_tx_complete_pending,962516,84,THUMB_32,FUNC
-outDgt,1137244,42,THUMB_32,FUNC
-_coexIsA2dpLink,301016,50,THUMB_32,FUNC
-q_pka_hw_read_LIR,704544,44,THUMB_32,FUNC
-bcs_kernelBtProgIntDisable,817418,32,THUMB_32,FUNC
-btclk_Convert_us_clkpclk_precise,856600,40,THUMB_32,FUNC
-port_open_continue,967668,84,THUMB_32,FUNC
-divOut,1137286,34,THUMB_32,FUNC
-_coexEnableHWMode,301732,54,THUMB_32,FUNC
-hw_aes_init,705090,56,THUMB_32,FUNC
-bcs_kernelCheckPhyStatus,817450,52,THUMB_32,FUNC
-btclk_GetSysClkOffsetAgainstSysClk_clkpclk,856868,44,THUMB_32,FUNC
-PORT_PortNegInd,968786,72,THUMB_32,FUNC
-print_array,1137320,50,THUMB_32,FUNC
-bcs_coexSlaveUpdateDeferCounter,302264,72,THUMB_32,FUNC
-hw_aes_set_free,705768,40,THUMB_32,FUNC
-bcs_kernelClockRolloverCheck,817502,74,THUMB_32,FUNC
-btclk_SubtractiveConvert_us_clkpclk,856918,38,THUMB_32,FUNC
-PORT_LineStatusInd,969250,72,THUMB_32,FUNC
-wiced_printf,1137868,104,THUMB_32,FUNC
-bcs_coexCmd_esco_retran,303232,48,THUMB_32,FUNC
-hw_aes_check_param,705824,92,THUMB_32,FUNC
-rm_calculateInqScanAccessCodes,824816,92,THUMB_32,FUNC
-memcmp,857872,88,THUMB_32,FUNC
-Port_TimeOutCloseMux,969398,48,THUMB_32,FUNC
-wiced_audio_request_samples,1139096,78,THUMB_32,FUNC
-tester_PROT_ARQ_BV_38_C_expectPauseEncryption,304560,62,THUMB_32,FUNC
-hw_aes_isr,706236,68,THUMB_32,FUNC
-rm_setHostAFHChannelMap,824908,50,THUMB_32,FUNC
-bcsulp_releaseLEAudioLink,858506,52,THUMB_32,FUNC
-strncpy,970840,88,THUMB_32,FUNC
-wiced_read_sbc_params,1139290,98,THUMB_32,FUNC
-tester_PROT_ARQ_BV_38_C_lmpTransmittedCheck,304622,32,THUMB_32,FUNC
-hw_sha2_isr,706692,58,THUMB_32,FUNC
-rm_getACLConnPtr,824988,32,THUMB_32,FUNC
-mmulp_allocLEABuffer,859146,42,THUMB_32,FUNC
-_printf_fp_infnan,970952,128,THUMB_32,FUNC
-wiced_get_sbcenc_frame_length,1139420,96,THUMB_32,FUNC
-tester_PROT_ARQ_BV_38_C_increaseCount,304654,40,THUMB_32,FUNC
-q_init,716810,60,THUMB_32,FUNC
-rm_setPeriodicInquiryParam,826184,50,THUMB_32,FUNC
-bcsulp_cleanupLEAudioInfo,859776,36,THUMB_32,FUNC
-_btod_etento,971080,228,THUMB_32,FUNC
-wiced_get_sbcdec_frame_length,1139516,36,THUMB_32,FUNC
-tester_PROT_ARQ_BV_40_C_increaseCount,304724,36,THUMB_32,FUNC
-q_copy,716870,58,THUMB_32,FUNC
-rm_getConnFromBdAddress,826234,88,THUMB_32,FUNC
-bcsulp_isPrimaryEvent,859824,38,THUMB_32,FUNC
-_btod_d2e,971308,62,THUMB_32,FUNC
-wiced_get_codec_info,1139552,156,THUMB_32,FUNC
-tester_PROT_ARQ_BV_40_C_receivedAndIncreaseGlobalCount,304760,42,THUMB_32,FUNC
-q_free,716928,38,THUMB_32,FUNC
-rm_getConnFromBdAddress_connected,826322,94,THUMB_32,FUNC
-bcsulp_setAudioPktTimeStamp,859900,62,THUMB_32,FUNC
-_btod_ediv,971370,40,THUMB_32,FUNC
-devlpm_registeredObjectsApproveHidOff,1143772,36,THUMB_32,FUNC
-tester_PROT_ARQ_BV_42_C_l2capTransmittedCheck,304830,46,THUMB_32,FUNC
-btm_ble_adv_states_operation,717100,42,THUMB_32,FUNC
-rm_getLPMCount,826416,64,THUMB_32,FUNC
-_connTaskDeterminCurrentPHYSetting,868436,110,THUMB_32,FUNC
-_btod_emul,971410,40,THUMB_32,FUNC
-devlpm_timeToSleep,1143808,120,THUMB_32,FUNC
-tester_PROT_ARQ_BV_42_C_increaseCount,304906,42,THUMB_32,FUNC
-btm_ble_stop_observe,717778,58,THUMB_32,FUNC
-rm_getConnectionHandle,826480,76,THUMB_32,FUNC
-_connTaskSetChannels,868546,58,THUMB_32,FUNC
-__ARM_fpclassify,971450,50,THUMB_32,FUNC
-devlpm_isSleepAllowed,1143928,38,THUMB_32,FUNC
-tester_corruptAclPayload,304964,66,THUMB_32,FUNC
-btm_ble_stream_adv_data,718934,64,THUMB_32,FUNC
-rm_adjustNPCCfgThreshold,826794,102,THUMB_32,FUNC
-_connTaskHopDataChannel,868740,166,THUMB_32,FUNC
-l2cu_ble_get_next_channel_in_rr,971958,68,THUMB_32,FUNC
-devlpm_registerForLowPowerQueries,1143996,32,THUMB_32,FUNC
-tester_corruptEscoPayload,305042,62,THUMB_32,FUNC
-ANT_Time_AddBTTime,720872,62,THUMB_32,FUNC
-rm_assignHciConnHandle,827140,72,THUMB_32,FUNC
-_connTaskSetAlarmLevel,868906,78,THUMB_32,FUNC
-l2c_ble_check_channel_congestion,972026,70,THUMB_32,FUNC
-poly1305_auth,1182194,40,THUMB_32,FUNC
-tester_firstL2capTransmittedCheck,305104,32,THUMB_32,FUNC
-ANT_Time_BTTimeDiff,720934,50,THUMB_32,FUNC
-rm_releaseHciConnHandle,828462,50,THUMB_32,FUNC
-_bcsulp_linkQuality_calculate,870160,90,THUMB_32,FUNC
-"l2cu_ble_enqueue_lecb, l2cu_ble_enqueue_lecb",972562,72,THUMB_32,FUNC
-chacha20_poly1305_aead_irtf_cfrg,1182720,198,THUMB_32,FUNC
-tester_nackL2cap,305136,62,THUMB_32,FUNC
-hidh_le_alloc_rpt_entry,734680,96,THUMB_32,FUNC
-rm_getBBConnectedACLUsage,828944,52,THUMB_32,FUNC
-_bcsulp_linkQuality_update,870250,32,THUMB_32,FUNC
-"l2cu_ble_dequeue_lecb, l2cu_ble_dequeue_lecb",972714,106,THUMB_32,FUNC
-chacha20_poly1305_aead_tls_decrypt,1183128,208,THUMB_32,FUNC
-_advTaskSetupChanMap,306780,120,THUMB_32,FUNC
-hidh_le_read_rpt_ref_dscpt,734878,122,THUMB_32,FUNC
-rm_getMasterACLUsage,829544,42,THUMB_32,FUNC
-bcsulp_connUpdateLateAdjustment,870486,82,THUMB_32,FUNC
-l2cu_ble_find_lecb_by_local_id,973434,52,THUMB_32,FUNC
-chacha_keysetup,1184232,66,THUMB_32,FUNC
-advTaskGetQueue,307436,78,THUMB_32,FUNC
-hidh_le_expl_rpt,735072,54,THUMB_32,FUNC
-rm_supportSecureConnections,829784,44,THUMB_32,FUNC
-bcsulp_connTaskTxDataAck,873560,60,THUMB_32,FUNC
-l2cu_ble_determ_security_act,973564,84,THUMB_32,FUNC
-chacha_encrypt_bytes,1184344,102,THUMB_32,FUNC
-advTaskInsertQueue,307514,60,THUMB_32,FUNC
-hidh_le_gattc_get_disc_range,735668,44,THUMB_32,FUNC
-rm_checkAclPktTypeLegality,830034,70,THUMB_32,FUNC
-_connTaskAdjustIntervalForLatency,876252,58,THUMB_32,FUNC
-"rfc_find_lcid_mcb, rfc_find_lcid_mcb",973656,48,THUMB_32,FUNC
-chacha20_block_function,1184492,52,THUMB_32,FUNC
-bcsulp_advGetInstanceFromTask,308426,56,THUMB_32,FUNC
-hidh_le_gattc_start_char_disc,735786,34,THUMB_32,FUNC
-rm_hci_EnableDeviceUnderTestMode,830128,40,THUMB_32,FUNC
-bcsulp_connTaskSetReason4HostFromConnState,876524,58,THUMB_32,FUNC
-RFCOMM_BufDataInd,973730,224,THUMB_32,FUNC
-sha4,1188282,50,THUMB_32,FUNC
-_advTaskAdvanceSysClk00,309678,104,THUMB_32,FUNC
-hidh_le_gatt_disc_cmplt_cb,736166,52,THUMB_32,FUNC
-rm_eventInVSEventMask,830488,34,THUMB_32,FUNC
-bcsulp_checkDataPath,877780,102,THUMB_32,FUNC
-strcmp,974224,128,THUMB_32,FUNC
-sha4_hmac_starts,1188332,126,THUMB_32,FUNC
-_advTaskRxHeaderDone,311042,34,THUMB_32,FUNC
-hidh_le_gattc_srvc_in_list,736592,54,THUMB_32,FUNC
-bcs_timeline_CalculateDebugIdAndDebugDataCounts,831684,282,THUMB_32,FUNC
-_connTaskRestoreRefreshInstantState,878840,84,THUMB_32,FUNC
-_d2e_norm_op1,974352,96,THUMB_32,FUNC
-sha4_hmac_finish,1188460,76,THUMB_32,FUNC
-bcsulp_advFindTaskByLtch,311656,76,THUMB_32,FUNC
-hidh_le_find_rpt_entry_by_hdl,736842,42,THUMB_32,FUNC
-bcs_timeline_CalculateRecordCounts,831966,152,THUMB_32,FUNC
-bcsulp_connTaskIsTxPending,880726,36,THUMB_32,FUNC
-GATTC_SendHandleValueConfirm,975572,56,THUMB_32,FUNC
-sha1_starts,1188892,4228,THUMB_32,FUNC
-_plc_init_cvsdupdate,312348,50,THUMB_32,FUNC
-hidh_le_process_notification,736884,142,THUMB_32,FUNC
-bcs_timeline_CalculateTaskIdAndPriorityCounts,832118,142,THUMB_32,FUNC
-bcs_pmuTimeToSleepCallback,882522,64,THUMB_32,FUNC
-l2c_fcr_is_flow_controlled,976314,36,THUMB_32,FUNC
-sha1_update,1193120,114,THUMB_32,FUNC
-plcSetupApuExtFilter,312552,114,THUMB_32,FUNC
-hidh_le_gatt_cmplt_cb,737026,138,THUMB_32,FUNC
-bcs_timeline_CompressData,832260,302,THUMB_32,FUNC
-utilslib_uint16tostr,889562,36,THUMB_32,FUNC
-l2c_fcr_proc_ack_tout,976444,46,THUMB_32,FUNC
-sha1_finish,1193234,212,THUMB_32,FUNC
-utilslib_countBits,889650,44,THUMB_32,FUNC
+name addr size mode type
+DHM_peekFrontTxLmp 98962 46 THUMB_32 FUNC
+_lrm_isWholeHolePresent 225796 40 THUMB_32 FUNC
+DHM_isTxLmpListEmpty 99022 32 THUMB_32 FUNC
+_lrm_needRearrangeCAT0Link 226634 32 THUMB_32 FUNC
+handlePacketBoundary_FlushTimeout_Logic 99166 132 THUMB_32 FUNC
+_lrm_isPartialHolePresent 226666 38 THUMB_32 FUNC
+_dhm_okToSendLZP 100018 96 THUMB_32 FUNC
+bcs_ecsiTaskInit 228016 66 THUMB_32 FUNC
+DHM_SetHostPktTypeFlags 101264 82 THUMB_32 FUNC
+bcs_ecsiDisable 228084 44 THUMB_32 FUNC
+DHM_HandleRxPktL2CAPFlowBit 103204 40 THUMB_32 FUNC
+calcA2DPBufferECSITimer 228380 92 THUMB_32 FUNC
+bthci_event_SendCommandCompleteEventWithStatus 109014 40 THUMB_32 FUNC
+_tx_semaphore_info_get 228732 72 THUMB_32 FUNC
+bthci_event_SendCommandStatusEventWithStatus 109190 40 THUMB_32 FUNC
+_tx_block_pool_create 228928 156 THUMB_32 FUNC
+bthci_event_SendInquiryRespNotif 109858 42 THUMB_32 FUNC
+_afhcc_genReportMap 231326 120 THUMB_32 FUNC
+bthci_event_SendEncryptionChangeCompleteEvent 110886 74 THUMB_32 FUNC
+afhccQualifingAclConn 231560 42 THUMB_32 FUNC
+bthci_event_SendLinkKeyRequestEvent 111438 38 THUMB_32 FUNC
+afhcc_bleRxPkt 235438 76 THUMB_32 FUNC
+bthci_event_InstallHCIEventFilter 112976 34 THUMB_32 FUNC
+_afhcc_updatePer 235692 48 THUMB_32 FUNC
+bcs_syncTaskPiconetsAligned 115102 66 THUMB_32 FUNC
+afhcc_nextScanCh 236188 40 THUMB_32 FUNC
+mlse_getIntValue 119308 32 THUMB_32 FUNC
+apepApu_init 237704 38 THUMB_32 FUNC
+mlse_initMlseInfo 119340 154 THUMB_32 FUNC
+intctl_enable 239280 42 THUMB_32 FUNC
+mlse_reset_le 119494 134 THUMB_32 FUNC
+intctl_disable 239322 38 THUMB_32 FUNC
+mlse_covCalcs 120890 340 THUMB_32 FUNC
+intctl_ClrPendingInt 239388 48 THUMB_32 FUNC
+DetInvCalc 121230 54 THUMB_32 FUNC
+pcm_scoLinkUp 240638 344 THUMB_32 FUNC
+LinkQual_GlobalInit 124268 40 THUMB_32 FUNC
+pcm_scoLinkDown 240982 38 THUMB_32 FUNC
+LinkQual_ResetAclConn 124308 66 THUMB_32 FUNC
+pcm_loopback 241020 38 THUMB_32 FUNC
+LinkQual_ResetScoConn 124374 46 THUMB_32 FUNC
+slimboot_rfm_R_RC_cal_data_store_to_aon 241624 40 THUMB_32 FUNC
+LinkQual_1_SecUpdate 124420 76 THUMB_32 FUNC
+slimboot_rfm_R_RC_calInit 241664 38 THUMB_32 FUNC
+LinkQual_SetTestModeCnts 124526 46 THUMB_32 FUNC
+slimboot_rfm_txpower_init 241702 102 THUMB_32 FUNC
+LinkQual_GetPktInfo 124572 46 THUMB_32 FUNC
+slimboot_rfm_agc_wrssi_init 241810 76 THUMB_32 FUNC
+LinkQual_GetBERLQ 125612 64 THUMB_32 FUNC
+slimboot_rfm_iq_lo_data_store_to_aon 241916 128 THUMB_32 FUNC
+bcs_scanTaskFsmSetup 128280 56 THUMB_32 FUNC
+slimboot_rfm_iq_lo_calInit 242044 114 THUMB_32 FUNC
+bcs_scanTaskGetInfoPtr 128336 46 THUMB_32 FUNC
+spiffy_slaveRxData 242938 38 THUMB_32 FUNC
+bcs_scanTaskResample 129550 88 THUMB_32 FUNC
+fmsr_hclk_enable 243500 32 THUMB_32 FUNC
+_sco_sendScoConnChangedEvent 314562 46 THUMB_32 FUNC
+lm_SendLmpIOCapReq 436610 128 THUMB_32 FUNC
+btm_ble_resume_bg_conn 909932 48 THUMB_32 FUNC
+update_wlan_multi_channels 167378 112 THUMB_32 FUNC
+_sco_startTxn 315250 64 THUMB_32 FUNC
+_sp_start 437064 62 THUMB_32 FUNC
+__rt_memcpy_w 911096 72 THUMB_32 FUNC
+gci_getWlanImplicitBTCMode 169386 36 THUMB_32 FUNC
+_sco_procHostAddFinal 315314 54 THUMB_32 FUNC
+_sp_handlePeerReq 437126 72 THUMB_32 FUNC
+hw_pka_pt_IsAffine 912940 38 THUMB_32 FUNC
+get_FabID_gci 169448 40 THUMB_32 FUNC
+_sco_adjstTescoRange4IntegerCheck 316126 66 THUMB_32 FUNC
+lmulp_sendLcpVSFeatureReq 440812 40 THUMB_32 FUNC
+hw_pka_ecp_pt_dbl_prj_pka 914378 254 THUMB_32 FUNC
+_escoTaskPreActivate 172080 92 THUMB_32 FUNC
+_sco_lmpPktType2HciPktType 317552 78 THUMB_32 FUNC
+lmulp_handleSendVersionID 440852 64 THUMB_32 FUNC
+rfc_calc_fcs 919728 32 THUMB_32 FUNC
+_escoTaskRxHeaderDonePacketCheck 174752 200 THUMB_32 FUNC
+_sco_adjustTescoRange 317630 104 THUMB_32 FUNC
+lmulp_sendLcpVSFeatureRsp 441730 40 THUMB_32 FUNC
+rfc_check_fcs 919760 42 THUMB_32 FUNC
+wbs_init_link_service_cb 176586 36 THUMB_32 FUNC
+_sco_retrieveRemoteProposal 318164 218 THUMB_32 FUNC
+lmulp_sendLcpVSEnableBcsTimeline 441874 42 THUMB_32 FUNC
+rfcomm_process_timeout 920128 32 THUMB_32 FUNC
+wbs_alloc_link_service_cb 176622 56 THUMB_32 FUNC
+_sco_setupCurHciParam 318724 172 THUMB_32 FUNC
+lmulp_handleDisconnect 441916 46 THUMB_32 FUNC
+"rfc_dec_credit, rfc_dec_credit" 920248 36 THUMB_32 FUNC
+wbs_free_link_service_cb 176678 66 THUMB_32 FUNC
+lm_HandleRemoveScoLinkReqPduAcked 319264 34 THUMB_32 FUNC
+lmulp_formConnUpdateReqPkt 442146 52 THUMB_32 FUNC
+rfc_add_tx_complete_pending 920284 38 THUMB_32 FUNC
+wbs_get_num_free_service_cbs 176744 38 THUMB_32 FUNC
+_sco_procBufTimeout 320346 42 THUMB_32 FUNC
+lmulp_formChanMapUpdateReqPkt 442684 34 THUMB_32 FUNC
+wiced_transport_uart_set_baud_rate 921260 36 THUMB_32 FUNC
+wbs_fill_up_msbc_dec_params_and_dec_init 177238 56 THUMB_32 FUNC
+endTest 322552 50 THUMB_32 FUNC
+lm_ClaenUpDataRateMode 444960 90 THUMB_32 FUNC
+uart_transport_allocate_rx_buffer 921328 32 THUMB_32 FUNC
+wbs_fill_up_msbc_enc_params_and_enc_init 177294 38 THUMB_32 FUNC
+initBerTest 322738 186 THUMB_32 FUNC
+lm_HandleLmpPktTypeTableReqNotAcceptedPdu 445132 36 THUMB_32 FUNC
+bthci_cmd_lp_GetCommandHandler 921444 32 THUMB_32 FUNC
+wbs_add_H2_hdr_and_padding 177704 72 THUMB_32 FUNC
+ber_startBerPerTest 322924 58 THUMB_32 FUNC
+lm_llt_FormConnParamRsp 445406 124 THUMB_32 FUNC
+bthci_cmd_info_GetCommandHandler 922388 32 THUMB_32 FUNC
+wbs_com_crc 179118 126 THUMB_32 FUNC
+ber_resetTest 323026 32 THUMB_32 FUNC
+lm_llt_FindPreferredInterval 445530 34 THUMB_32 FUNC
+bthci_cmd_cbb_HandleWrite_Scan_Enable 923204 42 THUMB_32 FUNC
+WBS_SwitchPLC_BEC 181162 50 THUMB_32 FUNC
+_batchScanSaveAndSetState 324468 58 THUMB_32 FUNC
+lm_llt_SendConnUpdate 446106 34 THUMB_32 FUNC
+bthci_cmd_cbb_HandleSet_Mws_Signaling 925380 36 THUMB_32 FUNC
+SBC_Decoder_Enable_BEC 182008 44 THUMB_32 FUNC
+_batchScanRestoreState 324526 40 THUMB_32 FUNC
+lm_llt_HandleRxLcpConnParamReqPending 447004 82 THUMB_32 FUNC
+bthci_cmd_status_GetCommandHandler 926908 32 THUMB_32 FUNC
+SBC_Decoder_Enable_PLC 182052 60 THUMB_32 FUNC
+_batchScanTaskDelete 324658 38 THUMB_32 FUNC
+lm_llt_ConnParamReqNeed2ReportHost 447086 64 THUMB_32 FUNC
+bthci_cmd_status_HandleGet_MWS_Transport_Layer_Configuration 927494 32 THUMB_32 FUNC
+SBC_Decoder_is_PLC_Enabled 182112 32 THUMB_32 FUNC
+utils_memcpy8_postinc 325556 76 THUMB_32 FUNC
+pinConfig_saveUart 449080 82 THUMB_32 FUNC
+q_ucmp 930144 66 THUMB_32 FUNC
+SBC_Encoder_encode 182968 824 THUMB_32 FUNC
+utils_memcpy8 325632 56 THUMB_32 FUNC
+"pinConfig_restorePinConfig, pinConfig_savePinConfig" 449234 32 THUMB_32 FUNC
+q_add 930210 68 THUMB_32 FUNC
+SBC_Encoder_Init 183792 248 THUMB_32 FUNC
+utils_memset8 325700 60 THUMB_32 FUNC
+"pinConfig_restorePinConfig, pinConfig_savePinConfig" 449266 32 THUMB_32 FUNC
+q_add_int 930278 40 THUMB_32 FUNC
+dma_Init 184146 82 THUMB_32 FUNC
+utils_memcpy10 325768 72 THUMB_32 FUNC
+pinConfig_setSpi 449338 72 THUMB_32 FUNC
+q_sub 930348 112 THUMB_32 FUNC
+dma_StartTransfer 184270 108 THUMB_32 FUNC
+utils_copy_afh_table 325840 100 THUMB_32 FUNC
+pinConfig_setI2c 449410 76 THUMB_32 FUNC
+q_sub_int 930460 38 THUMB_32 FUNC
+dma_RequestTransfer 184378 134 THUMB_32 FUNC
+interrupt_ClearPendingState 326034 50 THUMB_32 FUNC
+pinConfig_setDbUart 449838 42 THUMB_32 FUNC
+q_cmp 930498 96 THUMB_32 FUNC
+ptuaux_scoMuxDown 191876 50 THUMB_32 FUNC
+_tx_semaphore_create 326320 84 THUMB_32 FUNC
+pinConfig_setUart 450150 50 THUMB_32 FUNC
+q_cmp_int 930594 40 THUMB_32 FUNC
+SBC_Decoder_fill_status_flag 192172 64 THUMB_32 FUNC
+bluerf_Write_16 326908 40 THUMB_32 FUNC
+config_VerifyChecksum 450538 86 THUMB_32 FUNC
+q_lsb 930634 46 THUMB_32 FUNC
+SBC_Decoder_get_status_flag 193226 84 THUMB_32 FUNC
+bluerf_Read_16 326948 40 THUMB_32 FUNC
+config_InitForRAMConfig 450864 50 THUMB_32 FUNC
+q_msb 930680 48 THUMB_32 FUNC
+SBC_Decoder_get_PCM 193310 424 THUMB_32 FUNC
+i2c_master_CPUClockSwitchPost 327936 114 THUMB_32 FUNC
+config_FindSSorDSItemInfoInGroup 451236 48 THUMB_32 FUNC
+q_shift_l 930728 144 THUMB_32 FUNC
+SbcSynthesisFilter4sb 194248 774 THUMB_32 FUNC
+i2c_master_Init 328050 72 THUMB_32 FUNC
+config_HandleCRC 452100 60 THUMB_32 FUNC
+q_shift_r 930872 138 THUMB_32 FUNC
+SbcSynthesisFilter8sb 195022 1540 THUMB_32 FUNC
+_inqScanTaskInit 69766 50 THUMB_32 FUNC
+EncPacking 196884 592 THUMB_32 FUNC
+sfi_allow_deep_sleep 481360 48 THUMB_32 FUNC
+BTM_CheckEirData 605284 44 THUMB_32 FUNC
+_scanTaskUpdateUpperLimit 277884 88 THUMB_32 FUNC
+bcs_inqScanTaskCreate 69816 38 THUMB_32 FUNC
+SBC_HeaderBEC_1 200508 424 THUMB_32 FUNC
+DHM_GetSCOInfoPtr 481688 42 THUMB_32 FUNC
+btm_eir_get_uuid_list 605328 88 THUMB_32 FUNC
+_scanTaskChangePriority 279818 102 THUMB_32 FUNC
+_inqScanTaskLcuCmd 70224 126 THUMB_32 FUNC
+SBC_BEC_1 200932 432 THUMB_32 FUNC
+_dhmsco_pcmBcsCbFunc 481930 92 THUMB_32 FUNC
+btm_read_inq_tx_power_complete 606102 64 THUMB_32 FUNC
+SBC_GetframeLen 280568 356 THUMB_32 FUNC
+_inqScanTaskLcuSoftReset 70350 84 THUMB_32 FUNC
+aa_freeMemoryBlock 208266 36 THUMB_32 FUNC
+smdpitch_coarse_nb 484212 424 THUMB_32 FUNC
+BTM_RemoveEirService 606268 36 THUMB_32 FUNC
+Audio_BufInit 281050 106 THUMB_32 FUNC
+_inqScanTaskSwitch 70442 62 THUMB_32 FUNC
+sbc_com_bit_alloc_mono 210380 504 THUMB_32 FUNC
+smdpitch_coarse_wb 484636 430 THUMB_32 FUNC
+gap_ble_find_clcb_by_conn_id 606658 46 THUMB_32 FUNC
+Audio_ReadOneFrame 281156 58 THUMB_32 FUNC
+bb_Init 70568 52 THUMB_32 FUNC
+sbc_com_bit_alloc_ste 210884 652 THUMB_32 FUNC
+__memmove_lastfew 485162 36 THUMB_32 FUNC
+gap_ble_c_connect_cback 607178 58 THUMB_32 FUNC
+Audio_UpdateReadPointer 281214 36 THUMB_32 FUNC
+bb_SettingStage1 70638 52 THUMB_32 FUNC
+SBC_com_crc 211536 196 THUMB_32 FUNC
+__rt_memcpy 485198 102 THUMB_32 FUNC
+bthci_ble_isDataLenInvalid 613982 56 THUMB_32 FUNC
+Audio_UpdateWritePointer 281250 64 THUMB_32 FUNC
+bb_timing_Init 71872 40 THUMB_32 FUNC
+SBC_FastDCT4 211740 112 THUMB_32 FUNC
+_memcpy_lastbytes 485300 36 THUMB_32 FUNC
+bthci_cmd_ble_addDev2ResolveList_callback 617274 46 THUMB_32 FUNC
+Audio_PlayBackBuf 281314 160 THUMB_32 FUNC
+bcs_isrWaitForRxUntilGivenClk 71912 58 THUMB_32 FUNC
+SBC_FastDCT8 211852 420 THUMB_32 FUNC
+hciulp_sendEncryptionChangeCompleteEvent 490182 40 THUMB_32 FUNC
+"strlen, strlen" 618448 62 THUMB_32 FUNC
+Audio_RecordBuf 281474 38 THUMB_32 FUNC
+bcs_isrProfileTime 71970 58 THUMB_32 FUNC
+SBC_FastIDCT8 212272 368 THUMB_32 FUNC
+hciulp_sendEncryptionKeyRefreshCompleteEvent 490222 36 THUMB_32 FUNC
+mpaf_pmu_postSleep 618844 58 THUMB_32 FUNC
+rfm_RegisterWrite 285742 32 THUMB_32 FUNC
+gpio_configurePortPins 75008 40 THUMB_32 FUNC
+SBC_FastIDCT4 212640 128 THUMB_32 FUNC
+lmulp_lcp_GetLcpInfo 490552 86 THUMB_32 FUNC
+mpaf_pmu_sleepHandlerInit 618904 40 THUMB_32 FUNC
+rfm_RegisterRead 285774 32 THUMB_32 FUNC
+gpio_inputDisableAll 75048 80 THUMB_32 FUNC
+SBC_BEC_2 212768 620 THUMB_32 FUNC
+lmulp_lcp_SetPendingLcp 490638 48 THUMB_32 FUNC
+mpaf_pmu_selectEnhancedLPOSource 618944 142 THUMB_32 FUNC
+rfm_RestoreRegisters 285938 50 THUMB_32 FUNC
+gpio_getPinConfig 75240 32 THUMB_32 FUNC
+calc_rccal 213484 70 THUMB_32 FUNC
+lmulp_lcp_ClearPendingLcp 490686 34 THUMB_32 FUNC
+mpaf_transProcHostData 619430 40 THUMB_32 FUNC
+a2dp_findConn 289934 32 THUMB_32 FUNC
+gpio_slimboot_reinforce_cfg 75530 108 THUMB_32 FUNC
+rfm_ProgramRfPllValues 213892 86 THUMB_32 FUNC
+rfm_hci_WriteHoppingChannels 491176 46 THUMB_32 FUNC
+mpaf_sendTransStausInd 619794 54 THUMB_32 FUNC
+ulp_fwenc_genSx 292744 74 THUMB_32 FUNC
+ksq_removeCurElement 75908 34 THUMB_32 FUNC
+rfm_agc_wrssi_init 214100 122 THUMB_32 FUNC
+rfm_hci_WriteRfProgrammingTable 491358 62 THUMB_32 FUNC
+mpaf_sendDevSatusInd 619848 44 THUMB_32 FUNC
+bcsulp_setupNonce 293018 204 THUMB_32 FUNC
+keyscan_keystuckCheckRowGpios 75980 54 THUMB_32 FUNC
+rfm_cal_pwrControlInit 214268 68 THUMB_32 FUNC
+Get_TempertureIndex 491504 32 THUMB_32 FUNC
+mpaf_transAclAdapter 620296 58 THUMB_32 FUNC
+bcsulp_encryptTxBuffer 293294 52 THUMB_32 FUNC
+keyscan_reset 76088 60 THUMB_32 FUNC
+rfm_switchRfmRegs 214374 42 THUMB_32 FUNC
+tca_enableControl_fast 491606 46 THUMB_32 FUNC
+mpaf_tranChanConfig 620642 74 THUMB_32 FUNC
+lechan2_setChanInitChan2Bit 293412 38 THUMB_32 FUNC
+keyscan_turnOff 76148 64 THUMB_32 FUNC
+findTargetInList 214696 48 THUMB_32 FUNC
+get_pad_reg_adr 491794 62 THUMB_32 FUNC
+"_config_VS_SetEEPROMEntryUse, _config_VS_SetEEPROMEntryUse" 621458 58 THUMB_32 FUNC
+lechan2_perm 293488 64 THUMB_32 FUNC
+_keyscan_hwResetOnce 77030 34 THUMB_32 FUNC
+data_patch_installPatchEntry 215250 52 THUMB_32 FUNC
+get_rf_bin_index 491856 160 THUMB_32 FUNC
+_config_VS_GetEEPROMEntryUse 621750 72 THUMB_32 FUNC
+lechan2_hopDataChannel 293870 52 THUMB_32 FUNC
+mia_init 77706 94 THUMB_32 FUNC
+patch_installPatchEntry 215302 58 THUMB_32 FUNC
+bignum_xor 495308 40 THUMB_32 FUNC
+_config_VS_findMoveDest 621822 74 THUMB_32 FUNC
+diag_getByteCount 294176 86 THUMB_32 FUNC
+mia_enableKeyscanPriorToHidOff 78268 58 THUMB_32 FUNC
+data_patch_uninstallPatchEntry 215360 36 THUMB_32 FUNC
+bignum_lshift 495348 120 THUMB_32 FUNC
+_config_VS_AddItemPrepAddHoleInfo 624958 64 THUMB_32 FUNC
+_ll_shift_l 294968 38 THUMB_32 FUNC
+mia_turnOffLhlLpoIfPossible 78326 78 THUMB_32 FUNC
+patch_swapPatchEntry 215426 58 THUMB_32 FUNC
+bignum_bits 495494 64 THUMB_32 FUNC
+debuguart_Write 626920 42 THUMB_32 FUNC
+_tx_semaphore_put 295124 88 THUMB_32 FUNC
+quad_configurePortPins 79870 262 THUMB_32 FUNC
+_patch_generateBranchWordInstruction 215484 84 THUMB_32 FUNC
+sha1_round 496264 74 THUMB_32 FUNC
+debuguart_SetBaudrate 627072 52 THUMB_32 FUNC
+bt_boot_hci_HandleDownload_Minidriver 296004 46 THUMB_32 FUNC
+quad_hwInit 80132 300 THUMB_32 FUNC
+patch_autoInstall 215568 40 THUMB_32 FUNC
+E21 508664 74 THUMB_32 FUNC
+dbguart_read 627250 94 THUMB_32 FUNC
+bt_boot_hci_WriteBytesToNonByteAddressableMemory 296148 248 THUMB_32 FUNC
+quad_miaFreezeCallBack 80524 132 THUMB_32 FUNC
+_lrm_insertHeadOrTail 225122 166 THUMB_32 FUNC
+E22 508738 52 THUMB_32 FUNC
+bthci_cmd_info_GetCommandHandler 635240 32 THUMB_32 FUNC
+bt_boot_hci_ReadBytesFromNonByteAddressableMemory 296594 142 THUMB_32 FUNC
+quad_getXYMotion 80712 34 THUMB_32 FUNC
+_lrm_adjustLinkBandwidth 225372 72 THUMB_32 FUNC
+E22_PIN 508790 156 THUMB_32 FUNC
+bthci_cmd_info_HandleRead_Local_Extended_Features 635654 74 THUMB_32 FUNC
+eeprom_ReadPrivate 297940 74 THUMB_32 FUNC
+rtc_getRTCRawClock 80840 66 THUMB_32 FUNC
+_lrm_HIDBlockInsertLink 225444 78 THUMB_32 FUNC
+ape_MAC 508946 58 THUMB_32 FUNC
+bthci_cmd_info_HandleRead_Buffer_Size 635728 84 THUMB_32 FUNC
+eeprom_Read 298014 68 THUMB_32 FUNC
+rtc_RtcTime2Sec 80976 156 THUMB_32 FUNC
+_lrm_isThisLinkGoodForHole 225522 274 THUMB_32 FUNC
+sc_h3 509748 78 THUMB_32 FUNC
+celt_plc_saturate 640172 32 THUMB_32 FUNC
+"_pageTaskLcuSoftReset, bcsulp_testTaskLcuSoftReset" 298968 44 THUMB_32 FUNC
+rtc_setRTCTime 81150 44 THUMB_32 FUNC
+ulp_rand 509892 32 THUMB_32 FUNC
+q_fill_random 931010 36 THUMB_32 FUNC
+avct_bcb_last_ccb 1119434 50 THUMB_32 FUNC
+bttransport_txStateIdle 36806 34 THUMB_32 FUNC
+rtc_sec2RtcTime 81194 164 THUMB_32 FUNC
+bthci_cmd_vs_ReadSleepMode 512232 72 THUMB_32 FUNC
+q_IsZero 931046 32 THUMB_32 FUNC
+avct_bcb_chk_disc 1119484 40 THUMB_32 FUNC
+bttransport_configureSleepLineControl 36840 38 THUMB_32 FUNC
+bcsulp_runCoexAlgorithm 81708 54 THUMB_32 FUNC
+bthci_cmd_vs_CrystalPpm 512470 42 THUMB_32 FUNC
+q_SetOne 931098 34 THUMB_32 FUNC
+avct_bcb_discard_msg 1119644 76 THUMB_32 FUNC
+wiced_bt_sco_output_stream 37690 88 THUMB_32 FUNC
+irtx_sendData 82826 78 THUMB_32 FUNC
+bthci_cmd_vs_WritePcmPins 513272 54 THUMB_32 FUNC
+q_LeadingOne 931142 34 THUMB_32 FUNC
+avct_lcb_chnl_open 1120464 42 THUMB_32 FUNC
+btuartcommon_Init 39136 44 THUMB_32 FUNC
+irtx_doneHandler 82920 72 THUMB_32 FUNC
+bthci_cmd_vs_WriteI2sPcmInterface 513350 56 THUMB_32 FUNC
+btm_ble_update_srvc_data_change 933004 32 THUMB_32 FUNC
+avct_lcb_open_ind 1120518 148 THUMB_32 FUNC
+btuartcommon_LengthOfTXPacketList 39180 36 THUMB_32 FUNC
+puart_calculateBaudrate 83020 54 THUMB_32 FUNC
+bthci_cmd_vs_ReadAudioRouteInfo 513794 42 THUMB_32 FUNC
+mapScalar 943276 74 THUMB_32 FUNC
+avct_lcb_close_cfm 1120806 102 THUMB_32 FUNC
+btuartcommon_RemoveFromTXPacketListHead 39322 32 THUMB_32 FUNC
+puart_setBaudrate 83074 130 THUMB_32 FUNC
+bthci_cmd_vs_ReadGoldenRange 514076 32 THUMB_32 FUNC
+btm_ble_update_resolving_list 948832 76 THUMB_32 FUNC
+avct_lcb_chk_disc 1120944 50 THUMB_32 FUNC
+btuartcommon_RemoveFromTXPacketListTail 39354 58 THUMB_32 FUNC
+puart_synchronousRead 83418 36 THUMB_32 FUNC
+bthci_cmd_vs_LTETriggerWCI2Message 515822 62 THUMB_32 FUNC
+btm_ble_remove_resolving_list_entry_complete 948994 50 THUMB_32 FUNC
+A2D_SbcDescramble 1122348 104 THUMB_32 FUNC
+_lmulp_chooseOnePhyFromMany 39622 64 THUMB_32 FUNC
+puart_interruptHandler 83536 92 THUMB_32 FUNC
+"XOR_MOD256, XOR_MOD256" 524840 36 THUMB_32 FUNC
+btm_ble_enable_resolving_list 949924 48 THUMB_32 FUNC
+A2D_BldSbcInfo 1122452 118 THUMB_32 FUNC
+multi_av_WordAlignedCopy 40984 56 THUMB_32 FUNC
+puart_checkRtsPortPin 83750 38 THUMB_32 FUNC
+MP_Copy 526070 36 THUMB_32 FUNC
+_printf_longlong_hex 952320 92 THUMB_32 FUNC
+A2D_BldSbcMplHdr 1122736 52 THUMB_32 FUNC
+_coexFWSampleRx 313586 40 THUMB_32 FUNC
+multi_av_FastArmCopy 41040 228 THUMB_32 FUNC
+puart_checkCtsPortPin 83788 38 THUMB_32 FUNC
+MP_CMP 526106 52 THUMB_32 FUNC
+__printf 952476 396 THUMB_32 FUNC
+avdt_ad_tc_close_ind 1123394 60 THUMB_32 FUNC
+uart_CheckReceiveFIFOLevelBytes 41600 60 THUMB_32 FUNC
+"puart_checkTxdPortPin, puart_checkTxdPortPin" 83826 50 THUMB_32 FUNC
+sha256_final 527582 134 THUMB_32 FUNC
+_printf_wctomb 952996 188 THUMB_32 FUNC
+avdt_ad_tc_open_ind 1123454 104 THUMB_32 FUNC
+wiced_bt_l2cap_cancel_ble_connect_req 2585904 44 THUMB_32 FUNC
+"puart_checkRxdPortPin, puart_checkRxdPortPin" 83876 50 THUMB_32 FUNC
+bthci_cmd_lc_GetCommandHandler 527924 66 THUMB_32 FUNC
+_printf_longlong_dec 953184 120 THUMB_32 FUNC
+avdt_ad_open_req 1123656 74 THUMB_32 FUNC
+wiced_hal_gpio_select_rxpu 2585996 56 THUMB_32 FUNC
+puart_selectUartPads 83926 326 THUMB_32 FUNC
+bthci_cmd_lc_HandlePeriodic_Inquiry_Mode 528100 58 THUMB_32 FUNC
+_printf_longlong_oct 953304 76 THUMB_32 FUNC
+avdt_process_timeout 1123776 72 THUMB_32 FUNC
+wiced_hal_gpio_select_txpu 2586052 52 THUMB_32 FUNC
+FSMdefaultTransitTo 84252 60 THUMB_32 FUNC
+bthci_cmd_lc_HandleRead_Lmp_Handle 531218 38 THUMB_32 FUNC
+q_asm_addc 953424 36 THUMB_32 FUNC
+AVDT_DiscoverReq 1124164 64 THUMB_32 FUNC
+_bcs_appNotifiTaskDeferredHandler 49452 32 THUMB_32 FUNC
+FSMinit 84626 86 THUMB_32 FUNC
+bthci_cmd_lc_EnhancedVoiceSetting 532060 134 THUMB_32 FUNC
+_printf_int_common 953688 184 THUMB_32 FUNC
+AVDT_DelayReport 1124338 42 THUMB_32 FUNC
+bcs_appNotifiEnable 49484 52 THUMB_32 FUNC
+aclk_updateClkGating 84712 70 THUMB_32 FUNC
+GKI_update_timer_list 538084 72 THUMB_32 FUNC
+_ll_udiv10 953872 138 THUMB_32 FUNC
+AVDT_ConfigRsp 1124470 60 THUMB_32 FUNC
+bcs_appNotifiTaskChangeInterval 49588 90 THUMB_32 FUNC
+aclk_disableClock 84938 46 THUMB_32 FUNC
+GKI_add_to_timer_list 538156 110 THUMB_32 FUNC
+__lib_sel_fp_printf 954010 430 THUMB_32 FUNC
+AVDT_StartRsp 1124672 58 THUMB_32 FUNC
+DHM_CallbackReleaseHCICredits 58010 72 THUMB_32 FUNC
+LedCtrl_SetLEDToSleepState 85974 34 THUMB_32 FUNC
+GKI_remove_from_timer_list 538266 126 THUMB_32 FUNC
+_wcrtomb 955110 64 THUMB_32 FUNC
+AVDT_ReconfigReq 1124876 40 THUMB_32 FUNC
+DHM_GetSlotsFromLmpBitMap 58082 34 THUMB_32 FUNC
+LedCtrl_TimerCallback 86108 372 THUMB_32 FUNC
+btm_vsc_cfg_ver_info_complete 538784 40 THUMB_32 FUNC
+btm_sco_flush_sco_data 955188 48 THUMB_32 FUNC
+AVDT_SecurityRsp 1125000 54 THUMB_32 FUNC
+DHM_ReleaseHciListItemReturnBuffer 58298 46 THUMB_32 FUNC
+__2snprintf 86512 56 THUMB_32 FUNC
+btm_vsc_brcm_features_complete 538942 46 THUMB_32 FUNC
+btm_sco_voice_settings_2_legacy 955268 116 THUMB_32 FUNC
+AVDT_WriteReqOpt 1125054 52 THUMB_32 FUNC
+DHM_GetBBPktInfoPtr 58572 96 THUMB_32 FUNC
+_dmaReqInit 86676 110 THUMB_32 FUNC
+GAP_SetPairableMode 539648 48 THUMB_32 FUNC
+btm_sco_check_send_pkts 955584 48 THUMB_32 FUNC
+AVDT_GetSignalChannel 1125262 64 THUMB_32 FUNC
+DHM_UpdateACLStats 58668 66 THUMB_32 FUNC
+_dmaReqSend 87104 46 THUMB_32 FUNC
+GAP_ReadDeviceClass 539936 44 THUMB_32 FUNC
+btm_find_scb_by_handle 955632 34 THUMB_32 FUNC
+avdt_l2c_disconnect_cfm_cback 1126068 38 THUMB_32 FUNC
+config_OTP_get_XTAL_kHz 59532 64 THUMB_32 FUNC
+bcs_aclTaskSetTpoll 89714 36 THUMB_32 FUNC
+HID_HostGetLeRepDesc 541398 130 THUMB_32 FUNC
+BTM_ConfigI2SPCM 955726 44 THUMB_32 FUNC
+avdt_l2c_congestion_ind_cback 1126106 42 THUMB_32 FUNC
+pmu_PowerDownSRAM 62156 176 THUMB_32 FUNC
+bcs_aclTaskReadjustClock 89904 54 THUMB_32 FUNC
+PORT_SetState 542140 56 THUMB_32 FUNC
+BTM_ConfigScoPath 955770 50 THUMB_32 FUNC
+avdt_l2c_data_ind_cback 1126148 44 THUMB_32 FUNC
+pmu_PowerUpSRAM 62332 200 THUMB_32 FUNC
+_aclTaskQosGrantPostMortem 93250 34 THUMB_32 FUNC
+PORT_GetRxQueueCnt 542196 32 THUMB_32 FUNC
+btm_is_sco_active 957928 40 THUMB_32 FUNC
+avdt_scb_event 1126192 88 THUMB_32 FUNC
+hcivs_reset_proximity_vars 63088 66 THUMB_32 FUNC
+_aclTaskQosTaskReschedule 94328 134 THUMB_32 FUNC
+PORT_GetState 542228 42 THUMB_32 FUNC
+BTM_GetNumScoLinks 957968 44 THUMB_32 FUNC
+avdt_scb_by_hdl 1126486 46 THUMB_32 FUNC
+bb_computeAC 63492 118 THUMB_32 FUNC
+_aclTaskGetInfoPtr 95468 48 THUMB_32 FUNC
+PORT_Write 543302 92 THUMB_32 FUNC
+gatt_determine_sec_act 958428 232 THUMB_32 FUNC
+avdt_scb_verify 1126532 108 THUMB_32 FUNC
+pmu_config_execute 69154 56 THUMB_32 FUNC
+lite_host_check_supported_route 397090 178 THUMB_32 FUNC
+hidh_le_close_api 737562 78 THUMB_32 FUNC
+celt_plc_Norm64 1264916 52 THUMB_32 FUNC
+celt_plc_add 640204 34 THUMB_32 FUNC
+lite_host_get_audio_route_mix 397324 38 THUMB_32 FUNC
+hidh_le_gatt_close 737648 74 THUMB_32 FUNC
+celt_bitexact_cos 1267632 74 THUMB_32 FUNC
+celt_plc_sub 640238 34 THUMB_32 FUNC
+lite_host_get_max_frame_length 397496 60 THUMB_32 FUNC
+hidh_le_open_fail 737722 44 THUMB_32 FUNC
+celt_resampling_factor 1276576 68 THUMB_32 FUNC
+celt_plc_shr 640294 46 THUMB_32 FUNC
+hook_init 402876 58 THUMB_32 FUNC
+hidh_le_encrypt_cback 737766 90 THUMB_32 FUNC
+celt_ec_enc_init 1298436 34 THUMB_32 FUNC
+celt_plc_shl 640340 106 THUMB_32 FUNC
+lm_HandleLmpSetupCompleteSent 405224 68 THUMB_32 FUNC
+hidh_le_security_cmpl 738208 62 THUMB_32 FUNC
+celt_ec_enc_bits 1298844 84 THUMB_32 FUNC
+celt_plc_mult 640446 52 THUMB_32 FUNC
+lm_HandleLmpBPCS_featuresResPdu 405554 36 THUMB_32 FUNC
+hidh_le_read_char_cmpl 738784 76 THUMB_32 FUNC
+_celt_preemphasis_loop 1307764 58 THUMB_32 FUNC
+celt_plc_L_add 640544 42 THUMB_32 FUNC
+BTMSync_SCOTestInit 405860 142 THUMB_32 FUNC
+hidh_le_find_rpt_by_id_or_type 739468 68 THUMB_32 FUNC
+_celt_l1_metric 1308312 144 THUMB_32 FUNC
+celt_plc_round 640586 46 THUMB_32 FUNC
+"_pageTaskLcuSoftReset, bcsulp_testTaskLcuSoftReset" 406948 44 THUMB_32 FUNC
+hidh_le_conn_snd_data 739752 204 THUMB_32 FUNC
+_celt_preemphasis_early_cc1 1308456 66 THUMB_32 FUNC
+celt_plc_L_mac 640632 66 THUMB_32 FUNC
+hciulp_determineCeLen 407796 38 THUMB_32 FUNC
+L2CA_FlowControl 740744 78 THUMB_32 FUNC
+_celt_preemphasis_early_cc2 1308522 74 THUMB_32 FUNC
+celt_plc_L_sub 640698 42 THUMB_32 FUNC
+_ll_sshift_r 409528 40 THUMB_32 FUNC
+btm_dev_support_switch 750142 66 THUMB_32 FUNC
+_celt_fir5 1309332 140 THUMB_32 FUNC
+celt_plc_L_msu 640740 66 THUMB_32 FUNC
+_mblmTaskLcuCmd 415582 56 THUMB_32 FUNC
+btm_bda_to_acl 750576 70 THUMB_32 FUNC
+_celt_find_best_pitch_loop 1309472 86 THUMB_32 FUNC
+celt_plc_L_add_c 640806 118 THUMB_32 FUNC
+"ulp_nextRand, ulp_nextRand" 416388 54 THUMB_32 FUNC
+"BTM_GetRole, BTM_GetRole" 750664 32 THUMB_32 FUNC
+_celt_ec_enc_carry_out 1309560 116 THUMB_32 FUNC
+celt_plc_L_sub_c 640950 118 THUMB_32 FUNC
+ulp_rand 416502 32 THUMB_32 FUNC
+BTM_GetNumAclLinks 750710 38 THUMB_32 FUNC
+_celt_maxabs16_unroll_16 1309676 210 THUMB_32 FUNC
+celt_plc_mult_r 641228 60 THUMB_32 FUNC
+hciulp_SendRssiAlert 416902 82 THUMB_32 FUNC
+btm_handle_to_acl_index 750850 40 THUMB_32 FUNC
+_celt_rcp 1309886 98 THUMB_32 FUNC
+celt_plc_L_shr 641288 46 THUMB_32 FUNC
+hciulp_HandleLeAudioConfig 420484 68 THUMB_32 FUNC
+BTM_SetLinkPolicy 751052 122 THUMB_32 FUNC
+_celt_sqrt 1309984 120 THUMB_32 FUNC
+celt_plc_L_shl 641334 84 THUMB_32 FUNC
+hciulp_HandleWriteExtendedPacketLengthConfig 421012 74 THUMB_32 FUNC
+btm_establish_continue 751234 72 THUMB_32 FUNC
+_celt_comb_filter_const_sp 1310104 172 THUMB_32 FUNC
+celt_plc_shr_r 641418 84 THUMB_32 FUNC
+bthci_cmd_vs_LeScanRssiThresholdSetup 421354 116 THUMB_32 FUNC
+BTM_SetDefaultLinkPolicy 752986 78 THUMB_32 FUNC
+_celt_stereo_split 1310854 114 THUMB_32 FUNC
+celt_plc_mac_r 641502 52 THUMB_32 FUNC
+uart_ReceiveAsynchComplete 425466 32 THUMB_32 FUNC
+l2cu_find_lcb_by_bd_addr 756132 66 THUMB_32 FUNC
+_celt_mdct_prerotate 1311792 240 THUMB_32 FUNC
+celt_plc_msu_r 641554 106 THUMB_32 FUNC
+MABEC_QPSK_acc 428062 44 THUMB_32 FUNC
+"l2cu_dequeue_ccb, l2cu_dequeue_ccb" 756526 78 THUMB_32 FUNC
+_celt_mdct_rearrange 1312032 242 THUMB_32 FUNC
+celt_plc_L_shr_r 641666 40 THUMB_32 FUNC
+MABEC_GFSK_lpf 428106 78 THUMB_32 FUNC
+l2cu_get_num_hi_priority 757328 44 THUMB_32 FUNC
+_celt_dec_tdac 1312274 106 THUMB_32 FUNC
+celt_plc_L_sat 641726 32 THUMB_32 FUNC
+mpaf_cfa_ConfigVSReadLongItem 430312 124 THUMB_32 FUNC
+"l2cu_enqueue_ccb, l2cu_enqueue_ccb" 760902 50 THUMB_32 FUNC
+_celt_norm_with_br 1313984 170 THUMB_32 FUNC
+celt_plc_norm_s 641758 50 THUMB_32 FUNC
+_sp_handleHciOOBDataReplyAndLmpSimplePairingNumber 433210 54 THUMB_32 FUNC
+l2cu_find_ccb_by_cid 762058 94 THUMB_32 FUNC
+_celt_kf_bfly2_loop 1314324 190 THUMB_32 FUNC
+celt_plc_div_s 641808 124 THUMB_32 FUNC
+_sp_handleHciPasskeyReplyAndLmpSimplePairingNumberConfirm 433264 48 THUMB_32 FUNC
+Flush_send_burst_ind 764908 50 THUMB_32 FUNC
+_celt_kf_bfly3_loop 1314514 302 THUMB_32 FUNC
+celt_plc_norm_l 641932 48 THUMB_32 FUNC
+_sp_handleHciConfirmReplyAndLmpDHKeyCheck 433312 48 THUMB_32 FUNC
+hostctlr_findHostPair 773472 38 THUMB_32 FUNC
+_celt_kf_bfly5_loop 1314816 336 THUMB_32 FUNC
+celt_plc_div_l 642006 214 THUMB_32 FUNC
+lm_SendLmpOOBFailed 433360 40 THUMB_32 FUNC
+hostctlr_regSPipe 773510 54 THUMB_32 FUNC
+_celt_kf_bfly4_loop 1315152 272 THUMB_32 FUNC
+celt_plc_L_mac0 642270 46 THUMB_32 FUNC
+lm_SendLmpSimplePairingNumber 433472 62 THUMB_32 FUNC
+hostctlr_updatePair 773564 58 THUMB_32 FUNC
+_celt_kf_bfly4_find_max_loop 1315424 336 THUMB_32 FUNC
+celt_plc_L_msu0 642316 46 THUMB_32 FUNC
+lm_SendLmpDhkeyCheck 433602 62 THUMB_32 FUNC
+hostctlr_regDPipe 773622 54 THUMB_32 FUNC
+_celt_ki_bfly4_loop 1315760 256 THUMB_32 FUNC
+celt_plc_L_Extract 642362 84 THUMB_32 FUNC
+_sp_txV 434232 158 THUMB_32 FUNC
+hostctlr_isHcpFromHidInhibited 773700 68 THUMB_32 FUNC
+_celt_ki_bfly4_find_max_loop 1316016 336 THUMB_32 FUNC
+celt_plc_Mpy_32 642452 144 THUMB_32 FUNC
+bcs_timeline_WriteBitstream 833202 122 THUMB_32 FUNC
+bcs_timeline_CopyBitstream 833324 44 THUMB_32 FUNC
+bcs_timeline_GetPriorityHashIndex 834006 50 THUMB_32 FUNC
+bcs_timeline_GetTaskIdHashIndex 834056 46 THUMB_32 FUNC
+bcs_timeline_GetRecordHashIndex 834102 72 THUMB_32 FUNC
+bcs_timeline_GetDebugDataHashIndex 834832 64 THUMB_32 FUNC
+bcs_timeline_GetDebugIdHashIndex 834896 62 THUMB_32 FUNC
+bcs_timeline_Disable 837830 36 THUMB_32 FUNC
+bcs_timeline_Start 837866 164 THUMB_32 FUNC
+rmulp_pal_clear 839052 54 THUMB_32 FUNC
+rmulp_pal_allocate 839544 68 THUMB_32 FUNC
+rmulp_mr4p_allocate 839644 32 THUMB_32 FUNC
+rmulp_getConnTaskPtr 840042 34 THUMB_32 FUNC
+rmulp_getConnTaskPtr 840076 34 THUMB_32 FUNC
+rmulp_assignHciConnHandle 840452 66 THUMB_32 FUNC
+rmulp_getWdAddr 841122 34 THUMB_32 FUNC
+rmulp_SetTxPower_MaxPwr 841904 64 THUMB_32 FUNC
+bcsulp_initAfterMemoryInit 843180 32 THUMB_32 FUNC
+bcsulp_init 843212 48 THUMB_32 FUNC
+bcsulp_setupWhitenning 843388 34 THUMB_32 FUNC
+bcsulp_encryptKeyUpdate 844630 44 THUMB_32 FUNC
+bcsulp_peekNxtTxHdr4TxDone 847134 42 THUMB_32 FUNC
+bcsulp_shiftTxPktHdr 847450 88 THUMB_32 FUNC
+bcsulp_bleToBtChannel 849542 56 THUMB_32 FUNC
+bpl_lcu_BqbHwInit 849600 34 THUMB_32 FUNC
+bpl_lcu_LEReset 849782 40 THUMB_32 FUNC
+bpl_lcu_ResyncDone 853246 48 THUMB_32 FUNC
+bpl_lcu_ScanResponseActive 853294 32 THUMB_32 FUNC
+ulp_advBatchingResetStorage 379942 104 THUMB_32 FUNC
+avdt_scb_hdl_setconfig_rsp 1127460 46 THUMB_32 FUNC
+bcs_scanTaskReschedule 129638 104 THUMB_32 FUNC
+fmsr_hclk_disable 243532 44 THUMB_32 FUNC
+ulp_advBatchingReset 380046 42 THUMB_32 FUNC
+avdt_scb_snd_abort_req 1128190 42 THUMB_32 FUNC
+_afhHssiTaskGetNewPtr 130396 42 THUMB_32 FUNC
+lc_mcMasterReceivedData 246378 32 THUMB_32 FUNC
+ulp_advBatchingGetPercentageUsage 380186 54 THUMB_32 FUNC
+avdt_scb_snd_stream_close 1128288 32 THUMB_32 FUNC
+bcs_afhHssiTaskGetPtr 130640 52 THUMB_32 FUNC
+lculp_checkAndUpdateScanRspInWait 251104 46 THUMB_32 FUNC
+rftune_setRfCh 381948 102 THUMB_32 FUNC
+avdt_scb_snd_setconfig_rej 1128654 34 THUMB_32 FUNC
+bcs_afhHssiTaskGetActiveCount 130732 36 THUMB_32 FUNC
+lculp_createAccessAddress 251784 62 THUMB_32 FUNC
+rftune_TurnOnallRxandTx 382050 34 THUMB_32 FUNC
+avdt_scb_snd_setconfig_rsp 1128758 46 THUMB_32 FUNC
+bcs_afhHssiTaskLmpSetAfhSent 130834 64 THUMB_32 FUNC
+lculp_checkAdvPkt 252464 32 THUMB_32 FUNC
+rftune_setTxIfFreq 382232 42 THUMB_32 FUNC
+avdt_scb_free_pkt 1128902 42 THUMB_32 FUNC
+bcs_afhRssiScanTaskCreate 130944 110 THUMB_32 FUNC
+lculp_correctCrcField 254446 36 THUMB_32 FUNC
+rftune_setRxCordicBypass 382274 46 THUMB_32 FUNC
+avdt_scb_clr_pkt 1128944 68 THUMB_32 FUNC
+bcs_afhWriteAfhRegisters 131054 92 THUMB_32 FUNC
+lm_HandleLmpPiconetClkAdjAck 256936 134 THUMB_32 FUNC
+rftune_setDemodCordicBypass 382320 46 THUMB_32 FUNC
+avdt_scb_chk_snd_pkt 1129012 60 THUMB_32 FUNC
+lmtxn_getTxnOp 134328 122 THUMB_32 FUNC
+lm_masterPCARecoveryModeFeatureCheck 257660 66 THUMB_32 FUNC
+rftune_setCordicAngle 382366 86 THUMB_32 FUNC
+avdt_msg_bld_cfg 1129088 158 THUMB_32 FUNC
+afh_sendLmpSetAfh 137014 104 THUMB_32 FUNC
+"lm_HandleLmpPiconetClkAdjReqAcceptedPdu, lm_HandleLmpPiconetClkAdjReqNotAcceptedPdu" 258402 36 THUMB_32 FUNC
+rftune_tssiDigitalGainAdjust 382452 44 THUMB_32 FUNC
+avdt_msg_bld_setconfig_cmd 1129262 32 THUMB_32 FUNC
+bcs_timeline_ConvertBcsTaskIntoTaskIndex 832562 412 THUMB_32 FUNC
+afh_genEValue 137352 56 THUMB_32 FUNC
+"lm_HandleLmpPiconetClkAdjReqAcceptedPdu, lm_HandleLmpPiconetClkAdjReqNotAcceptedPdu" 258438 36 THUMB_32 FUNC
+rftune_tssiDCOffsetAdjust 382496 68 THUMB_32 FUNC
+"avdt_msg_bld_delay_rpt, avdt_msg_bld_delay_rpt" 1129390 38 THUMB_32 FUNC
+afh_bleLinkup 138300 32 THUMB_32 FUNC
+lm_slavePCARequestLMPTransactionCheck 258474 60 THUMB_32 FUNC
+rftune_setPaBias 382564 76 THUMB_32 FUNC
+avdt_msg_bld_discover_rsp 1129428 82 THUMB_32 FUNC
+afh_sendLmpChannelClassificationPdu 138672 76 THUMB_32 FUNC
+lm_handlePCABroadcastLmpSent 258754 134 THUMB_32 FUNC
+rftune_adjustDcOffset 382664 48 THUMB_32 FUNC
+avdt_msg_prs_setconfig_cmd 1129940 100 THUMB_32 FUNC
+lm_HandleLmpChannelClassificationEsc4Pdu 138978 36 THUMB_32 FUNC
+arip_audHandleFMRx2DAC_help 259172 32 THUMB_32 FUNC
+rftune_SelectOutput 382716 54 THUMB_32 FUNC
+avdt_msg_prs_multi 1130134 82 THUMB_32 FUNC
+afh_disconnect 139084 58 THUMB_32 FUNC
+afhcc_saveModemRegs 260128 54 THUMB_32 FUNC
+rftune_tx_reg92 382770 34 THUMB_32 FUNC
+avdt_msg_prs_security_cmd 1130216 48 THUMB_32 FUNC
+_pageScanTaskInit 140054 38 THUMB_32 FUNC
+afhcc_configModem 260252 92 THUMB_32 FUNC
+lm_power_AdjustPowerAndTarget 382892 60 THUMB_32 FUNC
+avdt_msg_prs_discover_rsp 1130264 116 THUMB_32 FUNC
+bcs_pageScanTaskCreate 140092 38 THUMB_32 FUNC
+afhcc_restoreModemRegs 260418 64 THUMB_32 FUNC
+"iqcal_forcepad, iqcal_restore_pad" 386784 48 THUMB_32 FUNC
+avdt_msg_prs_svccap 1130380 38 THUMB_32 FUNC
+_pageScanTaskNewConnDone 140264 48 THUMB_32 FUNC
+msgqueue_Put 260542 102 THUMB_32 FUNC
+iqcal_save_pad 386832 50 THUMB_32 FUNC
+avdt_msg_prs_all_svccap 1130418 38 THUMB_32 FUNC
+_sniffTaskSubrateDropToSniffMode 143404 52 THUMB_32 FUNC
+msgqueue_PrivateGet 260744 132 THUMB_32 FUNC
+"iqcal_forcepad, iqcal_restore_pad" 386882 48 THUMB_32 FUNC
+"avdt_msg_prs_rej, avdt_msg_prs_rej" 1130464 38 THUMB_32 FUNC
+_sniffTaskGetInfoPtr 144672 70 THUMB_32 FUNC
+_psmSetMinPeriodicInfo 261046 76 THUMB_32 FUNC
+rfp_interpolate 387384 52 THUMB_32 FUNC
+avdt_msg_prs_delay_rpt 1130502 48 THUMB_32 FUNC
+apepTran_reset 145776 72 THUMB_32 FUNC
+bcs_psmTaskCreated 261122 38 THUMB_32 FUNC
+osapi_waitEvent 387574 46 THUMB_32 FUNC
+avdt_msg_send_rsp 1131340 96 THUMB_32 FUNC
+apepApu_init 145848 38 THUMB_32 FUNC
+Update_LC_PLC_wb 264244 122 THUMB_32 FUNC
+lite_host_proc_uipc_open 394694 62 THUMB_32 FUNC
+avdt_msg_send_rej 1131436 112 THUMB_32 FUNC
+apepTran_setup 146448 238 THUMB_32 FUNC
+LC_PLC_Indicate_BEC 268144 268 THUMB_32 FUNC
+lite_host_proc_avdt 395226 226 THUMB_32 FUNC
+avdt_ccb_hdl_start_cmd 1132404 76 THUMB_32 FUNC
+sbcenc_get_bit_rate 155252 76 THUMB_32 FUNC
+r_rc_cal_wr_adjustBT 269284 334 THUMB_32 FUNC
+lite_host_proc_start_req 396158 198 THUMB_32 FUNC
+avdt_ccb_hdl_suspend_cmd 1132540 86 THUMB_32 FUNC
+update_gci_for_LE_Audio 162846 164 THUMB_32 FUNC
+wiced_rtos_register_timed_event 272554 50 THUMB_32 FUNC
+lite_host_proc_stop_req 396424 36 THUMB_32 FUNC
+avdt_ccb_cmd_fail 1132870 84 THUMB_32 FUNC
+update_gci_with_common_info 163010 116 THUMB_32 FUNC
+bcs_mcsGetDataPtr 273036 32 THUMB_32 FUNC
+lite_host_proc_suspend_req 396460 36 THUMB_32 FUNC
+avdt_ccb_clear_cmds 1132954 92 THUMB_32 FUNC
+gci_semaphore_request_blocking 163126 40 THUMB_32 FUNC
+pcmfifo_getRxDataSize 275420 62 THUMB_32 FUNC
+lite_host_proc_cleanup_req 396496 64 THUMB_32 FUNC
+wiced_bt_rfcomm_set_buffer_pool 1135728 62 THUMB_32 FUNC
+gci_hw_variable_init 163192 80 THUMB_32 FUNC
+pcmfifo_getTxDataSize 275482 68 THUMB_32 FUNC
+lite_host_get_audio_route_source 396754 58 THUMB_32 FUNC
+wiced_bt_l2cap_le_data_write 1136372 66 THUMB_32 FUNC
+gci_write_aux_tx_register_byte 163346 76 THUMB_32 FUNC
+_scanTaskSetDefaultPriority 276138 34 THUMB_32 FUNC
+i2c_master_Read 328128 114 THUMB_32 FUNC
+_printf_pre_padding 552308 46 THUMB_32 FUNC
+avrc_bld_get_folder_items_cmd 1108136 188 THUMB_32 FUNC
+i2c_master_WaitForTransactionToCompletePrivate 328242 40 THUMB_32 FUNC
+_printf_post_padding 552354 36 THUMB_32 FUNC
+avrc_bld_change_path_cmd 1108324 86 THUMB_32 FUNC
+apipe_getEDFlagAndGroupFlag 329590 46 THUMB_32 FUNC
+"_printf_str, _printf_str" 552390 82 THUMB_32 FUNC
+avrc_bld_get_item_attrs_cmd 1108410 180 THUMB_32 FUNC
+apipe_unMuteFunc 330832 60 THUMB_32 FUNC
+gap_convert_btm_status 561812 88 THUMB_32 FUNC
+"avrc_bld_search_cmd, avrc_bld_search_cmd" 1108590 78 THUMB_32 FUNC
+apipe_muteFunc 330892 64 THUMB_32 FUNC
+find_conn_by_cid 562178 54 THUMB_32 FUNC
+avrc_bld_play_item_cmd 1108668 72 THUMB_32 FUNC
+apipe_fillDirect 332548 70 THUMB_32 FUNC
+hidh_l2cif_cong_ind 562232 50 THUMB_32 FUNC
+avrc_bld_get_capability_rsp 1109288 194 THUMB_32 FUNC
+ulp_dple_getEffeMaxRxOctets 333010 112 THUMB_32 FUNC
+hidh_l2cif_data_ind 562342 192 THUMB_32 FUNC
+avrc_bld_list_app_settings_attr_rsp 1109482 122 THUMB_32 FUNC
+pcm2_down 333192 52 THUMB_32 FUNC
+hidh_l2cif_disconnect_cfm 562534 88 THUMB_32 FUNC
+"avrc_bld_list_app_settings_values_rsp, avrc_bld_list_app_settings_values_rsp" 1109604 90 THUMB_32 FUNC
+_pcm2_preConn 333302 62 THUMB_32 FUNC
+hidh_conn_initiate 562622 86 THUMB_32 FUNC
+avrc_bld_get_cur_app_setting_value_rsp 1109694 162 THUMB_32 FUNC
+avrc_bld_get_elem_attrs_rsp 1110164 282 THUMB_32 FUNC
+arip_fm_sco_pcm2_reset 333660 102 THUMB_32 FUNC
+hidh_le_ntfy_sdp_cb 737444 54 THUMB_32 FUNC
+"l2c_fcr_chk_chan_modes, l2c_fcr_chk_chan_modes" 976502 44 THUMB_32 FUNC
+hidh_proc_repage_timeout 562708 56 THUMB_32 FUNC
+_discn_procTimerExp 334870 88 THUMB_32 FUNC
+hidh_l2cif_disconnect_ind 562764 226 THUMB_32 FUNC
+avrc_bld_get_play_status_rsp 1110446 80 THUMB_32 FUNC
+lm_HandleLmpDetachPdu 336234 48 THUMB_32 FUNC
+hidh_l2cif_intr_connected 562990 162 THUMB_32 FUNC
+avrc_bld_change_path_rsp 1112068 50 THUMB_32 FUNC
+BTMUtil_SetHoppingMode 336568 56 THUMB_32 FUNC
+hidh_l2cif_ctrl_connected 563152 176 THUMB_32 FUNC
+avrc_bld_search_rsp 1112510 66 THUMB_32 FUNC
+BTMUtil_SetWhiteningMode 336624 32 THUMB_32 FUNC
+hidh_conn_reg 563328 164 THUMB_32 FUNC
+avrc_pars_vendor_rsp 1113164 1008 THUMB_32 FUNC
+BTMUtil_CheckAUXPkt 336774 156 THUMB_32 FUNC
+MP_LShiftMod_P192_ASM 569380 118 THUMB_32 FUNC
+avrc_pars_browsing_rsp 1114172 1262 THUMB_32 FUNC
+BTMUtil_SetPktHwRegs 337116 110 THUMB_32 FUNC
+MP_RShift_P192_ASM 569498 58 THUMB_32 FUNC
+AVRC_ParsResponse 1115434 76 THUMB_32 FUNC
+"GetBCSLinkType, GetBCSLinkType" 337428 54 THUMB_32 FUNC
+MP_Sub_P192_ASM 569556 52 THUMB_32 FUNC
+avrc_pars_vendor_cmd 1115510 702 THUMB_32 FUNC
+smulp_handleFlushRxData 340984 80 THUMB_32 FUNC
+MP_SubMod_P192_ASM 569608 70 THUMB_32 FUNC
+avrc_pars_browsing_cmd 1116212 448 THUMB_32 FUNC
+ulp_advFilter_getListCnt 342434 44 THUMB_32 FUNC
+MP_Add_P192_ASM 569678 52 THUMB_32 FUNC
+AVRC_ParsCommand 1116660 76 THUMB_32 FUNC
+ulp_advFilterGetListMask 343460 128 THUMB_32 FUNC
+MP_AddMod_P192_ASM 569730 102 THUMB_32 FUNC
+"AVRC_IsValidAvcType, AVRC_IsValidAvcType" 1116736 100 THUMB_32 FUNC
+ulp_advFilterCheckSolicitUUID 344548 68 THUMB_32 FUNC
+MP_MersennsMultMod_P192_ASM 569832 770 THUMB_32 FUNC
+avrc_is_valid_player_attrib_value 1116836 50 THUMB_32 FUNC
+ulp_brcmFilter_addFilter 344646 110 THUMB_32 FUNC
+MP_MersennsSquaMod_P192_ASM 570602 626 THUMB_32 FUNC
+"avrc_pars_pass_thru, avrc_pars_pass_thru" 1116904 64 THUMB_32 FUNC
+ulp_brcmFilter_clearList 345270 88 THUMB_32 FUNC
+MP_Add_P256_ASM 571228 62 THUMB_32 FUNC
+"avrc_opcode_from_pdu, avrc_opcode_from_pdu" 1116968 46 THUMB_32 FUNC
+_ll_udiv 348560 238 THUMB_32 FUNC
+MP_AddMod_P256_ASM 571290 132 THUMB_32 FUNC
+AVCT_MsgReq 1117596 108 THUMB_32 FUNC
+sha1 1193446 46 THUMB_32 FUNC
+bcs_utilBbRxPktSetLength 350138 54 THUMB_32 FUNC
+MP_Sub_P256_ASM 571422 62 THUMB_32 FUNC
+avct_bcb_event 1118394 56 THUMB_32 FUNC
+bcs_utilCopyFromHwToFifo 351234 48 THUMB_32 FUNC
+MP_SubMod_P256_ASM 571484 88 THUMB_32 FUNC
+avct_lcb_has_pid 1118692 42 THUMB_32 FUNC
+bcs_utilCopyToHwFromFifo 351282 68 THUMB_32 FUNC
+MP_RShift_P256_ASM 571572 78 THUMB_32 FUNC
+avct_bcb_open_ind 1118964 186 THUMB_32 FUNC
+MP_LShiftMod_P256_ASM 571650 158 THUMB_32 FUNC
+avct_bcb_open_fail 1119150 36 THUMB_32 FUNC
+bcs_utilGetRSSI 351518 58 THUMB_32 FUNC
+sdpu_build_uuid_seq 1006132 118 THUMB_32 FUNC
+process_service_search_attr_rsp 1007248 178 THUMB_32 FUNC
+gatt_send_prepare_write 1009932 94 THUMB_32 FUNC
+gatt_act_write 1010026 150 THUMB_32 FUNC
+gatt_check_write_long_terminate 1010204 92 THUMB_32 FUNC
+gatt_discovery_result 1010296 34 THUMB_32 FUNC
+gatt_proc_disc_error_rsp 1010614 32 THUMB_32 FUNC
+rfc_port_sm_execute 1013402 32 THUMB_32 FUNC
+rfc_set_port_state 1013532 84 THUMB_32 FUNC
+rfc_process_l2cap_congestion 1014344 52 THUMB_32 FUNC
+gatt_sr_enqueue_cmd 1017476 48 THUMB_32 FUNC
+gatts_attibute_request 1018202 34 THUMB_32 FUNC
+__decompress1 1025048 92 THUMB_32 FUNC
+tsensor_equationInit 1025632 50 THUMB_32 FUNC
+tsensor_init 1025702 38 THUMB_32 FUNC
+tsensor_read 1025740 36 THUMB_32 FUNC
+tsensor_lpFilter 1025776 62 THUMB_32 FUNC
+init_cm4_fpu 1262 58 THUMB_32 FUNC
+tsensor_convert 1025838 36 THUMB_32 FUNC
+tsensor_filter 1025902 50 THUMB_32 FUNC
+tsensor_filterPreload 1025952 60 THUMB_32 FUNC
+XOR128 1085656 36 THUMB_32 FUNC
+hmac_aes_mmo_sign 1087184 78 THUMB_32 FUNC
+hmac_aes_mmo_verify 1087262 102 THUMB_32 FUNC
+i2cm_read 1088442 68 THUMB_32 FUNC
+adc_readSampleRaw 1091794 64 THUMB_32 FUNC
+adc_readVoltage 1091858 66 THUMB_32 FUNC
+adc_adcCalibrate 1092034 118 THUMB_32 FUNC
+adc_SetInputRange 1092152 40 THUMB_32 FUNC
+sha1_hmac_starts 1193492 114 THUMB_32 FUNC
+_lm_sam_InitializeSlotmapsForESam 787756 96 THUMB_32 FUNC
+utilslib_calculateCrc 889848 68 THUMB_32 FUNC
+_celt_ki_bfly3_find_max_loop 1316352 300 THUMB_32 FUNC
+sha1_hmac_finish 1193608 62 THUMB_32 FUNC
+lm_sam_ResetAll 787852 108 THUMB_32 FUNC
+approxLog2 889916 32 THUMB_32 FUNC
+_celt_ki_bfly2_find_max_loop 1316652 160 THUMB_32 FUNC
+sha1_hmac 1193670 48 THUMB_32 FUNC
+lm_sam_GetConnection 788070 34 THUMB_32 FUNC
+FifoOv_remove 890188 52 THUMB_32 FUNC
+_celt_ki_bfly5_find_max_loop 1316812 296 THUMB_32 FUNC
+BigIntegerToCstrEx 1196562 40 THUMB_32 FUNC
+lm_sam_InitiateSamDisable 788104 40 THUMB_32 FUNC
+micro_bcsOvrKvcoCalEn 892250 32 THUMB_32 FUNC
+srand 1317268 42 THUMB_32 FUNC
+t_sessionkey 1196798 210 THUMB_32 FUNC
+lm_sam_ResetRemote 788384 36 THUMB_32 FUNC
+_micro_bcsRestoreRegisters_bpl_lcu_Reset 892356 132 THUMB_32 FUNC
+strstr 1317348 36 THUMB_32 FUNC
+cstr_new_alloc 1197202 48 THUMB_32 FUNC
+lm_sam_DefineLocalType0 788684 32 THUMB_32 FUNC
+micro_bcsSaveVcoCapCalRegs 893828 60 THUMB_32 FUNC
+__default_signal_display 1318336 50 THUMB_32 FUNC
+cstr_free 1197526 40 THUMB_32 FUNC
+_lm_sam_MarkConnsForNewType0Submap 789168 88 THUMB_32 FUNC
+micro_bcsDriftPredictionReset 893888 46 THUMB_32 FUNC
+_dcmple 1618976 98 THUMB_32 FUNC
+NN_Sub 1202326 82 THUMB_32 FUNC
+_lm_sam_MarkConnsForSlotmapUpdate 789256 76 THUMB_32 FUNC
+micro_bcsDisableTCATaskQuick 894252 58 THUMB_32 FUNC
+_dmul 1619096 340 THUMB_32 FUNC
+NN_AddMod 1202548 174 THUMB_32 FUNC
+_lm_sam_UpdateSlotmap 789332 228 THUMB_32 FUNC
+_memset_w 894560 74 THUMB_32 FUNC
+__fpl_dnaninf 1619436 156 THUMB_32 FUNC
+NN_EmTick 1204090 50 THUMB_32 FUNC
+_lm_sam_CalculateAvailability 790404 98 THUMB_32 FUNC
+_memset 894638 64 THUMB_32 FUNC
+_drcmple 1619604 108 THUMB_32 FUNC
+wps_NN_set 1204486 36 THUMB_32 FUNC
+_lm_sam_LmpToSamStruct 790954 54 THUMB_32 FUNC
+clock_Init 897360 84 THUMB_32 FUNC
+"__semihosting_library_function, _maybe_terminate_alloc" 1621248 63 THUMB_32 FUNC
+wps_NN_get 1204522 32 THUMB_32 FUNC
+_lm_sam_NumOfSlotsToPreferedSlot 792010 262 THUMB_32 FUNC
+dbfw_hal_coredump_ram_image_addr_info 897636 48 THUMB_32 FUNC
+rsa_check_pubkey 1205116 80 THUMB_32 FUNC
+_lm_sam_isSlotTypeMatched 792724 156 THUMB_32 FUNC
+u8toHexStr 898056 32 THUMB_32 FUNC
+besl_802_11_generate_pmk 1207666 76 THUMB_32 FUNC
+lc_bcsNewConnEvent 795620 62 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_sign_part2_cb 902088 40 THUMB_32 FUNC
+dhm_read_public 1208226 36 THUMB_32 FUNC
+lc_SetSRMode 796214 38 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_sign_part1_cb 902224 40 THUMB_32 FUNC
+dhm_calc_secret 1208410 74 THUMB_32 FUNC
+lc_changeScansParamDuringPageInquiry 796436 40 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part1_cb 902940 42 THUMB_32 FUNC
+dhm_tls_decode_premaster_secret 1208558 76 THUMB_32 FUNC
+lrm_ConvertRollover 796880 38 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part3_cb 903756 42 THUMB_32 FUNC
+dh_tls_create_premaster_secret 1208634 78 THUMB_32 FUNC
+"lrm_ComputeScoBZL, lrm_ComputeScoBZL" 798900 56 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part4_isr 904284 42 THUMB_32 FUNC
+microrng_rand 1210574 440 THUMB_32 FUNC
+lrm_ConvertRealToLmp 799192 34 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part9_cb 904590 42 THUMB_32 FUNC
+aes_setkey_enc 1211014 416 THUMB_32 FUNC
+lrm_FindOffset 801894 112 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part8_cb 904662 42 THUMB_32 FUNC
+aes_crypt_cbc 1213492 134 THUMB_32 FUNC
+_lrm_NumOfIncompatibleIntervals 802006 80 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part7_cb 904740 42 THUMB_32 FUNC
+arc4_setup 1213752 64 THUMB_32 FUNC
+_lrm_ClearSamLinks 802776 66 THUMB_32 FUNC
+hw_pka_ecp_ecdsa_verf_part6_cb 904820 42 THUMB_32 FUNC
+camellia_crypt_cbc 1215536 134 THUMB_32 FUNC
+lrm_findBzl 803416 76 THUMB_32 FUNC
+hw_pka_dsa_sign_part2_cb 905418 40 THUMB_32 FUNC
+camellia_crypt_cfb128 1215670 874 THUMB_32 FUNC
+"lrm_SlotUsed, lrm_SlotUsed" 806424 32 THUMB_32 FUNC
+hw_pka_dsa_sign_part1_cb 905494 40 THUMB_32 FUNC
+des_setkey_dec 1216548 176 THUMB_32 FUNC
+lrm_NewMulticastSlaveLink 807084 60 THUMB_32 FUNC
+hw_pka_dsa_verf_part2_cb 906460 40 THUMB_32 FUNC
+md4_starts 1218688 1270 THUMB_32 FUNC
+lrm_NewMulticastIndPollSlaveLink 807292 60 THUMB_32 FUNC
+hw_pka_dsa_verf_part1_cb 906536 40 THUMB_32 FUNC
+md4_update 1219958 114 THUMB_32 FUNC
+lrm_NewLteCoexLink 807352 64 THUMB_32 FUNC
+hw_pka_rsa_keygen_q 908636 44 THUMB_32 FUNC
+md5_finish 1220072 190 THUMB_32 FUNC
+lrm_SetBleConnBzl 807422 50 THUMB_32 FUNC
+hw_pka_rsa_keygen_p 908680 42 THUMB_32 FUNC
+dynamic_memory_Release 453474 60 THUMB_32 FUNC
+celt_plc_Mpy_32_16 642596 80 THUMB_32 FUNC
+lm_handleLmpSlotOffsetPdu 456632 70 THUMB_32 FUNC
+mpi_lsb 667590 46 THUMB_32 FUNC
+tssical_computeScaledTcaValue 460198 84 THUMB_32 FUNC
+mpi_msb 667636 50 THUMB_32 FUNC
+_ape_transactionDone 461060 90 THUMB_32 FUNC
+mpi_size 667686 66 THUMB_32 FUNC
+ape_HandleLmpPduCb 461150 32 THUMB_32 FUNC
+mpi_cmp_abs 668010 108 THUMB_32 FUNC
+lm_SendLmpStartEncryptReq 461242 80 THUMB_32 FUNC
+mpi_shift_r 670216 124 THUMB_32 FUNC
+lm_SendLmpPauseEncryptionAESReq 462752 86 THUMB_32 FUNC
+mpi_cmp_mpi 670340 148 THUMB_32 FUNC
+ape_check_fail_device 463494 56 THUMB_32 FUNC
+gatt_get_tcb_by_idx 674712 48 THUMB_32 FUNC
+_ape_action_txSres 463850 170 THUMB_32 FUNC
+gatt_sr_send_req_callback 675546 42 THUMB_32 FUNC
+lm_SendLmpEncryptModeReq 465334 104 THUMB_32 FUNC
+gatt_sr_dispatchExtValueCb 675588 116 THUMB_32 FUNC
+_ape_add_auth_fail_device 466242 190 THUMB_32 FUNC
+gatt_add_sdp_record 675818 216 THUMB_32 FUNC
+lm_HandleLmpSresPdu 467276 170 THUMB_32 FUNC
+gatt_is_clcb_allocated 676034 70 THUMB_32 FUNC
+_ape_action_procUnitKey 467710 74 THUMB_32 FUNC
+gatt_clcb_alloc 676104 102 THUMB_32 FUNC
+lm_SendLmpEncryptKeySizeReq 468334 52 THUMB_32 FUNC
+gatt_find_tcb_by_cid 676226 78 THUMB_32 FUNC
+lm_HandleLmpInRandAcceptedPdu 469752 48 THUMB_32 FUNC
+gatt_cmd_enq 676548 72 THUMB_32 FUNC
+lm_HandleLmpEncryptModeReqAcceptedPdu 470124 86 THUMB_32 FUNC
+gatt_cmd_dequeue 676620 92 THUMB_32 FUNC
+lm_HandleLmpUseSemiPermKeyAcceptedPdu 471328 62 THUMB_32 FUNC
+btm_sec_start_get_name 680444 52 THUMB_32 FUNC
+testulp_loadPrbs15Pattern 472894 88 THUMB_32 FUNC
+btm_sec_execute_procedure 680496 154 THUMB_32 FUNC
+autocor_nb 473696 1372 THUMB_32 FUNC
+btm_sec_use_smp_br_chnl 684408 44 THUMB_32 FUNC
+autocor_wb 475068 1360 THUMB_32 FUNC
+btm_sec_send_hci_disconnect 686458 104 THUMB_32 FUNC
+erasure_fx2 476428 360 THUMB_32 FUNC
+btm_sec_is_a_bonded_dev 687056 38 THUMB_32 FUNC
+cvsd_step_size_estimate 476788 252 THUMB_32 FUNC
+btm_sec_dev_rec_cback_event 687160 56 THUMB_32 FUNC
+Div_32_ARM 477068 56 THUMB_32 FUNC
+BTM_BleSetPrefConnParams 690558 146 THUMB_32 FUNC
+Norm64 477124 60 THUMB_32 FUNC
+btm_ble_increment_sign_ctr 691140 38 THUMB_32 FUNC
+smdpitch_fine_wb 477184 864 THUMB_32 FUNC
+btm_get_local_div 691200 34 THUMB_32 FUNC
+smdpitch_fine_nb 478048 468 THUMB_32 FUNC
+btm_ble_set_encryption 692220 132 THUMB_32 FUNC
+sfi_size 481182 42 THUMB_32 FUNC
+BTM_BleVerifySignature 694010 112 THUMB_32 FUNC
+sfi_deepPowerDownDisable 481324 36 THUMB_32 FUNC
+BTM_GetLeSecurityState 694122 108 THUMB_32 FUNC
+host_sendHcpMsg 773858 50 THUMB_32 FUNC
+hostctlr_isPidValid 773942 32 THUMB_32 FUNC
+hostctlr_getPipeRxState 773974 46 THUMB_32 FUNC
+hostctlr_findAnyHostPair 774268 58 THUMB_32 FUNC
+hostctlr_getPipeState 774326 46 THUMB_32 FUNC
+hostctlr_setPipeState 774372 52 THUMB_32 FUNC
+hostctlr_getDPipeList 774744 92 THUMB_32 FUNC
+hostctlr_findPid4HostPair 774836 48 THUMB_32 FUNC
+hostctlr_findPid4Gate 774884 62 THUMB_32 FUNC
+host_getHidTalkToDh 775310 36 THUMB_32 FUNC
+host_managePipeState 775346 56 THUMB_32 FUNC
+ulp_rl_locateItemByLocalRpa 778904 56 THUMB_32 FUNC
+ulp_rl_locateItemByPeerIdAddrAndType 778960 56 THUMB_32 FUNC
+ulp_rl_itemIdx2Ptr 779016 32 THUMB_32 FUNC
+ulp_rl_itemPtr2Idx 779048 70 THUMB_32 FUNC
+ulp_rl_getAnEmptyItem 779118 40 THUMB_32 FUNC
+ulp_rl_retireThisItem 779158 78 THUMB_32 FUNC
+ulp_rl_rpaNotBuffered 779650 130 THUMB_32 FUNC
+ulp_rl_rpaGenStMach_refreshOndemand 779878 146 THUMB_32 FUNC
+ulp_rl_rpaGenStMach_procGenDone 780160 238 THUMB_32 FUNC
+ulp_rl_rpaGenStMach_procLmTimerTick 780398 108 THUMB_32 FUNC
+ulp_rl_invalidateLocalRpa 781506 32 THUMB_32 FUNC
+ulp_rl_setRpaTimeout 781764 32 THUMB_32 FUNC
+arip_audRM_GetSynch 784076 40 THUMB_32 FUNC
+arip_audRM_GetFra 784116 40 THUMB_32 FUNC
+arip_audRM_GetFiFo 784156 34 THUMB_32 FUNC
+arip_audRM_GetHld 784358 40 THUMB_32 FUNC
+_lm_sam_InitializeSlotmapsForSIG 787664 92 THUMB_32 FUNC
+_tx_thread_initialize 7376 52 THUMB_32 FUNC
+"l2c_fcr_adj_monitor_retran_timeout, l2c_fcr_adj_monitor_retran_timeout" 976740 50 THUMB_32 FUNC
+adc_convertGPIOtoADCInput 1092192 72 THUMB_32 FUNC
+_tx_thread_stack_build 8204 64 THUMB_32 FUNC
+l2c_fcr_adj_our_rsp_options 976790 64 THUMB_32 FUNC
+adc_convertADCInputtoGPIO 1092264 72 THUMB_32 FUNC
+OTP_Standby 9536 36 THUMB_32 FUNC
+l2c_fcr_process_peer_cfg_req 976854 302 THUMB_32 FUNC
+spiffyd_txWord 1096056 34 THUMB_32 FUNC
+OTP_PowerOn 9612 66 THUMB_32 FUNC
+smp_concatenate_local 979132 46 THUMB_32 FUNC
+spiffyd_txWord 1097148 34 THUMB_32 FUNC
+Read_Static_BitErrors 9896 60 THUMB_32 FUNC
+smp_process_stk 979738 38 THUMB_32 FUNC
+hidd_l2cif_cong_ind 1098388 66 THUMB_32 FUNC
+Apply_Static_BitError_Correction 9956 64 THUMB_32 FUNC
+smp_calc_num_to_disp_nc 980732 92 THUMB_32 FUNC
+hidd_no_conn_proc_evt 1099804 80 THUMB_32 FUNC
+Read_Entire_OTP_Data 10044 40 THUMB_32 FUNC
+smp_calc_peer_dhkey_chck 981484 102 THUMB_32 FUNC
+hidd_proc_repage_timeout 1099884 70 THUMB_32 FUNC
+pmu_sleep_PreSleep 10934 74 THUMB_32 FUNC
+smp_build_pairing_cmd 982218 66 THUMB_32 FUNC
+hidd_connecting_proc_evt 1099954 94 THUMB_32 FUNC
+synch_AcquireMutex 13120 98 THUMB_32 FUNC
+smp_pair_req_rsp_par_valid 983296 48 THUMB_32 FUNC
+hidd_connected_proc_evt 1100074 76 THUMB_32 FUNC
+reset_SetBluetoothUARTBaudRate 1206 50 THUMB_32 FUNC
+synch_ReleasePriorityMutex 13524 54 THUMB_32 FUNC
+smp_reject_unexp_pair_cmd 983368 38 THUMB_32 FUNC
+hidd_disc_ing_proc_evt 1100150 38 THUMB_32 FUNC
+btuarth4_InitiateReceive 15728 36 THUMB_32 FUNC
+"smp_select_assoc_model, smp_select_assoc_model" 983606 48 THUMB_32 FUNC
+l2c_fcr_updcrc 1100188 36 THUMB_32 FUNC
+h4_IsPmuPauseAllowed 17556 34 THUMB_32 FUNC
+smp_reverse_array 983654 36 THUMB_32 FUNC
+avrc_ctrl_cback 1103190 54 THUMB_32 FUNC
+_tx_mutex_cleanup 17652 108 THUMB_32 FUNC
+_d2e_denorm_low 984236 70 THUMB_32 FUNC
+avrc_start_cmd_timer 1103244 42 THUMB_32 FUNC
+extract_even_bits 19040 36 THUMB_32 FUNC
+__btod_div_common 984306 824 THUMB_32 FUNC
+avrc_get_data_ptr 1103416 52 THUMB_32 FUNC
+high_pri_msg_Init 6062 40 THUMB_32 FUNC
+OTP_GetHammingParity 19136 710 THUMB_32 FUNC
+_e2e 985130 198 THUMB_32 FUNC
+avrc_prep_end_frag 1103468 94 THUMB_32 FUNC
+__tx_SVCallHandler 5388 158 THUMB_32 FUNC
+OTP_FEC_Locate_Bit_Error 19846 54 THUMB_32 FUNC
+__btod_mult_common 985328 580 THUMB_32 FUNC
+AVRC_PassCmd 1106054 112 THUMB_32 FUNC
+_tx_thread_context_restore 5288 68 THUMB_32 FUNC
+OTP_GetFECParityByte 19900 350 THUMB_32 FUNC
+"gki_add_pool_to_list, gki_add_pool_to_list" 986164 50 THUMB_32 FUNC
+AVRC_PassRsp 1106166 54 THUMB_32 FUNC
+slimboot_start 2764 46 THUMB_32 FUNC
+pmu_lpo_update_average 20456 40 THUMB_32 FUNC
+GKI_enqueue 986968 86 THUMB_32 FUNC
+AVRC_VendorRsp 1107126 34 THUMB_32 FUNC
+pmu_lpo_SwitchLPOSource 20902 176 THUMB_32 FUNC
+GKI_find_buf_start 987640 62 THUMB_32 FUNC
+avrc_bld_get_capability_cmd 1107160 42 THUMB_32 FUNC
+_tx_thread_time_slice 22496 96 THUMB_32 FUNC
+gatt_channel_congestion 987904 68 THUMB_32 FUNC
+avrc_bld_get_cur_app_setting_value_cmd 1107252 134 THUMB_32 FUNC
+slimboot_clear_ram 2810 86 THUMB_32 FUNC
+uart_ReceiveSynch 23424 56 THUMB_32 FUNC
+gatt_update_app_hold_link_status 988178 80 THUMB_32 FUNC
+avrc_bld_get_app_setting_value_text_cmd 1107556 108 THUMB_32 FUNC
+high_pri_msg_RegisterHandler 6102 120 THUMB_32 FUNC
+uart_SynchToEnter_Download_Mode 23480 228 THUMB_32 FUNC
+gatt_update_app_use_link_flag 988258 78 THUMB_32 FUNC
+avrc_bld_inform_charset_cmd 1107664 68 THUMB_32 FUNC
+high_pri_msg_UnregisterHandler 6222 98 THUMB_32 FUNC
+uart_ProgramDHBR_DLBR 23732 76 THUMB_32 FUNC
+bleconn_proc_credits_from_peer 989348 70 THUMB_32 FUNC
+avrc_bld_inform_battery_status_cmd 1107732 38 THUMB_32 FUNC
+_tx_initialize_high_level 6380 32 THUMB_32 FUNC
+uart_PerformAutobaudMeasurement 23808 154 THUMB_32 FUNC
+l2c_bleconn_execute 990612 54 THUMB_32 FUNC
+avrc_bld_get_elem_attrs_cmd 1107770 142 THUMB_32 FUNC
+_tx_initialize_low_level 6412 48 THUMB_32 FUNC
+uart_PerformAutobaud 23962 52 THUMB_32 FUNC
+sdpu_build_attrib_seq 993154 92 THUMB_32 FUNC
+avrc_bld_notify_cmd 1107916 62 THUMB_32 FUNC
+spiffy_sw_reset 6680 62 THUMB_32 FUNC
+btuart_flex_HandleUpdate_Uart_Baud_Rate 28738 46 THUMB_32 FUNC
+sdpu_get_len_from_type 993246 88 THUMB_32 FUNC
+avrc_bld_set_addr_player_cmd 1108036 34 THUMB_32 FUNC
+spiffy_write_quad 6912 90 THUMB_32 FUNC
+bttransport_Disable 35412 52 THUMB_32 FUNC
+sdpu_extract_uid_seq 993506 258 THUMB_32 FUNC
+avrc_bld_set_abs_volume_cmd 1108070 32 THUMB_32 FUNC
+spiffy_get_base_clock_khz 7248 50 THUMB_32 FUNC
+bttransport_Detect 35584 62 THUMB_32 FUNC
+sdpu_extract_attr_seq 993764 254 THUMB_32 FUNC
+avrc_bld_set_browsed_player_cmd 1108102 34 THUMB_32 FUNC
+spiffy_get_tport_div 7298 78 THUMB_32 FUNC
+utilPower2dB 352012 54 THUMB_32 FUNC
+MP_MersennsMultMod_P256_ASM 571808 1130 THUMB_32 FUNC
+sdpu_get_first_attr 994026 34 THUMB_32 FUNC
+md5_starts 1220544 1742 THUMB_32 FUNC
+levelMinimaxTrack 352066 424 THUMB_32 FUNC
+MP_MersennsSquaMod_P256_ASM 572938 1458 THUMB_32 FUNC
+sdpu_get_first_attr 994128 34 THUMB_32 FUNC
+md5_update 1222286 114 THUMB_32 FUNC
+levelEstimatorInit 352490 66 THUMB_32 FUNC
+slidingWin_addTail 575696 148 THUMB_32 FUNC
+sdpu_compare_uuid_arrays 994282 226 THUMB_32 FUNC
+md5_finish 1222400 190 THUMB_32 FUNC
+VAD_TransmitSCO 353616 44 THUMB_32 FUNC
+_shdlc_handleNr 576294 76 THUMB_32 FUNC
+sdpu_compare_bt_uuids 994508 54 THUMB_32 FUNC
+seed_cbc_encrypt 1230944 90 THUMB_32 FUNC
+vad_hci_WriteVadMode 353660 78 THUMB_32 FUNC
+_shdlc_procS 576730 54 THUMB_32 FUNC
+sdpu_compare_uuid_with_attr 994562 58 THUMB_32 FUNC
+seed_cbc_decrypt 1231034 90 THUMB_32 FUNC
+radio_control_enableRadio 353856 58 THUMB_32 FUNC
+swpllcshdlc_isRSETSupported 576970 68 THUMB_32 FUNC
+sdpu_sort_attr_list 994620 58 THUMB_32 FUNC
+sha2_starts 1231124 7314 THUMB_32 FUNC
+radio_control_HandleMsgInIdleThread 354006 32 THUMB_32 FUNC
+swpllcshdlc_procPdu 577152 76 THUMB_32 FUNC
+sdpu_get_attr_id 994678 38 THUMB_32 FUNC
+sha2_update 1238438 114 THUMB_32 FUNC
+_sniff_sendHciSubratingEvent 355632 68 THUMB_32 FUNC
+swpllcshdlc_handleSeqnum 577516 72 THUMB_32 FUNC
+sdpu_get_list_len 994812 56 THUMB_32 FUNC
+sha2_finish 1238552 286 THUMB_32 FUNC
+_sniff_initiateSubrating 355700 86 THUMB_32 FUNC
+lm_SendLmpQoS 578008 46 THUMB_32 FUNC
+sdpu_get_rec_handle 994942 106 THUMB_32 FUNC
+asn1_read_length 1239172 56 THUMB_32 FUNC
+_sniff_rejectHostSniffReq 357660 52 THUMB_32 FUNC
+Command_ResponseMessage 578632 64 THUMB_32 FUNC
+smp_update_key_mask 995328 78 THUMB_32 FUNC
+lm_HandleLmpTestControlPdu 1244042 34 THUMB_32 FUNC
+BTMMstr_IsRxPayloadCorrect 360190 78 THUMB_32 FUNC
+celt_ec_enc_init 579984 34 THUMB_32 FUNC
+smp_key_pick_key 996190 56 THUMB_32 FUNC
+CELT_enc_encode 1245712 74 THUMB_32 FUNC
+_initTaskSetDefaultPriority 361676 54 THUMB_32 FUNC
+mpaf_core_read_buffer_size 587218 78 THUMB_32 FUNC
+smp_br_key_distribution 996448 82 THUMB_32 FUNC
+celt_opus_packet_get_bandwidth 1246120 62 THUMB_32 FUNC
+_initTaskLcuCmd 362078 74 THUMB_32 FUNC
+mpaf_core_read_local_version_information 587466 50 THUMB_32 FUNC
+smp_wait_both_publ_keys 997282 58 THUMB_32 FUNC
+celt_opus_packet_get_nb_frames 1246296 46 THUMB_32 FUNC
+_ll_ushift_r 368636 38 THUMB_32 FUNC
+mpaf_tranSapInstallHidCtrlChain 588348 40 THUMB_32 FUNC
+smp_br_check_auth_req 997824 104 THUMB_32 FUNC
+celt_opus_decode 1248480 52 THUMB_32 FUNC
+__memmove_aligned 368712 56 THUMB_32 FUNC
+mpaf_tranSapInstallHidCtrlChain 588422 40 THUMB_32 FUNC
+smp_start_enc 998442 54 THUMB_32 FUNC
+celt_plc_Init_LC_PLC 1249006 358 THUMB_32 FUNC
+mmu_IsAddressInRAM 368796 48 THUMB_32 FUNC
+mpaf_tranSapInstallHidCtrlChain 588462 40 THUMB_32 FUNC
+smp_check_auth_req 998536 174 THUMB_32 FUNC
+celt_ec_dec_init 1258836 120 THUMB_32 FUNC
+iqcal_scaleInput 373750 76 THUMB_32 FUNC
+SDP_CancelServiceSearch 589904 38 THUMB_32 FUNC
+port_find_port_cb 1000764 42 THUMB_32 FUNC
+celt_ec_decode 1258956 40 THUMB_32 FUNC
+iqcal_writeInput 373826 130 THUMB_32 FUNC
+"SDP_FindAttributeInDb, SDP_FindAttributeInDb" 589972 38 THUMB_32 FUNC
+"port_find_verify_port_cb, port_find_verify_port_cb" 1000806 36 THUMB_32 FUNC
+celt_ec_decode_bin 1258996 44 THUMB_32 FUNC
+iqcal_gssInit 374154 180 THUMB_32 FUNC
+SDP_FindServiceUUIDInRec 590024 218 THUMB_32 FUNC
+port_find_mcb_dlci_port 1001302 46 THUMB_32 FUNC
+celt_ec_dec_update 1259040 112 THUMB_32 FUNC
+apuRxTxState_copyChnToS0 377588 32 THUMB_32 FUNC
+"SDP_FindServiceInDb, SDP_FindServiceInDb" 590242 200 THUMB_32 FUNC
+port_find_dlci_port 1001348 78 THUMB_32 FUNC
+celt_ec_dec_bit_logp 1259152 106 THUMB_32 FUNC
+bthci_event_filter_SetupInquiryFilterWithClassOfDevice 377734 114 THUMB_32 FUNC
+"sdp_fill_proto_elem, sdp_fill_proto_elem" 590556 124 THUMB_32 FUNC
+port_get_signal_changes 1001612 70 THUMB_32 FUNC
+celt_ec_dec_icdf 1259258 116 THUMB_32 FUNC
+bthci_event_filter_SetupConnSetupFilterWithClassOfDevice 377974 120 THUMB_32 FUNC
+SDP_FindProtocolListElemInRec 590680 36 THUMB_32 FUNC
+sdp_db_service_search 1002002 164 THUMB_32 FUNC
+celt_ec_dec_bits 1259374 84 THUMB_32 FUNC
+bthci_event_filter_SetupConnSetupFilterWithBdAddr 378094 104 THUMB_32 FUNC
+SDP_FindProfileVersionInRec 590800 114 THUMB_32 FUNC
+sdp_db_find_record 1002166 78 THUMB_32 FUNC
+celt_opus_packet_parse 1260578 38 THUMB_32 FUNC
+bthci_event_filter_InquiryResultIsNotFiltered 378198 146 THUMB_32 FUNC
+wiced_transport_send_buffer 591616 84 THUMB_32 FUNC
+sdp_db_find_attr_in_rec 1002244 56 THUMB_32 FUNC
+celt_gen_toc 1260894 54 THUMB_32 FUNC
+bthci_event_filter_DetermineAutoAcceptAndRole 378344 34 THUMB_32 FUNC
+wiced_transport_get_tx_pool 591700 38 THUMB_32 FUNC
+"padding, padding" 1002350 36 THUMB_32 FUNC
+opus_encoder_create 1260948 96 THUMB_32 FUNC
+hciulp_sendStartUntetheredRFTestCommandCompleteEvent 378724 34 THUMB_32 FUNC
+wiced_transport_free_buffer 591738 42 THUMB_32 FUNC
+rfc_mx_sm_sabme_wait_ua 1003292 88 THUMB_32 FUNC
+celt_user_bitrate_to_bitrate 1261044 64 THUMB_32 FUNC
+lculp_stopUntetheredRFTestTask 378842 38 THUMB_32 FUNC
+swpmac_isr 593258 36 THUMB_32 FUNC
+rfc_mx_sm_execute 1003490 50 THUMB_32 FUNC
+celt_downmix_int 1261108 398 THUMB_32 FUNC
+_batchingSizeOfFullRecord 379804 36 THUMB_32 FUNC
+BTM_AddEirService 605146 36 THUMB_32 FUNC
+rfc_send_buf_uih 1003900 204 THUMB_32 FUNC
+celt_frame_size_select 1261506 142 THUMB_32 FUNC
+_pageTaskTxDone 299764 38 THUMB_32 FUNC
+q_pka_sel_LIR 704088 150 THUMB_32 FUNC
+lm_handleCmdTrace 809308 70 THUMB_32 FUNC
+btclk_DelayXus 853852 46 THUMB_32 FUNC
+gatt_get_link_encrypt_status 958998 50 THUMB_32 FUNC
+wiced_trace_array 1136790 162 THUMB_32 FUNC
+_samInstantTaskGetNewPtr 300000 36 THUMB_32 FUNC
+q_pka_LIR_size 704238 98 THUMB_32 FUNC
+bcs_kernelGetCoarseScheduledSlotsWithCurrSlot 813588 76 THUMB_32 FUNC
+btclk_AdvanceNatClk_clkpclkHWWA 854482 104 THUMB_32 FUNC
+l2c_csm_execute 961318 62 THUMB_32 FUNC
+wiced_bt_trace_array 1136952 152 THUMB_32 FUNC
+bcs_sam_isSamActive 300322 64 THUMB_32 FUNC
+q_pka_hw_write_sequence 704372 64 THUMB_32 FUNC
+bcs_kernelIncreaseResyncWindows 816680 86 THUMB_32 FUNC
+btclk_GetSysClkOffsetAgainstNatClk_clkpclk 855246 40 THUMB_32 FUNC
+l2c_link_add_tx_complete_pending 962516 84 THUMB_32 FUNC
+outDgt 1137244 42 THUMB_32 FUNC
+_coexIsA2dpLink 301016 50 THUMB_32 FUNC
+q_pka_hw_read_LIR 704544 44 THUMB_32 FUNC
+bcs_kernelBtProgIntDisable 817418 32 THUMB_32 FUNC
+btclk_Convert_us_clkpclk_precise 856600 40 THUMB_32 FUNC
+port_open_continue 967668 84 THUMB_32 FUNC
+divOut 1137286 34 THUMB_32 FUNC
+_coexEnableHWMode 301732 54 THUMB_32 FUNC
+hw_aes_init 705090 56 THUMB_32 FUNC
+bcs_kernelCheckPhyStatus 817450 52 THUMB_32 FUNC
+btclk_GetSysClkOffsetAgainstSysClk_clkpclk 856868 44 THUMB_32 FUNC
+PORT_PortNegInd 968786 72 THUMB_32 FUNC
+print_array 1137320 50 THUMB_32 FUNC
+bcs_coexSlaveUpdateDeferCounter 302264 72 THUMB_32 FUNC
+hw_aes_set_free 705768 40 THUMB_32 FUNC
+bcs_kernelClockRolloverCheck 817502 74 THUMB_32 FUNC
+btclk_SubtractiveConvert_us_clkpclk 856918 38 THUMB_32 FUNC
+PORT_LineStatusInd 969250 72 THUMB_32 FUNC
+wiced_printf 1137868 104 THUMB_32 FUNC
+bcs_coexCmd_esco_retran 303232 48 THUMB_32 FUNC
+hw_aes_check_param 705824 92 THUMB_32 FUNC
+rm_calculateInqScanAccessCodes 824816 92 THUMB_32 FUNC
+memcmp 857872 88 THUMB_32 FUNC
+Port_TimeOutCloseMux 969398 48 THUMB_32 FUNC
+wiced_audio_request_samples 1139096 78 THUMB_32 FUNC
+tester_PROT_ARQ_BV_38_C_expectPauseEncryption 304560 62 THUMB_32 FUNC
+hw_aes_isr 706236 68 THUMB_32 FUNC
+rm_setHostAFHChannelMap 824908 50 THUMB_32 FUNC
+bcsulp_releaseLEAudioLink 858506 52 THUMB_32 FUNC
+strncpy 970840 88 THUMB_32 FUNC
+wiced_read_sbc_params 1139290 98 THUMB_32 FUNC
+tester_PROT_ARQ_BV_38_C_lmpTransmittedCheck 304622 32 THUMB_32 FUNC
+hw_sha2_isr 706692 58 THUMB_32 FUNC
+rm_getACLConnPtr 824988 32 THUMB_32 FUNC
+mmulp_allocLEABuffer 859146 42 THUMB_32 FUNC
+_printf_fp_infnan 970952 128 THUMB_32 FUNC
+wiced_get_sbcenc_frame_length 1139420 96 THUMB_32 FUNC
+tester_PROT_ARQ_BV_38_C_increaseCount 304654 40 THUMB_32 FUNC
+q_init 716810 60 THUMB_32 FUNC
+rm_setPeriodicInquiryParam 826184 50 THUMB_32 FUNC
+bcsulp_cleanupLEAudioInfo 859776 36 THUMB_32 FUNC
+_btod_etento 971080 228 THUMB_32 FUNC
+wiced_get_sbcdec_frame_length 1139516 36 THUMB_32 FUNC
+tester_PROT_ARQ_BV_40_C_increaseCount 304724 36 THUMB_32 FUNC
+q_copy 716870 58 THUMB_32 FUNC
+rm_getConnFromBdAddress 826234 88 THUMB_32 FUNC
+bcsulp_isPrimaryEvent 859824 38 THUMB_32 FUNC
+_btod_d2e 971308 62 THUMB_32 FUNC
+wiced_get_codec_info 1139552 156 THUMB_32 FUNC
+tester_PROT_ARQ_BV_40_C_receivedAndIncreaseGlobalCount 304760 42 THUMB_32 FUNC
+q_free 716928 38 THUMB_32 FUNC
+rm_getConnFromBdAddress_connected 826322 94 THUMB_32 FUNC
+bcsulp_setAudioPktTimeStamp 859900 62 THUMB_32 FUNC
+_btod_ediv 971370 40 THUMB_32 FUNC
+devlpm_registeredObjectsApproveHidOff 1143772 36 THUMB_32 FUNC
+tester_PROT_ARQ_BV_42_C_l2capTransmittedCheck 304830 46 THUMB_32 FUNC
+btm_ble_adv_states_operation 717100 42 THUMB_32 FUNC
+rm_getLPMCount 826416 64 THUMB_32 FUNC
+_connTaskDeterminCurrentPHYSetting 868436 110 THUMB_32 FUNC
+_btod_emul 971410 40 THUMB_32 FUNC
+devlpm_timeToSleep 1143808 120 THUMB_32 FUNC
+tester_PROT_ARQ_BV_42_C_increaseCount 304906 42 THUMB_32 FUNC
+btm_ble_stop_observe 717778 58 THUMB_32 FUNC
+rm_getConnectionHandle 826480 76 THUMB_32 FUNC
+_connTaskSetChannels 868546 58 THUMB_32 FUNC
+__ARM_fpclassify 971450 50 THUMB_32 FUNC
+devlpm_isSleepAllowed 1143928 38 THUMB_32 FUNC
+tester_corruptAclPayload 304964 66 THUMB_32 FUNC
+btm_ble_stream_adv_data 718934 64 THUMB_32 FUNC
+rm_adjustNPCCfgThreshold 826794 102 THUMB_32 FUNC
+_connTaskHopDataChannel 868740 166 THUMB_32 FUNC
+l2cu_ble_get_next_channel_in_rr 971958 68 THUMB_32 FUNC
+devlpm_registerForLowPowerQueries 1143996 32 THUMB_32 FUNC
+tester_corruptEscoPayload 305042 62 THUMB_32 FUNC
+ANT_Time_AddBTTime 720872 62 THUMB_32 FUNC
+rm_assignHciConnHandle 827140 72 THUMB_32 FUNC
+_connTaskSetAlarmLevel 868906 78 THUMB_32 FUNC
+l2c_ble_check_channel_congestion 972026 70 THUMB_32 FUNC
+poly1305_auth 1182194 40 THUMB_32 FUNC
+tester_firstL2capTransmittedCheck 305104 32 THUMB_32 FUNC
+ANT_Time_BTTimeDiff 720934 50 THUMB_32 FUNC
+rm_releaseHciConnHandle 828462 50 THUMB_32 FUNC
+_bcsulp_linkQuality_calculate 870160 90 THUMB_32 FUNC
+"l2cu_ble_enqueue_lecb, l2cu_ble_enqueue_lecb" 972562 72 THUMB_32 FUNC
+chacha20_poly1305_aead_irtf_cfrg 1182720 198 THUMB_32 FUNC
+tester_nackL2cap 305136 62 THUMB_32 FUNC
+hidh_le_alloc_rpt_entry 734680 96 THUMB_32 FUNC
+rm_getBBConnectedACLUsage 828944 52 THUMB_32 FUNC
+_bcsulp_linkQuality_update 870250 32 THUMB_32 FUNC
+"l2cu_ble_dequeue_lecb, l2cu_ble_dequeue_lecb" 972714 106 THUMB_32 FUNC
+chacha20_poly1305_aead_tls_decrypt 1183128 208 THUMB_32 FUNC
+_advTaskSetupChanMap 306780 120 THUMB_32 FUNC
+hidh_le_read_rpt_ref_dscpt 734878 122 THUMB_32 FUNC
+rm_getMasterACLUsage 829544 42 THUMB_32 FUNC
+bcsulp_connUpdateLateAdjustment 870486 82 THUMB_32 FUNC
+l2cu_ble_find_lecb_by_local_id 973434 52 THUMB_32 FUNC
+chacha_keysetup 1184232 66 THUMB_32 FUNC
+advTaskGetQueue 307436 78 THUMB_32 FUNC
+hidh_le_expl_rpt 735072 54 THUMB_32 FUNC
+rm_supportSecureConnections 829784 44 THUMB_32 FUNC
+bcsulp_connTaskTxDataAck 873560 60 THUMB_32 FUNC
+l2cu_ble_determ_security_act 973564 84 THUMB_32 FUNC
+chacha_encrypt_bytes 1184344 102 THUMB_32 FUNC
+advTaskInsertQueue 307514 60 THUMB_32 FUNC
+hidh_le_gattc_get_disc_range 735668 44 THUMB_32 FUNC
+rm_checkAclPktTypeLegality 830034 70 THUMB_32 FUNC
+_connTaskAdjustIntervalForLatency 876252 58 THUMB_32 FUNC
+"rfc_find_lcid_mcb, rfc_find_lcid_mcb" 973656 48 THUMB_32 FUNC
+chacha20_block_function 1184492 52 THUMB_32 FUNC
+bcsulp_advGetInstanceFromTask 308426 56 THUMB_32 FUNC
+hidh_le_gattc_start_char_disc 735786 34 THUMB_32 FUNC
+rm_hci_EnableDeviceUnderTestMode 830128 40 THUMB_32 FUNC
+bcsulp_connTaskSetReason4HostFromConnState 876524 58 THUMB_32 FUNC
+RFCOMM_BufDataInd 973730 224 THUMB_32 FUNC
+sha4 1188282 50 THUMB_32 FUNC
+_advTaskAdvanceSysClk00 309678 104 THUMB_32 FUNC
+hidh_le_gatt_disc_cmplt_cb 736166 52 THUMB_32 FUNC
+rm_eventInVSEventMask 830488 34 THUMB_32 FUNC
+bcsulp_checkDataPath 877780 102 THUMB_32 FUNC
+strcmp 974224 128 THUMB_32 FUNC
+sha4_hmac_starts 1188332 126 THUMB_32 FUNC
+_advTaskRxHeaderDone 311042 34 THUMB_32 FUNC
+hidh_le_gattc_srvc_in_list 736592 54 THUMB_32 FUNC
+bcs_timeline_CalculateDebugIdAndDebugDataCounts 831684 282 THUMB_32 FUNC
+_connTaskRestoreRefreshInstantState 878840 84 THUMB_32 FUNC
+_d2e_norm_op1 974352 96 THUMB_32 FUNC
+sha4_hmac_finish 1188460 76 THUMB_32 FUNC
+bcsulp_advFindTaskByLtch 311656 76 THUMB_32 FUNC
+hidh_le_find_rpt_entry_by_hdl 736842 42 THUMB_32 FUNC
+bcs_timeline_CalculateRecordCounts 831966 152 THUMB_32 FUNC
+bcsulp_connTaskIsTxPending 880726 36 THUMB_32 FUNC
+GATTC_SendHandleValueConfirm 975572 56 THUMB_32 FUNC
+sha1_starts 1188892 4228 THUMB_32 FUNC
+_plc_init_cvsdupdate 312348 50 THUMB_32 FUNC
+hidh_le_process_notification 736884 142 THUMB_32 FUNC
+bcs_timeline_CalculateTaskIdAndPriorityCounts 832118 142 THUMB_32 FUNC
+bcs_pmuTimeToSleepCallback 882522 64 THUMB_32 FUNC
+l2c_fcr_is_flow_controlled 976314 36 THUMB_32 FUNC
+sha1_update 1193120 114 THUMB_32 FUNC
+plcSetupApuExtFilter 312552 114 THUMB_32 FUNC
+hidh_le_gatt_cmplt_cb 737026 138 THUMB_32 FUNC
+bcs_timeline_CompressData 832260 302 THUMB_32 FUNC
+utilslib_uint16tostr 889562 36 THUMB_32 FUNC
+l2c_fcr_proc_ack_tout 976444 46 THUMB_32 FUNC
+sha1_finish 1193234 212 THUMB_32 FUNC
+utilslib_countBits 889650 44 THUMB_32 FUNC

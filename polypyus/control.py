@@ -131,7 +131,8 @@ class Controller(QObject):
     @logger.catch
     def update_settings(self, update: dict):
         self.status(
-            "Resetting project", [Events.MatchersBlocked, Events.MatchesBlocked],
+            "Resetting project",
+            [Events.MatchersBlocked, Events.MatchesBlocked],
         )
         reimport_binaries, reimport_symbols = models.SettingsStorage.change_events(
             update

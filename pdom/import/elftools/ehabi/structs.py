@@ -12,13 +12,13 @@ from ..construct import UBInt32, ULInt32, Struct
 
 
 class EHABIStructs(object):
-    """ Accessible attributes:
+    """Accessible attributes:
 
-            EH_index_struct:
-                Struct of item in section .ARM.exidx.
+    EH_index_struct:
+        Struct of item in section .ARM.exidx.
 
-            EH_table_struct:
-                Struct of item in section .ARM.extab.
+    EH_table_struct:
+        Struct of item in section .ARM.extab.
     """
 
     def __init__(self, little_endian):
@@ -35,13 +35,11 @@ class EHABIStructs(object):
 
     def _create_exception_handler_index(self):
         self.EH_index_struct = Struct(
-            'EH_index',
-            self.EHABI_uint32('word0'),
-            self.EHABI_uint32('word1')
+            "EH_index", self.EHABI_uint32("word0"), self.EHABI_uint32("word1")
         )
 
     def _create_exception_handler_table(self):
         self.EH_table_struct = Struct(
-            'EH_table',
-            self.EHABI_uint32('word0'),
+            "EH_table",
+            self.EHABI_uint32("word0"),
         )

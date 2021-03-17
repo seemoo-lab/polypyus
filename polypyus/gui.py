@@ -138,7 +138,9 @@ class MainWindow(QtWidgets.QMainWindow):
             hide_fields=["id"],
             item_overrides={"addr": HexTableItem, "size": IntTableItem},
             parent=self,
-            stretch_fields=["Name",],
+            stretch_fields=[
+                "Name",
+            ],
             format_map=dict(addr=lambda v: f"{v:#08X}"),
         )
         self.matches.sortItems(2, QtCore.Qt.DescendingOrder)

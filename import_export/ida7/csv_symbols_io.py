@@ -16,31 +16,32 @@ def modifi_csv(dict):
             tempList[0] = "_" + tempList[0]
             symbols[index] = tempList
 
-    for index, row in enumerate(symbols):                       
-        if len(symbols)-1 > index and symbols[index][0] == symbols[index+1][0]:
+    for index, row in enumerate(symbols):
+        if len(symbols) - 1 > index and symbols[index][0] == symbols[index + 1][0]:
             k = 1
-            while symbols[index][0] == symbols[index+k][0]:
-                templst = list(symbols[index+k])
-                templst[0] =  templst[0] +  "_" + str(k)
-                symbols[index+k] = templst
-                k = k+1
+            while symbols[index][0] == symbols[index + k][0]:
+                templst = list(symbols[index + k])
+                templst[0] = templst[0] + "_" + str(k)
+                symbols[index + k] = templst
+                k = k + 1
 
     return symbols
+
 
 def sort_csv(file_path):
     symbols = []
     with open(file_path, "r") as f:
         reader = csv.reader(f, delimiter=" ")
-        sortedlist = sorted(reader, key=operator.itemgetter(0)) 
+        sortedlist = sorted(reader, key=operator.itemgetter(0))
         for line in sortedlist:
-        	symbols.append(line)
-       
+            symbols.append(line)
+
     return symbols
 
 
 def read_symbols_csv(file_path):
     """opens csv and returns list of symbols
-    
+
     Arguments:
         file_path {str} -- filepath of csv
     """
@@ -67,13 +68,15 @@ def read_symbols_csv(file_path):
             objs.append((name, size, addr, None))
         else:
             print("Ignoring", row)
-    return modifi_csv(fncs),modifi_csv(objs)
+    return modifi_csv(fncs), modifi_csv(objs)
 
 
 EXPORT_FIELDS = ["name", "addr", "size", "type", "mode"]
+
+
 def write_func_csv(target):
     """reads functions from current idb and writes them to a csv
-    
+
     Arguments:
         target {str} -- path of the file to write to.
     """
@@ -92,6 +95,7 @@ def write_func_csv(target):
             writer.writerow(data)
     print("functions exported to " + target)
 
+
 def write_sample_csv(target, sample):
     with open(target, "w") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=EXPORT_FIELDS, delimiter=" ")
@@ -106,4 +110,3 @@ def write_sample_csv(target, sample):
             )
             writer.writerow(data)
     print("sample exported to " + target)
-

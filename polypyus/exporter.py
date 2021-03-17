@@ -8,7 +8,8 @@ from polypyus.tools import serialize
 
 from typing import Iterable
 
-csv.register_dialect("space_delimiter", delimiter=" ", quoting=csv.QUOTE_NONE)
+csv.register_dialect("space_delimiter", delimiter=" ", quoting=csv.QUOTE_MINIMAL)
+
 
 
 def export_csv_combined(binary: Binary, path: Path):

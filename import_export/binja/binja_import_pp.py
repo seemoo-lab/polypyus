@@ -25,11 +25,11 @@ import csv
 from argparse import ArgumentParser, FileType
 
 from binaryninja.binaryview import BinaryViewType
-from binaryninja.types import (Type, Symbol)
-from binaryninja.enums import (SymbolType, IntegerDisplayType, InstructionTextTokenType)
+from binaryninja.types import Type, Symbol
+from binaryninja.enums import SymbolType, IntegerDisplayType, InstructionTextTokenType
 from binaryninja.plugin import PluginCommand
 from binaryninja.plugin import BackgroundTaskThread
-from binaryninja.interaction import (ChoiceField, OpenFileNameField, get_form_input)
+from binaryninja.interaction import ChoiceField, OpenFileNameField, get_form_input
 from binaryninja.log import log_error
 
 
@@ -56,7 +56,9 @@ def import_pp(csv_file, bv, options):
         bv.add_function(fun["start"])
         func = bv.get_function_at(fun["start"])
         # TODO only filters for sub_, should also filter for nonsense function start matcher names
-        if fun["name"] != ("sub_%x" % fun["start"]):   # this script already filters for "sub_"
+        if fun["name"] != (
+            "sub_%x" % fun["start"]
+        ):  # this script already filters for "sub_"
             func.name = fun["name"]
 
     log("Updating analysis...")
@@ -100,7 +102,7 @@ class GetOptions:
             csv_file = OpenFileNameField("Import csv file")
             get_form_input([csv_file], "Polypyus Import Options")
             self.verbose = True
-            if csv_file.result == '':
+            if csv_file.result == "":
                 self.csv_file = None
             else:
                 self.csv_file = csv_file.result
@@ -110,9 +112,11 @@ class GetOptions:
         # headless
         descr = "Export functions from a Polypyus csv into an existing Binary Ninja database."
         parser = ArgumentParser(description=descr)
-        parser.add_argument('csv', type=FileType('w'), help="Path to Polypyus csv.")
-        parser.add_argument('bndb', type=FileType('r'), help="Path to Binary Ninja database.")
-        args  = parser.parse_args()
+        parser.add_argument("csv", type=FileType("w"), help="Path to Polypyus csv.")
+        parser.add_argument(
+            "bndb", type=FileType("r"), help="Path to Binary Ninja database."
+        )
+        args = parser.parse_args()
         self.csv_file = args.csv
         self.input_file = args.csv
         self.output_name = args.bndb
@@ -128,7 +132,9 @@ def main():
         print("Could not open {}".format(options.input_file))
         return False
 
-    (success, error_message) = import_pp(options.csv_file, bv, options.output_name, options)
+    (success, error_message) = import_pp(
+        options.csv_file, bv, options.output_name, options
+    )
     if not success:
         print("Error:", error_message)
         return
@@ -148,7 +154,9 @@ class ImportPPInBackground(BackgroundTaskThread):
         task = self
 
     def run(self):
-        (success, error_message) = import_pp(self.options.csv_file, self.bv, self.options)
+        (success, error_message) = import_pp(
+            self.options.csv_file, self.bv, self.options
+        )
         if not success:
             log_error(error_message)
 
@@ -162,4 +170,8 @@ def import_pp_in_background(bv):
 if __name__ == "__main__":
     main()
 else:
-    PluginCommand.register("Import data from Polypyus", "Import data from Polypyus", import_pp_in_background)
+    PluginCommand.register(
+        "Import data from Polypyus",
+        "Import data from Polypyus",
+        import_pp_in_background,
+    )

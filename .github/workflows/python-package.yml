@@ -10,12 +10,26 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Check editorconfig
+        run: |
+          pip install editorconfig-checker black
+          editorconfig-checker
+          black . --check
+  test:
+    needs: lint
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8, 3.9]
 
     steps:
     - uses: actions/checkout@v2

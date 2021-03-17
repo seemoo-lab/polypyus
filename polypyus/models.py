@@ -68,7 +68,6 @@ class Binary(DB.Entity, Serializable):
          functions (Set): Set of functions found in the binary
          matched_by (Set): Set of matches that matched something in this binary
          comment (str): A user defined comment for additional information
-
     """
 
     name = Required(str)
@@ -256,8 +255,7 @@ class Function(DB.Entity, Serializable):
         return str(self)
 
     def dump(self):
-        """dumps corresponding bytes from binary
-        """
+        """dumps corresponding bytes from binary"""
         return self.binary.read()[self.addr : self.addr + self.size]
 
     @classmethod
@@ -466,8 +464,7 @@ class StartMatcher(Matcher):
 
 
 class Match(DB.Entity, Serializable):
-    """Represents a successful match on a target binary.
-    """
+    """Represents a successful match on a target binary."""
 
     addr = Required(int)
     size = Required(int)

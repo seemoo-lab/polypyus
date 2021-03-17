@@ -32,8 +32,10 @@ class TestGraphStucture(unittest.TestCase):
         self.assertLessEqual(len(list(graph.edges_at(0))), len(data))
 
         if data:
-            self.assertEqual(max(len(binary) for binary in data), graph._get_max_match_size(0))
-        
+            self.assertEqual(
+                max(len(binary) for binary in data), graph._get_max_match_size(0)
+            )
+
 
 class TestAbitrarySimpleMatching(unittest.TestCase):
     @given(st.binary())
@@ -44,9 +46,7 @@ class TestAbitrarySimpleMatching(unittest.TestCase):
         graph = Graph()
         graph.insert(match_frag, match)
         matches = list(graph.match(match))
-        note(
-            f"frag: {match_frag}, target: {match}, matches: {matches}, graph: {graph}"
-        )
+        note(f"frag: {match_frag}, target: {match}, matches: {matches}, graph: {graph}")
         self.assertIn(([match], len(match), len(match)), matches)
 
 
