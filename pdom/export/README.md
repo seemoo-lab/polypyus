@@ -1,1 +1,0 @@
-The compiled exporter is rather large, so we're currently hosting it [externally](https://drive.google.com/file/d/1uBFtPW5k8hQRCGptIMJm-j3v8TAo0_J-/view?usp=sharing).
