@@ -106,7 +106,7 @@ def get_or_create_binary(path: Path, make_target=False) -> Binary:
         if not path.is_file():
             raise FileNotFoundError
         binary = Binary(filepath=str(path), name=path.name)
-    elif make_target:
+    if make_target:
         binary.is_target = True
     binary.partition()
     return binary
