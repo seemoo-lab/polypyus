@@ -65,6 +65,7 @@ def prepare_graph(
         typer.echo("No history entries in database")
         return None
 
+    matchers = None
     if histories:
         logger.debug("Clearing matchers")
         Matcher.reset()
